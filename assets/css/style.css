@@ -1800,6 +1800,227 @@ html {
     }
 }
 
+/* Catering Page Styles */
+.catering-services-section {
+    padding: var(--spacing-xxl) 0;
+    background-color: var(--bg-secondary);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.service-card {
+    background-color: var(--color-white);
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.service-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--color-red), var(--color-green));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto var(--spacing-md);
+}
+
+.service-icon i {
+    font-size: 2rem;
+    color: var(--color-white);
+}
+
+.service-card h3 {
+    color: var(--color-red);
+    margin-bottom: var(--spacing-md);
+}
+
+.service-card p {
+    color: var(--color-text-light);
+    margin-bottom: var(--spacing-md);
+    line-height: 1.6;
+}
+
+.service-card ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: var(--spacing-md);
+    text-align: left;
+}
+
+.service-card li {
+    color: var(--color-text-light);
+    margin-bottom: var(--spacing-xs);
+    padding-left: var(--spacing-sm);
+    position: relative;
+}
+
+.service-card li::before {
+    content: '•';
+    color: var(--color-red);
+    position: absolute;
+    left: 0;
+}
+
+.service-price {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-red);
+    background-color: var(--bg-primary);
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--radius-md);
+    display: inline-block;
+}
+
+.catering-packages-section {
+    padding: var(--spacing-xxl) 0;
+    background-color: var(--bg-primary);
+}
+
+.packages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.package-card {
+    background-color: var(--color-white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.package-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.package-card.featured {
+    border: 3px solid var(--color-red);
+    transform: scale(1.05);
+}
+
+.package-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: var(--color-red);
+    color: var(--color-white);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--radius-md);
+    font-size: 0.8rem;
+    font-weight: 600;
+    z-index: 2;
+}
+
+.package-header {
+    background: linear-gradient(135deg, var(--color-red), var(--color-green));
+    color: var(--color-white);
+    padding: var(--spacing-xl);
+    text-align: center;
+}
+
+.package-header h3 {
+    margin: 0 0 var(--spacing-sm) 0;
+    font-size: 1.8rem;
+}
+
+.package-price {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing-xs);
+}
+
+.package-people {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+.package-content {
+    padding: var(--spacing-xl);
+}
+
+.package-content h4 {
+    color: var(--color-red);
+    margin-bottom: var(--spacing-md);
+}
+
+.package-content ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: var(--spacing-lg);
+}
+
+.package-content li {
+    color: var(--color-text-light);
+    margin-bottom: var(--spacing-xs);
+    padding-left: var(--spacing-sm);
+    position: relative;
+}
+
+.package-content li::before {
+    content: '•';
+    color: var(--color-red);
+    position: absolute;
+    left: 0;
+}
+
+.package-total {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--color-red);
+    text-align: center;
+    padding: var(--spacing-sm);
+    background-color: var(--bg-primary);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--spacing-lg);
+}
+
+.package-card .btn {
+    width: 100%;
+    justify-content: center;
+}
+
+/* Responsive Design for Catering Page */
+@media (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .packages-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .package-card.featured {
+        transform: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .package-price {
+        font-size: 2rem;
+    }
+    
+    .service-card,
+    .package-content {
+        padding: var(--spacing-lg);
+    }
+}
+
 /* Print styles */
 @media print {
     .header,
