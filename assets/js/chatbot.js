@@ -54,7 +54,7 @@ class PortillosChatbot {
             </div>
             
             <div class="chatbot-toggle" id="chatbot-toggle">
-                <i class="fab fa-whatsapp"></i>
+                <i class="fas fa-robot"></i>
                 <span class="notification-badge" id="notification-badge">1</span>
             </div>
         `;
