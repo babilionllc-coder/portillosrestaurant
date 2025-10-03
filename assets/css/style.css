@@ -1415,6 +1415,7 @@ input:focus, textarea:focus, select:focus {
     border-radius: var(--radius-md);
     transition: var(--transition-base);
     box-shadow: none;
+    display: block;
 }
 
 .logo-image:hover {
@@ -1539,6 +1540,7 @@ input:focus, textarea:focus, select:focus {
     min-height: 44px;
     justify-content: center;
     align-items: center;
+    z-index: 1001;
 }
 
 .nav-toggle:hover {
@@ -2489,9 +2491,11 @@ input:focus, textarea:focus, select:focus {
     }
     
     .nav-menu.active {
-        top: 70px;
-        transform: translateY(0);
-        -webkit-transform: translateY(0);
+        top: 70px !important;
+        transform: translateY(0) !important;
+        -webkit-transform: translateY(0) !important;
+        opacity: 1 !important;
+        visibility: visible !important;
     }
     
     .nav-list {
@@ -2508,14 +2512,28 @@ input:focus, textarea:focus, select:focus {
         text-align: center;
     }
     
+    /* Ensure logo is visible on mobile */
+    .logo-image {
+        display: block !important;
+        height: 50px;
+        max-width: 100%;
+    }
+    
+    .nav-brand {
+        display: flex !important;
+        align-items: center;
+    }
+    
     .nav-toggle {
-        display: flex;
+        display: flex !important;
         flex-direction: column;
         gap: 6px;
         background: none;
         border: none;
         cursor: pointer;
         padding: var(--spacing-2);
+        z-index: 1001;
+        position: relative;
     }
     
     .nav-toggle span {

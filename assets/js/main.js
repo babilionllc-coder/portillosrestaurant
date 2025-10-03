@@ -15,7 +15,12 @@ function initMobileMenu() {
     const navToggle = document.getElementById('navToggle');
     const navMenu = document.getElementById('navMenu');
     
-    if (!navToggle || !navMenu) return;
+    if (!navToggle || !navMenu) {
+        console.error('Mobile menu elements not found:', { navToggle, navMenu });
+        return;
+    }
+    
+    console.log('Mobile menu initialized:', { navToggle, navMenu });
 
     // Prevent body scroll when menu is open
     function toggleBodyScroll(disable) {
@@ -51,13 +56,15 @@ function initMobileMenu() {
     navToggle.addEventListener('click', function(e) {
         e.preventDefault();
         e.stopPropagation();
+        console.log('Toggle button clicked');
         toggleMenu();
     });
-
-    // Touch events for better iPhone support
+    
+    // Add touchstart for better mobile support
     navToggle.addEventListener('touchstart', function(e) {
         e.preventDefault();
-    });
+        console.log('Toggle button touchstart');
+    }, { passive: false });
 
     // Close menu when clicking on links
     const navLinks = document.querySelectorAll('.nav-link');
