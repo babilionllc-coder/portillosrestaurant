@@ -1681,6 +1681,11 @@ input:focus, textarea:focus, select:focus {
         transform: translateY(0);
     }
     
+    .nav-list.active {
+        left: 0;
+        animation: slideInLeft 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
     .nav-list {
         flex-direction: column;
         padding: var(--spacing-6);

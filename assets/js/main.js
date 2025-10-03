@@ -28,10 +28,12 @@ function initMobileMenu() {
     // Enhanced toggle function with ARIA management
     function toggleMenu(force = null) {
         const shouldOpen = force !== null ? force : !isMenuOpen;
+        const navList = navMenu.querySelector('.nav-list');
         
         if (shouldOpen) {
             navToggle.classList.add('active');
             navMenu.classList.add('active');
+            if (navList) navList.classList.add('active');
             navToggle.setAttribute('aria-expanded', 'true');
             document.body.style.overflow = 'hidden'; // Prevent background scroll
             isMenuOpen = true;
@@ -44,6 +46,7 @@ function initMobileMenu() {
         } else {
             navToggle.classList.remove('active');
             navMenu.classList.remove('active');
+            if (navList) navList.classList.remove('active');
             navToggle.setAttribute('aria-expanded', 'false');
             document.body.style.overflow = ''; // Restore background scroll
             isMenuOpen = false;
