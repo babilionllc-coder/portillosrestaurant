@@ -2492,39 +2492,66 @@ input:focus, textarea:focus, select:focus {
     }
 }
 
-/* Responsive Design - Mobile */
+/* Simple Mobile Menu */
 @media (max-width: 768px) {
-    /* Hide desktop navigation */
-    .nav-menu-desktop {
-        display: none;
+    .nav-menu {
+        position: fixed;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--color-white);
+        box-shadow: var(--shadow-lg);
+        transition: all 0.3s ease;
+        z-index: 999;
     }
     
-    /* Show mobile menu toggle */
-    .mobile-menu-toggle {
-        display: flex;
+    .nav-menu.active {
+        top: 100%;
+        transform: translateY(0);
     }
     
-    /* Adjust logo size */
-    .logo-image {
-        height: 50px;
+    .nav-list {
+        flex-direction: column;
+        padding: var(--spacing-6);
+        gap: var(--spacing-2);
     }
     
-    .logo-text h1 {
-        font-size: var(--text-3xl);
-    }
-    
-    /* Mobile nav overlay adjustments */
-    .mobile-nav-content {
-        width: 280px;
-    }
-    
-    .mobile-nav-link {
-        padding: var(--spacing-md) var(--spacing-lg);
-        font-size: var(--text-base);
-    }
-    
-    .mobile-nav-link i {
+    .nav-link {
+        padding: var(--spacing-4) var(--spacing-6);
+        border-radius: var(--radius-lg);
         font-size: var(--text-lg);
+        display: block;
+        text-align: center;
+    }
+    
+    .nav-toggle {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: var(--spacing-2);
+    }
+    
+    .nav-toggle span {
+        width: 28px;
+        height: 3px;
+        background-color: var(--color-text-primary);
+        transition: all 0.3s ease;
+        border-radius: var(--radius-sm);
+    }
+    
+    .nav-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(6px, 6px);
+    }
+    
+    .nav-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .nav-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
     }
 }
     
