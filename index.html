@@ -62,7 +62,7 @@
             "latitude": "21.158429985920003",
             "longitude": "-86.8515277850641"
         },
-        "openingHours": "Mo-Su 08:00-22:00",
+        "openingHours": "Mo-Su 10:00-22:00",
         "priceRange": "$$",
         "servesCuisine": ["Mexican", "Seafood"],
         "hasMenu": "https://portillosrestaurante.com/menu.html",
@@ -74,7 +74,7 @@
             "https://wa.me/529981892147"
         ],
         "image": "https://portillosrestaurante.com/assets/images/restaurant-exterior.jpg",
-        "logo": "https://portillosrestaurante.com/assets/images/logo.png"
+        "logo": "https://portillosrestaurante.com/assets/images/logo/portilloslogo.png"
     }
     </script>
     
@@ -93,24 +93,24 @@
     <link rel="stylesheet" href="assets/css/style.css">
     
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Dancing+Script:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Dancing+Script:wght@400;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Dancing+Script:wght@400;600;700&display=swap" rel="stylesheet"></noscript>
     
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></noscript>
 </head>
 <body>
+    <!-- Skip to main content link -->
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+    
     <!-- Header -->
-    <header class="header">
-        <nav class="navbar">
+    <header class="header" role="banner">
+        <nav class="navbar" role="navigation" aria-label="Navegación principal">
             <div class="container">
                 <div class="nav-brand">
-                    <a href="index.html" class="logo">
-                        <div class="logo-icon">
-                            <div class="logo-circle">
-                                <div class="logo-shrimp">🦐</div>
-                                <div class="logo-sombrero">🎩</div>
-                            </div>
-                        </div>
+                    <a href="index.html" class="logo" aria-label="Portillos Restaurante - Ir al inicio">
+                        <img src="assets/images/logo/portilloslogo.png" alt="Logo de Portillos Restaurante" class="logo-image">
                         <div class="logo-text">
                             <h1>Portillos</h1>
                             <span class="logo-subtitle">RESTAURANT</span>
@@ -119,15 +119,16 @@
                     </a>
                 </div>
                 
-                <div class="nav-menu" id="navMenu">
-                    <ul class="nav-list">
-                        <li><a href="index.html" class="nav-link active">Inicio</a></li>
-                        <li><a href="menu.html" class="nav-link">Menú</a></li>
-                        <li><a href="ordenar.html" class="nav-link">Ordenar</a></li>
-                        <li><a href="galeria.html" class="nav-link">Galería</a></li>
-                        <li><a href="nosotros.html" class="nav-link">Nosotros</a></li>
-                        <li><a href="catering.html" class="nav-link">Catering</a></li>
-                        <li><a href="contacto.html" class="nav-link">Contacto</a></li>
+                <div class="nav-menu" id="navMenu" role="menubar">
+                    <ul class="nav-list" role="none">
+                        <li role="none"><a href="index.html" class="nav-link active" role="menuitem" aria-current="page">Inicio</a></li>
+                        <li role="none"><a href="menu.html" class="nav-link" role="menuitem">Menú</a></li>
+                        <li role="none"><a href="ordenar.html" class="nav-link" role="menuitem">Ordenar</a></li>
+                        <li role="none"><a href="galeria.html" class="nav-link" role="menuitem">Galería</a></li>
+                        <li role="none"><a href="nosotros.html" class="nav-link" role="menuitem">Nosotros</a></li>
+                        <li role="none"><a href="catering.html" class="nav-link" role="menuitem">Catering</a></li>
+                        <li role="none"><a href="reservas.html" class="nav-link" role="menuitem">Reservas</a></li>
+                        <li role="none"><a href="contacto.html" class="nav-link" role="menuitem">Contacto</a></li>
                     </ul>
                 </div>
                 
@@ -136,10 +137,10 @@
                         <i class="fab fa-whatsapp"></i>
                         <span>Ordenar</span>
                     </a>
-                    <button class="nav-toggle" id="navToggle">
-                        <span></span>
-                        <span></span>
-                        <span></span>
+                    <button class="nav-toggle" id="navToggle" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="navMenu">
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
                     </button>
                 </div>
             </div>
@@ -147,7 +148,7 @@
     </header>
 
     <!-- Main Content -->
-    <main class="main">
+    <main id="main-content" class="main" role="main">
         <!-- Hero Section -->
         <section class="hero">
             <div class="hero-background">
@@ -169,8 +170,8 @@
                             <i class="fas fa-utensils"></i>
                             Ver Menú
                         </a>
-                        <a href="https://wa.me/529981668821" class="btn btn-whatsapp" target="_blank">
-                            <i class="fab fa-whatsapp"></i>
+                        <a href="https://wa.me/529981668821" class="btn btn-whatsapp" target="_blank" aria-label="Ordenar comida por WhatsApp">
+                            <i class="fab fa-whatsapp" aria-hidden="true"></i>
                             Ordenar por WhatsApp
                         </a>
                     </div>
@@ -269,7 +270,7 @@
             <div class="container">
                 <h2 class="section-title">Nuestro Menú</h2>
                 <div class="menu-categories">
-                    <a href="menu.html#desayuno" class="category-link">
+                    <a href="menu.html#desayunos" class="category-link">
                         <i class="fas fa-sun"></i>
                         <span>Desayuno</span>
                     </a>
@@ -281,7 +282,7 @@
                         <i class="fas fa-fish"></i>
                         <span>Mariscos</span>
                     </a>
-                    <a href="menu.html#tacos" class="category-link">
+                    <a href="menu.html#antojitos" class="category-link">
                         <i class="fas fa-taco"></i>
                         <span>Tacos</span>
                     </a>
@@ -413,6 +414,30 @@
             </div>
         </div>
     </footer>
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookieConsent" class="cookie-consent">
+        <div class="cookie-content">
+            <div class="cookie-icon">
+                <i class="fas fa-cookie-bite"></i>
+            </div>
+            <div class="cookie-text">
+                <h3>🍪 Política de Cookies</h3>
+                <p>Utilizamos cookies para mejorar tu experiencia en nuestro sitio web, analizar el tráfico y personalizar el contenido. Al continuar navegando, aceptas nuestro uso de cookies.</p>
+                <div class="cookie-links">
+                    <a href="legal.html#cookies" target="_blank">Más información</a>
+                    <span class="cookie-separator">•</span>
+                    <a href="legal.html#privacidad" target="_blank">Privacidad</a>
+                </div>
+            </div>
+            <div class="cookie-actions">
+                <button id="acceptCookies" class="btn btn-primary">
+                    <i class="fas fa-check"></i>
+                    Aceptar
+                </button>
+            </div>
+        </div>
+    </div>
 
     <!-- JavaScript -->
     <script src="assets/js/main.js"></script>
