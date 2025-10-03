@@ -23,6 +23,9 @@ function initMobileMenu() {
     function toggleMenu() {
         navMenu.classList.toggle('active');
         navToggle.classList.toggle('active');
+        console.log('Menu toggled:', navMenu.classList.contains('active'));
+        console.log('Menu element:', navMenu);
+        console.log('Menu computed style:', window.getComputedStyle(navMenu).display);
     }
 
     // Toggle button click
