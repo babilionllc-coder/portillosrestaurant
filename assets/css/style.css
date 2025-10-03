@@ -1911,9 +1911,9 @@ input:focus, textarea:focus, select:focus {
 }
 
 .dish-image {
-    aspect-ratio: 4/3;
-    overflow: hidden;
     height: 200px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #f8f9fa 0%, var(--color-white) 100%);
 }
 
 .dish-image img {
@@ -1929,6 +1929,7 @@ input:focus, textarea:focus, select:focus {
 
 .dish-content {
     padding: var(--spacing-md);
+    text-align: center;
 }
 
 .dish-content h3 {
@@ -2648,7 +2649,6 @@ input:focus, textarea:focus, select:focus {
     .dishes-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: var(--spacing-md);
-        max-width: none;
     }
     
     .dish-image {
@@ -2777,6 +2777,55 @@ html {
     color: var(--color-red);
     text-align: center;
     margin-bottom: var(--spacing-sm);
+}
+
+/* About Hero Section */
+.about-hero {
+    background: linear-gradient(135deg, #f8f9fa 0%, var(--color-white) 100%);
+    padding: var(--spacing-16) 0;
+}
+
+.about-hero .hero-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-12);
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-hero .hero-text {
+    text-align: left;
+}
+
+.about-hero .hero-text .page-title {
+    text-align: left;
+    margin-bottom: var(--spacing-4);
+}
+
+.about-hero .hero-text .page-subtitle {
+    font-size: var(--text-lg);
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+}
+
+.about-hero .hero-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.restaurant-exterior {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: var(--radius-2xl);
+    box-shadow: var(--shadow-lg);
+    transition: transform 0.3s ease;
+}
+
+.restaurant-exterior:hover {
+    transform: scale(1.02);
 }
 
 .page-subtitle {
