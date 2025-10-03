@@ -1929,7 +1929,7 @@ input:focus, textarea:focus, select:focus {
 
 .hero-title-main {
     font-family: var(--font-decorative);
-    font-size: 6rem;
+    font-size: 8rem;
     font-weight: 700;
     color: var(--color-red);
     display: block;
@@ -2787,7 +2787,7 @@ input:focus, textarea:focus, select:focus {
     
     
     .hero-title-main {
-        font-size: 4rem;
+        font-size: 5rem;
     }
     
     .hero-title-sub {
@@ -2844,7 +2844,7 @@ input:focus, textarea:focus, select:focus {
     }
     
     .hero-title-main {
-        font-size: 3.5rem;
+        font-size: 4.5rem;
     }
     
     .section-title {

@@ -199,6 +199,12 @@ function initMenuSearch() {
     if (!searchInput || !menuItems.length) return;
     
     let currentFilter = 'all';
+    
+    // Ensure all sections are visible by default
+    menuSections.forEach(section => {
+        section.style.display = 'block';
+        section.style.opacity = '1';
+    });
     let currentSearch = '';
     
     // Search functionality
