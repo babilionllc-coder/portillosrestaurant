@@ -1065,7 +1065,7 @@ input:focus, textarea:focus, select:focus {
 
 /* Gallery Page Styles */
 .gallery-hero {
-    background: linear-gradient(135deg, var(--color-accent-50) 0%, var(--color-primary-50) 100%);
+    background: linear-gradient(135deg, #f8f9fa 0%, var(--color-white) 100%);
     padding: var(--spacing-20) 0;
     text-align: center;
 }
@@ -1570,7 +1570,7 @@ input:focus, textarea:focus, select:focus {
     min-height: 80vh;
     display: flex;
     align-items: center;
-    background: linear-gradient(135deg, var(--color-accent-50) 0%, var(--color-primary-50) 100%);
+    background: linear-gradient(135deg, #f8f9fa 0%, var(--color-white) 100%);
     overflow: hidden;
 }
 
@@ -2686,7 +2686,7 @@ input:focus, textarea:focus, select:focus {
 }
 
 .bg-gold {
-    background-color: var(--color-gold);
+    background-color: #f8f9fa;
 }
 
 .mb-0 {
@@ -2750,7 +2750,7 @@ html {
 .contact-hero,
 .legal-hero {
     padding: var(--spacing-xxl) 0;
-    background: linear-gradient(135deg, var(--color-gold) 0%, var(--color-gold-dark) 100%);
+    background: linear-gradient(135deg, #f8f9fa 0%, var(--color-white) 100%);
     text-align: center;
 }
 
