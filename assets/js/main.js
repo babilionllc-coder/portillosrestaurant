@@ -16,104 +16,36 @@ function initMobileMenu() {
     const navMenu = document.getElementById('navMenu');
     
     if (!navToggle || !navMenu) {
-        console.error('Mobile menu elements not found:', { navToggle, navMenu });
         return;
     }
-    
-    console.log('Mobile menu initialized:', { navToggle, navMenu });
 
-    // Prevent body scroll when menu is open
-    function toggleBodyScroll(disable) {
-        if (disable) {
-            document.body.style.overflow = 'hidden';
-            document.body.style.position = 'fixed';
-            document.body.style.width = '100%';
-        } else {
-            document.body.style.overflow = '';
-            document.body.style.position = '';
-            document.body.style.width = '';
-        }
-    }
-
-    // Toggle menu function
+    // Simple toggle function
     function toggleMenu() {
-        const isActive = navMenu.classList.contains('active');
-        
-        if (isActive) {
-            navToggle.classList.remove('active');
-            navMenu.classList.remove('active');
-            toggleBodyScroll(false);
-            navToggle.setAttribute('aria-expanded', 'false');
-        } else {
-            navToggle.classList.add('active');
-            navMenu.classList.add('active');
-            toggleBodyScroll(true);
-            navToggle.setAttribute('aria-expanded', 'true');
-        }
+        navMenu.classList.toggle('active');
+        navToggle.classList.toggle('active');
     }
 
-    // Toggle button click with touch support
+    // Toggle button click
     navToggle.addEventListener('click', function(e) {
         e.preventDefault();
-        e.stopPropagation();
-        console.log('Toggle button clicked');
         toggleMenu();
     });
-    
-    // Add touchstart for better mobile support
-    navToggle.addEventListener('touchstart', function(e) {
-        e.preventDefault();
-        console.log('Toggle button touchstart');
-    }, { passive: false });
 
     // Close menu when clicking on links
     const navLinks = document.querySelectorAll('.nav-link');
     navLinks.forEach(link => {
         link.addEventListener('click', function() {
-            navToggle.classList.remove('active');
             navMenu.classList.remove('active');
-            toggleBodyScroll(false);
-            navToggle.setAttribute('aria-expanded', 'false');
+            navToggle.classList.remove('active');
         });
     });
 
     // Close menu when clicking outside
     document.addEventListener('click', function(e) {
         if (!navMenu.contains(e.target) && !navToggle.contains(e.target)) {
-            navToggle.classList.remove('active');
             navMenu.classList.remove('active');
-            toggleBodyScroll(false);
-            navToggle.setAttribute('aria-expanded', 'false');
-        }
-    });
-
-    // Handle escape key
-    document.addEventListener('keydown', function(event) {
-        if (event.key === 'Escape') {
             navToggle.classList.remove('active');
-            navMenu.classList.remove('active');
-            toggleBodyScroll(false);
-            navToggle.setAttribute('aria-expanded', 'false');
         }
-    });
-
-    // Handle iOS viewport changes
-    window.addEventListener('orientationchange', function() {
-        setTimeout(function() {
-            if (navMenu.classList.contains('active')) {
-                navMenu.style.height = window.innerHeight + 'px';
-            }
-        }, 100);
-    });
-
-    // Prevent zoom on double tap (iOS)
-    let lastTouchEnd = 0;
-    navToggle.addEventListener('touchend', function(event) {
-        const now = (new Date()).getTime();
-        if (now - lastTouchEnd <= 300) {
-            event.preventDefault();
-        }
-        lastTouchEnd = now;
     });
 }
 
