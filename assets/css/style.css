@@ -2,8 +2,14 @@
 
 /* CSS Variables - Modern Mexican Theme Colors */
 :root {
-    /* Primary Colors - Modern Mexican Palette */
-    --color-primary: #DC2626;        /* Modern red */
+    /* Original Mexican Restaurant Colors */
+    --color-red: #DC2626;           /* Traditional red */
+    --color-green: #059669;         /* Traditional green */
+    --color-gold: #D97706;          /* Traditional gold */
+    --color-gold-dark: #B45309;     /* Darker gold */
+    
+    /* Primary Colors - Legacy compatibility */
+    --color-primary: #DC2626;        /* Same as red */
     --color-primary-50: #FEF2F2;
     --color-primary-100: #FEE2E2;
     --color-primary-200: #FECACA;
@@ -12,8 +18,8 @@
     --color-primary-700: #B91C1C;
     --color-primary-900: #991B1B;
     
-    /* Secondary Colors */
-    --color-secondary: #059669;      /* Modern green */
+    /* Secondary Colors - Legacy compatibility */
+    --color-secondary: #059669;      /* Same as green */
     --color-secondary-50: #ECFDF5;
     --color-secondary-100: #D1FAE5;
     --color-secondary-500: #10B981;
@@ -2498,13 +2504,16 @@ input:focus, textarea:focus, select:focus {
         width: 100%;
         background: var(--color-white);
         box-shadow: var(--shadow-lg);
-        transition: all 0.3s ease;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         z-index: 999;
+        -webkit-backface-visibility: hidden;
+        -webkit-transform: translateZ(0);
     }
     
     .nav-menu.active {
         top: 70px;
         transform: translateY(0);
+        -webkit-transform: translateY(0);
     }
     
     .nav-list {

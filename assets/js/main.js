@@ -10,23 +10,53 @@ document.addEventListener('DOMContentLoaded', function() {
     initImageLoading();
 });
 
-// Simple Mobile Menu System
+// iPhone-Optimized Mobile Menu System
 function initMobileMenu() {
     const navToggle = document.getElementById('navToggle');
     const navMenu = document.getElementById('navMenu');
     
     if (!navToggle || !navMenu) return;
 
-    // Toggle menu function
-    function toggleMenu() {
-        navToggle.classList.toggle('active');
-        navMenu.classList.toggle('active');
+    // Prevent body scroll when menu is open
+    function toggleBodyScroll(disable) {
+        if (disable) {
+            document.body.style.overflow = 'hidden';
+            document.body.style.position = 'fixed';
+            document.body.style.width = '100%';
+        } else {
+            document.body.style.overflow = '';
+            document.body.style.position = '';
+            document.body.style.width = '';
+        }
     }
 
-    // Toggle button click
+    // Toggle menu function
+    function toggleMenu() {
+        const isActive = navMenu.classList.contains('active');
+        
+        if (isActive) {
+            navToggle.classList.remove('active');
+            navMenu.classList.remove('active');
+            toggleBodyScroll(false);
+            navToggle.setAttribute('aria-expanded', 'false');
+        } else {
+            navToggle.classList.add('active');
+            navMenu.classList.add('active');
+            toggleBodyScroll(true);
+            navToggle.setAttribute('aria-expanded', 'true');
+        }
+    }
+
+    // Toggle button click with touch support
     navToggle.addEventListener('click', function(e) {
         e.preventDefault();
+        e.stopPropagation();
         toggleMenu();
+    });
+
+    // Touch events for better iPhone support
+    navToggle.addEventListener('touchstart', function(e) {
+        e.preventDefault();
     });
 
     // Close menu when clicking on links
@@ -35,6 +65,8 @@ function initMobileMenu() {
         link.addEventListener('click', function() {
             navToggle.classList.remove('active');
             navMenu.classList.remove('active');
+            toggleBodyScroll(false);
+            navToggle.setAttribute('aria-expanded', 'false');
         });
     });
 
@@ -43,6 +75,8 @@ function initMobileMenu() {
         if (!navMenu.contains(e.target) && !navToggle.contains(e.target)) {
             navToggle.classList.remove('active');
             navMenu.classList.remove('active');
+            toggleBodyScroll(false);
+            navToggle.setAttribute('aria-expanded', 'false');
         }
     });
 
@@ -51,7 +85,28 @@ function initMobileMenu() {
         if (event.key === 'Escape') {
             navToggle.classList.remove('active');
             navMenu.classList.remove('active');
+            toggleBodyScroll(false);
+            navToggle.setAttribute('aria-expanded', 'false');
         }
+    });
+
+    // Handle iOS viewport changes
+    window.addEventListener('orientationchange', function() {
+        setTimeout(function() {
+            if (navMenu.classList.contains('active')) {
+                navMenu.style.height = window.innerHeight + 'px';
+            }
+        }, 100);
+    });
+
+    // Prevent zoom on double tap (iOS)
+    let lastTouchEnd = 0;
+    navToggle.addEventListener('touchend', function(event) {
+        const now = (new Date()).getTime();
+        if (now - lastTouchEnd <= 300) {
+            event.preventDefault();
+        }
+        lastTouchEnd = now;
     });
 }
 
