@@ -1,5 +1,25 @@
 /* ===== PORTILLOS RESTAURANT - CSS STYLES ===== */
 
+/* Hide any injected 'P Inicio S' elements */
+[class*='inicio'], [id*='inicio'], [data*='inicio'] {
+    display: none !important;
+}
+
+/* Hide any elements with specific text content */
+[class*="P"], [id*="P"] {
+    display: none !important;
+}
+
+/* Hide any red button elements near the logo */
+.nav-brand + * {
+    display: none !important;
+}
+
+/* Hide any buttons with white text on red background */
+button[style*="red"], a[style*="red"] {
+    display: none !important;
+}
+
 /* CSS Variables - Modern Mexican Theme Colors */
 :root {
     /* Original Mexican Restaurant Colors */
