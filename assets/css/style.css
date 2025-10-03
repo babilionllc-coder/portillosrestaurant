@@ -2051,9 +2051,10 @@ input:focus, textarea:focus, select:focus {
 
 /* Footer */
 .footer {
-    background-color: var(--color-text-dark);
-    color: var(--color-white);
+    background-color: var(--color-white);
+    color: var(--color-text-dark);
     padding: var(--spacing-xxl) 0 var(--spacing-lg);
+    border-top: 1px solid var(--color-gray-200);
 }
 
 .footer-content {
@@ -2070,7 +2071,7 @@ input:focus, textarea:focus, select:focus {
 }
 
 .footer-description {
-    color: #ccc;
+    color: var(--color-text-secondary);
     line-height: 1.6;
 }
 
@@ -2083,7 +2084,7 @@ input:focus, textarea:focus, select:focus {
 }
 
 .footer-links a {
-    color: #ccc;
+    color: var(--color-text-secondary);
     text-decoration: none;
     transition: color 0.3s ease;
 }
@@ -2095,14 +2096,18 @@ input:focus, textarea:focus, select:focus {
 .contact-info p {
     display: flex;
     align-items: center;
-    gap: var(--spacing-xs);
-    margin-bottom: var(--spacing-xs);
-    color: #ccc;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-text-secondary);
+    font-size: var(--text-sm);
+    line-height: 1.5;
 }
 
 .contact-info i {
     color: var(--color-red);
-    width: 20px;
+    width: 16px;
+    text-align: center;
+    flex-shrink: 0;
 }
 
 .whatsapp-buttons {
@@ -2112,8 +2117,9 @@ input:focus, textarea:focus, select:focus {
 }
 
 .footer-bottom {
-    border-top: 1px solid #444;
+    border-top: 1px solid var(--color-gray-200);
     padding-top: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
 }
 
 .footer-bottom-content {
@@ -2124,13 +2130,19 @@ input:focus, textarea:focus, select:focus {
     gap: var(--spacing-md);
 }
 
+.footer-bottom-content p {
+    color: var(--color-text-secondary);
+    font-size: var(--text-sm);
+    margin: 0;
+}
+
 .footer-legal {
     display: flex;
     gap: var(--spacing-md);
 }
 
 .footer-legal a {
-    color: #ccc;
+    color: var(--color-text-secondary);
     text-decoration: none;
     font-size: 0.9rem;
     transition: color 0.3s ease;
