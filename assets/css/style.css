@@ -483,9 +483,7 @@ p {
     }
 }
 
-.fade-in-up {
-    animation: fadeInUp 0.4s ease-out forwards;
-}
+/* Removed fade-in-up animation for cleaner look */
 
 /* Loading Animation */
 @keyframes pulse {
@@ -2747,9 +2745,7 @@ input:focus, textarea:focus, select:focus {
     }
 }
 
-.fade-in-up {
-    animation: fadeInUp 0.4s ease-out;
-}
+/* Removed fade-in-up animation for cleaner look */
 
 /* Smooth scrolling for anchor links */
 html {

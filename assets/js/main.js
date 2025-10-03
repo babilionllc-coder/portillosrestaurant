@@ -99,30 +99,7 @@ function initAnimations() {
         rootMargin: '0px 0px -50px 0px'
     };
     
-    const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('fade-in-up');
-                entry.target.style.opacity = '0';
-                entry.target.style.transform = 'translateY(30px)';
-                
-                // Stagger animation for multiple elements
-                const delay = entry.target.dataset.delay || 0;
-                setTimeout(() => {
-                    entry.target.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }, delay);
-            }
-        });
-    }, observerOptions);
-    
-    // Observe elements for animation with staggered delays
-    const animatedElements = document.querySelectorAll('.dish-card, .testimonial-card, .category-link, .section-title');
-    animatedElements.forEach((el, index) => {
-        el.dataset.delay = index * 100; // Stagger by 100ms
-        observer.observe(el);
-    });
+    // Removed scroll animations for better performance and cleaner look
 }
 
 // WhatsApp Button Functionality
