@@ -977,7 +977,7 @@ input:focus, textarea:focus, select:focus {
 
 .menu-items-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr;
     gap: var(--spacing-lg);
     align-items: start;
     max-width: 1400px;
