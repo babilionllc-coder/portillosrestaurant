@@ -1667,7 +1667,11 @@ input:focus, textarea:focus, select:focus {
         min-height: 44px;
     }
     
-    /* Mobile Navigation */
+    /* Mobile Navigation - Hide desktop menu, show hamburger */
+    .nav-list {
+        display: none;
+    }
+    
     .nav-toggle {
         display: flex;
     }
@@ -2512,35 +2516,6 @@ input:focus, textarea:focus, select:focus {
         border-bottom: none;
     }
     
-    .nav-toggle {
-        display: flex;
-        flex-direction: column;
-        gap: 4px;
-        background: none;
-        border: none;
-        cursor: pointer;
-        padding: var(--spacing-2);
-    }
-    
-    .nav-toggle span {
-        width: 28px;
-        height: 3px;
-        background-color: var(--color-text-primary);
-        transition: all 0.3s ease;
-        border-radius: var(--radius-sm);
-    }
-    
-    .nav-toggle.active span:nth-child(1) {
-        transform: rotate(45deg) translate(6px, 6px);
-    }
-    
-    .nav-toggle.active span:nth-child(2) {
-        opacity: 0;
-    }
-    
-    .nav-toggle.active span:nth-child(3) {
-        transform: rotate(-45deg) translate(6px, -6px);
-    }
 }
     
     /* Mobile-specific animations */
@@ -2588,21 +2563,6 @@ input:focus, textarea:focus, select:focus {
         font-size: 1.2rem;
     }
     
-    .nav-toggle {
-        display: flex;
-    }
-    
-    .nav-toggle.active span:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 5px);
-    }
-    
-    .nav-toggle.active span:nth-child(2) {
-        opacity: 0;
-    }
-    
-    .nav-toggle.active span:nth-child(3) {
-        transform: rotate(-45deg) translate(7px, -6px);
-    }
     
     .hero-title-main {
         font-size: 3rem;

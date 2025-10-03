@@ -16,21 +16,35 @@ function initMobileMenu() {
     const navMenu = document.getElementById('navMenu');
     
     if (!navToggle || !navMenu) {
+        console.error('Mobile menu elements not found');
         return;
     }
 
-    // Simple toggle function
+    console.log('Mobile menu elements found:', { navToggle, navMenu });
+
+    // Toggle menu function
     function toggleMenu() {
-        navMenu.classList.toggle('active');
-        navToggle.classList.toggle('active');
-        console.log('Menu toggled:', navMenu.classList.contains('active'));
-        console.log('Menu element:', navMenu);
-        console.log('Menu computed style:', window.getComputedStyle(navMenu).display);
+        const isActive = navMenu.classList.contains('active');
+        
+        if (isActive) {
+            navMenu.classList.remove('active');
+            navToggle.classList.remove('active');
+            console.log('Menu closed');
+        } else {
+            navMenu.classList.add('active');
+            navToggle.classList.add('active');
+            console.log('Menu opened');
+        }
+        
+        console.log('Menu state:', navMenu.classList.contains('active'));
+        console.log('Menu display:', window.getComputedStyle(navMenu).display);
     }
 
-    // Toggle button click
+    // Toggle button click event
     navToggle.addEventListener('click', function(e) {
         e.preventDefault();
+        e.stopPropagation();
+        console.log('Hamburger clicked');
         toggleMenu();
     });
 
@@ -40,6 +54,7 @@ function initMobileMenu() {
         link.addEventListener('click', function() {
             navMenu.classList.remove('active');
             navToggle.classList.remove('active');
+            console.log('Menu closed via link click');
         });
     });
 
@@ -48,6 +63,7 @@ function initMobileMenu() {
         if (!navMenu.contains(e.target) && !navToggle.contains(e.target)) {
             navMenu.classList.remove('active');
             navToggle.classList.remove('active');
+            console.log('Menu closed via outside click');
         }
     });
 }
