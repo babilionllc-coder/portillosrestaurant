@@ -969,10 +969,10 @@ input:focus, textarea:focus, select:focus {
 
 .menu-items-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: var(--spacing-lg);
     align-items: stretch;
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 0 auto;
 }
 
@@ -996,7 +996,7 @@ input:focus, textarea:focus, select:focus {
 }
 
 .menu-item-image {
-    height: 180px;
+    height: 200px;
     overflow: hidden;
     position: relative;
 }
@@ -1013,7 +1013,7 @@ input:focus, textarea:focus, select:focus {
 }
 
 .menu-item-content {
-    padding: var(--spacing-4);
+    padding: var(--spacing-5);
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -1021,25 +1021,25 @@ input:focus, textarea:focus, select:focus {
 }
 
 .menu-item h3 {
-    font-size: var(--text-lg);
+    font-size: var(--text-xl);
     font-weight: var(--font-semibold);
     color: var(--color-text-primary);
-    margin-bottom: var(--spacing-2);
+    margin-bottom: var(--spacing-3);
     line-height: 1.4;
 }
 
 .menu-item-description {
-    font-size: var(--text-sm);
+    font-size: var(--text-base);
     color: var(--color-text-secondary);
-    line-height: 1.5;
-    margin-bottom: var(--spacing-3);
+    line-height: 1.6;
+    margin-bottom: var(--spacing-4);
 }
 
 .menu-item-price {
-    font-size: var(--text-xl);
+    font-size: var(--text-2xl);
     font-weight: var(--font-bold);
     color: var(--color-primary-600);
-    margin-bottom: var(--spacing-3);
+    margin-bottom: var(--spacing-4);
 }
 
 .menu-item .btn {
@@ -1099,20 +1099,14 @@ input:focus, textarea:focus, select:focus {
     color: var(--color-primary-600);
 }
 
-/* Tablet Menu Styles */
+/* Mobile Menu Styles */
 @media (max-width: 768px) {
     .menu-items-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: var(--spacing-md);
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
     }
 }
 
-/* Mobile Menu Styles */
-@media (max-width: 480px) {
-    .menu-items-grid {
-        grid-template-columns: 1fr;
-        gap: var(--spacing-md);
-    }
     
     .menu-controls {
         padding: 0 var(--spacing-4);
