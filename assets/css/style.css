@@ -678,8 +678,9 @@ input:focus, textarea:focus, select:focus {
 }
 
 .hero-badge {
-    display: inline-flex;
+    display: flex;
     align-items: center;
+    justify-content: center;
     gap: var(--spacing-2);
     background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(10px);
@@ -689,7 +690,8 @@ input:focus, textarea:focus, select:focus {
     font-size: var(--text-sm);
     font-weight: var(--font-semibold);
     color: var(--color-white);
-    margin-bottom: var(--spacing-6);
+    margin: 0 auto var(--spacing-6);
+    width: fit-content;
 }
 
 .hero-badge i {
@@ -791,9 +793,10 @@ input:focus, textarea:focus, select:focus {
 
 .hero-actions .btn-outline {
     background: rgba(255, 255, 255, 0.1);
-    border: 2px solid rgba(255, 255, 255, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.5);
     color: var(--color-white);
     backdrop-filter: blur(10px);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .hero-actions .btn-outline:hover {
