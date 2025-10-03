@@ -1827,8 +1827,10 @@ input:focus, textarea:focus, select:focus {
 
 .dishes-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: var(--spacing-lg);
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .dish-card {
@@ -1845,8 +1847,9 @@ input:focus, textarea:focus, select:focus {
 }
 
 .dish-image {
-    aspect-ratio: 1;
+    aspect-ratio: 4/3;
     overflow: hidden;
+    height: 200px;
 }
 
 .dish-image img {
@@ -2615,12 +2618,29 @@ input:focus, textarea:focus, select:focus {
     }
     
     .dishes-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
         gap: var(--spacing-md);
+        max-width: none;
+    }
+    
+    .dish-image {
+        height: 180px;
     }
     
     .menu-categories {
         grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Small Mobile (320px - 480px) */
+@media (max-width: 480px) {
+    .dishes-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-sm);
+    }
+    
+    .dish-image {
+        height: 160px;
     }
     
     .testimonials-grid {
