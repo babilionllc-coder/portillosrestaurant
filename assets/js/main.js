@@ -10,159 +10,86 @@ document.addEventListener('DOMContentLoaded', function() {
     initImageLoading();
 });
 
-// Enhanced Mobile Menu Toggle with iOS Support
+// Modern Mobile Menu System
 function initMobileMenu() {
-    const navToggle = document.getElementById('navToggle');
-    const navMenu = document.getElementById('navMenu');
+    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+    const mobileNavOverlay = document.getElementById('mobileNavOverlay');
+    const mobileNavClose = document.getElementById('mobileNavClose');
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
     
-    if (!navToggle || !navMenu) return;
+    if (!mobileMenuToggle || !mobileNavOverlay) return;
 
     let isMenuOpen = false;
-    let touchStartY = 0;
-    let touchEndY = 0;
 
-    // Detect iOS devices
-    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || 
-                  (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
-
-    // Enhanced toggle function with ARIA management
+    // Toggle menu function
     function toggleMenu(force = null) {
         const shouldOpen = force !== null ? force : !isMenuOpen;
-        const navList = navMenu.querySelector('.nav-list');
         
         if (shouldOpen) {
-            navToggle.classList.add('active');
-            navMenu.classList.add('active');
-            if (navList) navList.classList.add('active');
-            navToggle.setAttribute('aria-expanded', 'true');
-            document.body.style.overflow = 'hidden'; // Prevent background scroll
+            mobileNavOverlay.classList.add('active');
+            mobileMenuToggle.classList.add('active');
+            mobileMenuToggle.setAttribute('aria-expanded', 'true');
+            document.body.style.overflow = 'hidden';
             isMenuOpen = true;
             
-            // Focus management for accessibility
+            // Focus management
             setTimeout(() => {
-                const firstLink = navMenu.querySelector('.nav-link');
+                const firstLink = mobileNavOverlay.querySelector('.mobile-nav-link');
                 if (firstLink) firstLink.focus();
             }, 100);
         } else {
-            navToggle.classList.remove('active');
-            navMenu.classList.remove('active');
-            if (navList) navList.classList.remove('active');
-            navToggle.setAttribute('aria-expanded', 'false');
-            document.body.style.overflow = ''; // Restore background scroll
+            mobileNavOverlay.classList.remove('active');
+            mobileMenuToggle.classList.remove('active');
+            mobileMenuToggle.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
             isMenuOpen = false;
         }
     }
 
-    // Click event (desktop and touch devices)
-    navToggle.addEventListener('click', function(e) {
+    // Toggle button click
+    mobileMenuToggle.addEventListener('click', function(e) {
         e.preventDefault();
         e.stopPropagation();
         toggleMenu();
     });
 
-    // Touch events for iOS devices
-    if (isIOS) {
-        navToggle.addEventListener('touchstart', function(e) {
-            touchStartY = e.touches[0].clientY;
-        }, { passive: true });
-
-        navToggle.addEventListener('touchend', function(e) {
-            touchEndY = e.changedTouches[0].clientY;
-            const touchDiff = Math.abs(touchStartY - touchEndY);
-            
-            // Only trigger if it's a tap (small movement)
-            if (touchDiff < 10) {
-                e.preventDefault();
-                e.stopPropagation();
-                toggleMenu();
-            }
-        }, { passive: false });
+    // Close button click
+    if (mobileNavClose) {
+        mobileNavClose.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            toggleMenu(false);
+        });
     }
 
-    // Close menu when clicking on a link
-    const navLinks = document.querySelectorAll('.nav-link');
-    navLinks.forEach(link => {
+    // Close menu when clicking on links
+    mobileNavLinks.forEach(link => {
         link.addEventListener('click', function() {
             toggleMenu(false);
         });
-
-        // Add touch support for links on iOS
-        if (isIOS) {
-            link.addEventListener('touchstart', function() {
-                this.style.transform = 'scale(0.98)';
-            }, { passive: true });
-
-            link.addEventListener('touchend', function() {
-                this.style.transform = '';
-            }, { passive: true });
-        }
     });
 
-    // Close menu when clicking outside (improved for touch)
-    function handleOutsideClick(event) {
-        if (isMenuOpen && !navMenu.contains(event.target) && !navToggle.contains(event.target)) {
+    // Close menu when clicking outside
+    mobileNavOverlay.addEventListener('click', function(e) {
+        if (e.target === mobileNavOverlay) {
             toggleMenu(false);
         }
-    }
-
-    document.addEventListener('click', handleOutsideClick);
-    
-    // Touch outside detection for iOS
-    if (isIOS) {
-        document.addEventListener('touchstart', function(e) {
-            if (isMenuOpen && !navMenu.contains(e.target) && !navToggle.contains(e.target)) {
-                toggleMenu(false);
-            }
-        }, { passive: true });
-    }
+    });
 
     // Handle escape key
     document.addEventListener('keydown', function(event) {
         if (event.key === 'Escape' && isMenuOpen) {
             toggleMenu(false);
-            navToggle.focus();
+            mobileMenuToggle.focus();
         }
     });
 
-    // Handle iOS viewport changes (address bar show/hide)
-    if (isIOS) {
-        let lastHeight = window.innerHeight;
-        
-        function handleViewportChange() {
-            const currentHeight = window.innerHeight;
-            
-            // If height decreased significantly, likely address bar appeared
-            if (currentHeight < lastHeight - 100) {
-                // Adjust menu positioning if needed
-                if (isMenuOpen) {
-                    navMenu.style.maxHeight = `${currentHeight - 70}px`;
-                }
-            }
-            
-            lastHeight = currentHeight;
+    // Handle window resize
+    window.addEventListener('resize', function() {
+        if (isMenuOpen && window.innerWidth > 768) {
+            toggleMenu(false);
         }
-
-        window.addEventListener('resize', handleViewportChange);
-        window.addEventListener('orientationchange', function() {
-            setTimeout(handleViewportChange, 500); // iOS needs delay after orientation change
-        });
-    }
-
-    // Prevent menu from opening on scroll (iOS Safari)
-    if (isIOS) {
-        let isScrolling = false;
-        
-        window.addEventListener('scroll', function() {
-            isScrolling = true;
-            setTimeout(() => { isScrolling = false; }, 150);
-        }, { passive: true });
-
-        navToggle.addEventListener('touchstart', function(e) {
-            if (isScrolling) {
-                e.preventDefault();
-            }
-        }, { passive: false });
-    }
+    });
 }
 
 // Smooth Scrolling for Anchor Links
