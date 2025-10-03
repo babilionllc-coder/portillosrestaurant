@@ -1828,7 +1828,7 @@ input:focus, textarea:focus, select:focus {
 
 .dishes-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: var(--spacing-lg);
 }
 
@@ -1846,7 +1846,7 @@ input:focus, textarea:focus, select:focus {
 }
 
 .dish-image {
-    height: 200px;
+    aspect-ratio: 1;
     overflow: hidden;
 }
 
@@ -2615,6 +2615,7 @@ input:focus, textarea:focus, select:focus {
     
     .dishes-grid {
         grid-template-columns: 1fr;
+        gap: var(--spacing-md);
     }
     
     .menu-categories {
