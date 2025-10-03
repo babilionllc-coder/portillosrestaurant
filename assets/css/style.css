@@ -405,6 +405,48 @@ p {
     box-shadow: var(--shadow-md);
 }
 
+/* Enhanced WhatsApp Button for Header */
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-3);
+}
+
+.nav-actions .btn-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-2);
+    padding: var(--spacing-3) var(--spacing-5);
+    border-radius: var(--radius-xl);
+    font-weight: var(--font-semibold);
+    font-size: var(--text-sm);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    min-width: 140px;
+    justify-content: center;
+    background: linear-gradient(135deg, #25D366, #128C7E);
+    color: var(--color-white);
+    border: 2px solid #25D366;
+    box-shadow: var(--shadow-sm);
+}
+
+.nav-actions .btn-whatsapp:hover {
+    background: linear-gradient(135deg, #128C7E, #075E54);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+    border-color: #128C7E;
+}
+
+.nav-actions .btn-whatsapp i {
+    font-size: var(--text-lg);
+    margin: 0;
+}
+
+.nav-actions .btn-whatsapp span {
+    font-size: var(--text-sm);
+    font-weight: var(--font-semibold);
+}
+
 .btn-small {
     padding: var(--spacing-2) var(--spacing-4);
     font-size: var(--text-sm);
