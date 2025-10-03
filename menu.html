@@ -181,31 +181,398 @@
                     <a href="#bebidas" class="menu-nav-link">Bebidas</a>
                 </div>
                 
-                <div class="menu-placeholder">
-                    <h2>Menú Interactivo Completo</h2>
-                    <p>Menú completo con todas las categorías, precios reales y funcionalidad de ordenar por WhatsApp.</p>
-                    <div class="menu-categories">
-                        <div class="category-card">
-                            <h3>Desayunos</h3>
-                            <p>Huevos Rancheros, Chilaquiles, Machaca, Huevos Mexicanos</p>
-                        </div>
-                        <div class="category-card">
-                            <h3>Antojitos</h3>
-                            <p>Tacos de Pescado, Camarón, Pulpo, Pescado Frito</p>
-                        </div>
-                        <div class="category-card">
-                            <h3>Comida Corrida</h3>
-                            <p>Pollo con Mole, Albóndigas, Costillas, Chicharrón</p>
-                        </div>
-                        <div class="category-card">
-                            <h3>Mariscos</h3>
-                            <p>Camarones al Mojo de Ajo, Ceviche, Cóctel de Camarón</p>
-                        </div>
-                        <div class="category-card">
-                            <h3>Bebidas</h3>
-                            <p>Agua de Horchata, Jamaica, Limón, Refrescos</p>
-                        </div>
+                <!-- Menu Search and Filter -->
+                <div class="menu-controls">
+                    <div class="menu-search">
+                        <input type="text" id="menuSearch" placeholder="Buscar platillo..." class="search-input">
+                        <i class="fas fa-search search-icon"></i>
                     </div>
+                    <div class="menu-filters">
+                        <button class="filter-btn active" data-filter="all">Todos</button>
+                        <button class="filter-btn" data-filter="desayunos">Desayunos</button>
+                        <button class="filter-btn" data-filter="antojitos">Antojitos</button>
+                        <button class="filter-btn" data-filter="comida">Comida</button>
+                        <button class="filter-btn" data-filter="mariscos">Mariscos</button>
+                        <button class="filter-btn" data-filter="bebidas">Bebidas</button>
+                    </div>
+                </div>
+
+                <!-- Menu Categories -->
+                <div class="menu-categories">
+                    <!-- DESAYUNOS -->
+                    <section class="menu-section" id="desayunos" data-category="desayunos">
+                        <h2 class="menu-section-title">
+                            <i class="fas fa-sun"></i>
+                            Desayunos
+                        </h2>
+                        <div class="menu-items-grid">
+                            <div class="menu-item">
+                                <div class="menu-item-image">
+                                    <img src="assets/images/menu/huevos-rancheros.jpg" alt="Huevos Rancheros" loading="lazy">
+                                </div>
+                                <div class="menu-item-content">
+                                    <h3>Huevos Rancheros</h3>
+                                    <p class="menu-item-description">Huevos estrellados sobre tortillas fritas, bañados en salsa ranchera con frijoles refritos</p>
+                                    <div class="menu-item-price">$89</div>
+                                    <a href="https://wa.me/529981668821?text=Hola%20Portillos,%20quiero%20ordenar:%20Huevos%20Rancheros%20-%20$89" class="btn btn-small btn-whatsapp" target="_blank">
+                                        <i class="fab fa-whatsapp"></i>
+                                        Ordenar
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="menu-item">
+                                <div class="menu-item-image">
+                                    <img src="assets/images/menu/chilaquiles.jpg" alt="Chilaquiles" loading="lazy">
+                                </div>
+                                <div class="menu-item-content">
+                                    <h3>Chilaquiles Rojos</h3>
+                                    <p class="menu-item-description">Tortillas cortadas en triángulos, fritas y bañadas en salsa roja con queso fresco y crema</p>
+                                    <div class="menu-item-price">$79</div>
+                                    <a href="https://wa.me/529981668821?text=Hola%20Portillos,%20quiero%20ordenar:%20Chilaquiles%20Rojos%20-%20$79" class="btn btn-small btn-whatsapp" target="_blank">
+                                        <i class="fab fa-whatsapp"></i>
+                                        Ordenar
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="menu-item">
+                                <div class="menu-item-image">
+                                    <img src="assets/images/menu/chilaquiles-verdes.jpg" alt="Chilaquiles Verdes" loading="lazy">
+                                </div>
+                                <div class="menu-item-content">
+                                    <h3>Chilaquiles Verdes</h3>
+                                    <p class="menu-item-description">Tortillas fritas bañadas en salsa verde con pollo deshebrado, queso y crema</p>
+                                    <div class="menu-item-price">$85</div>
+                                    <a href="https://wa.me/529981668821?text=Hola%20Portillos,%20quiero%20ordenar:%20Chilaquiles%20Verdes%20-%20$85" class="btn btn-small btn-whatsapp" target="_blank">
+                                        <i class="fab fa-whatsapp"></i>
+                                        Ordenar
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="menu-item">
+                                <div class="menu-item-image">
+                                    <img src="assets/images/menu/huevos-mexicanos.jpg" alt="Huevos Mexicanos" loading="lazy">
+                                </div>
+                                <div class="menu-item-content">
+                                    <h3>Huevos Mexicanos</h3>
+                                    <p class="menu-item-description">Huevos revueltos con cebolla, tomate, chile y cilantro, acompañados de frijoles y tortillas</p>
+                                    <div class="menu-item-price">$75</div>
+                                    <a href="https://wa.me/529981668821?text=Hola%20Portillos,%20quiero%20ordenar:%20Huevos%20Mexicanos%20-%20$75" class="btn btn-small btn-whatsapp" target="_blank">
+                                        <i class="fab fa-whatsapp"></i>
+                                        Ordenar
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="menu-item">
+                                <div class="menu-item-image">
+                                    <img src="assets/images/menu/machaca.jpg" alt="Machaca" loading="lazy">
+                                </div>
+                                <div class="menu-item-content">
+                                    <h3>Machaca con Huevo</h3>
+                                    <p class="menu-item-description">Carne seca deshebrada con huevo, cebolla, tomate y chile, servida con frijoles y tortillas</p>
+                                    <div class="menu-item-price">$95</div>
+                                    <a href="https://wa.me/529981668821?text=Hola%20Portillos,%20quiero%20ordenar:%20Machaca%20con%20Huevo%20-%20$95" class="btn btn-small btn-whatsapp" target="_blank">
+                                        <i class="fab fa-whatsapp"></i>
+                                        Ordenar
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- ANTOJITOS -->
+                    <section class="menu-section" id="antojitos" data-category="antojitos">
+                        <h2 class="menu-section-title">
+                            <i class="fas fa-pepper-hot"></i>
+                            Antojitos
+                        </h2>
+                        <div class="menu-items-grid">
+                            <div class="menu-item">
+                                <div class="menu-item-image">
+                                    <img src="assets/images/menu/tacos-pastor.jpg" alt="Tacos de Pastor" loading="lazy">
+                                </div>
+                                <div class="menu-item-content">
+                                    <h3>Tacos de Pastor</h3>
+                                    <p class="menu-item-description">Tacos de carne de cerdo marinada con especias, cebolla, cilantro y piña (4 piezas)</p>
+                                    <div class="menu-item-price">$99</div>
+                                    <a href="https://wa.me/529981668821?text=Hola%20Portillos,%20quiero%20ordenar:%20Tacos%20de%20Pastor%20(4%20piezas)%20-%20$99" class="btn btn-small btn-whatsapp" target="_blank">
+                                        <i class="fab fa-whatsapp"></i>
+                                        Ordenar
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="menu-item">
+                                <div class="menu-item-image">
+                                    <img src="assets/images/menu/tacos-pescado.jpg" alt="Tacos de Pescado" loading="lazy">
+                                </div>
+                                <div class="menu-item-content">
+                                    <h3>Tacos de Pescado</h3>
+                                    <p class="menu-item-description">Pescado fresco empanizado con repollo, salsa especial y limón (3 piezas)</p>
+                                    <div class="menu-item-price">$119</div>
+                                    <a href="https://wa.me/529981668821?text=Hola%20Portillos,%20quiero%20ordenar:%20Tacos%20de%20Pescado%20(3%20piezas)%20-%20$119" class="btn btn-small btn-whatsapp" target="_blank">
+                                        <i class="fab fa-whatsapp"></i>
+                                        Ordenar
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="menu-item">
+                                <div class="menu-item-image">
+                                    <img src="assets/images/menu/tacos-camaron.jpg" alt="Tacos de Camarón" loading="lazy">
+                                </div>
+                                <div class="menu-item-content">
+                                    <h3>Tacos de Camarón</h3>
+                                    <p class="menu-item-description">Camarones frescos con repollo, salsa especial y aguacate (3 piezas)</p>
+                                    <div class="menu-item-price">$129</div>
+                                    <a href="https://wa.me/529981668821?text=Hola%20Portillos,%20quiero%20ordenar:%20Tacos%20de%20Camarón%20(3%20piezas)%20-%20$129" class="btn btn-small btn-whatsapp" target="_blank">
+                                        <i class="fab fa-whatsapp"></i>
+                                        Ordenar
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="menu-item">
+                                <div class="menu-item-image">
+                                    <img src="assets/images/menu/guaraches.jpg" alt="Guaraches" loading="lazy">
+                                </div>
+                                <div class="menu-item-content">
+                                    <h3>Guaraches</h3>
+                                    <p class="menu-item-description">Masa de maíz con frijoles, carne, queso, lechuga, tomate y crema (2 piezas)</p>
+                                    <div class="menu-item-price">$49</div>
+                                    <a href="https://wa.me/529981668821?text=Hola%20Portillos,%20quiero%20ordenar:%20Guaraches%20(2%20piezas)%20-%20$49" class="btn btn-small btn-whatsapp" target="_blank">
+                                        <i class="fab fa-whatsapp"></i>
+                                        Ordenar
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="menu-item">
+                                <div class="menu-item-image">
+                                    <img src="assets/images/menu/pescado-frito.jpg" alt="Pescado Frito" loading="lazy">
+                                </div>
+                                <div class="menu-item-content">
+                                    <h3>Pescado Frito</h3>
+                                    <p class="menu-item-description">Pescado fresco empanizado y frito, servido con arroz, frijoles y ensalada</p>
+                                    <div class="menu-item-price">$139</div>
+                                    <a href="https://wa.me/529981668821?text=Hola%20Portillos,%20quiero%20ordenar:%20Pescado%20Frito%20-%20$139" class="btn btn-small btn-whatsapp" target="_blank">
+                                        <i class="fab fa-whatsapp"></i>
+                                        Ordenar
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- COMIDA CORRIDA -->
+                    <section class="menu-section" id="comida" data-category="comida">
+                        <h2 class="menu-section-title">
+                            <i class="fas fa-utensils"></i>
+                            Comida Corrida
+                        </h2>
+                        <div class="menu-items-grid">
+                            <div class="menu-item">
+                                <div class="menu-item-image">
+                                    <img src="assets/images/menu/pollo-mole.jpg" alt="Pollo con Mole" loading="lazy">
+                                </div>
+                                <div class="menu-item-content">
+                                    <h3>Pollo con Mole</h3>
+                                    <p class="menu-item-description">Pollo bañado en mole poblano tradicional, acompañado de arroz y frijoles</p>
+                                    <div class="menu-item-price">$89</div>
+                                    <a href="https://wa.me/529981668821?text=Hola%20Portillos,%20quiero%20ordenar:%20Pollo%20con%20Mole%20-%20$89" class="btn btn-small btn-whatsapp" target="_blank">
+                                        <i class="fab fa-whatsapp"></i>
+                                        Ordenar
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="menu-item">
+                                <div class="menu-item-image">
+                                    <img src="assets/images/menu/albondigas.jpg" alt="Albóndigas" loading="lazy">
+                                </div>
+                                <div class="menu-item-content">
+                                    <h3>Albóndigas</h3>
+                                    <p class="menu-item-description">Carne molida con arroz y hierbas en caldo de jitomate con verduras</p>
+                                    <div class="menu-item-price">$79</div>
+                                    <a href="https://wa.me/529981668821?text=Hola%20Portillos,%20quiero%20ordenar:%20Albóndigas%20-%20$79" class="btn btn-small btn-whatsapp" target="_blank">
+                                        <i class="fab fa-whatsapp"></i>
+                                        Ordenar
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="menu-item">
+                                <div class="menu-item-image">
+                                    <img src="assets/images/menu/costillas.jpg" alt="Costillas" loading="lazy">
+                                </div>
+                                <div class="menu-item-content">
+                                    <h3>Costillas BBQ</h3>
+                                    <p class="menu-item-description">Costillas de cerdo en salsa BBQ, acompañadas de papas y ensalada</p>
+                                    <div class="menu-item-price">$149</div>
+                                    <a href="https://wa.me/529981668821?text=Hola%20Portillos,%20quiero%20ordenar:%20Costillas%20BBQ%20-%20$149" class="btn btn-small btn-whatsapp" target="_blank">
+                                        <i class="fab fa-whatsapp"></i>
+                                        Ordenar
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="menu-item">
+                                <div class="menu-item-image">
+                                    <img src="assets/images/menu/chicharron.jpg" alt="Chicharrón" loading="lazy">
+                                </div>
+                                <div class="menu-item-content">
+                                    <h3>Chicharrón en Salsa Verde</h3>
+                                    <p class="menu-item-description">Chicharrón en salsa verde con nopales, acompañado de arroz y frijoles</p>
+                                    <div class="menu-item-price">$89</div>
+                                    <a href="https://wa.me/529981668821?text=Hola%20Portillos,%20quiero%20ordenar:%20Chicharrón%20en%20Salsa%20Verde%20-%20$89" class="btn btn-small btn-whatsapp" target="_blank">
+                                        <i class="fab fa-whatsapp"></i>
+                                        Ordenar
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- MARISCOS -->
+                    <section class="menu-section" id="mariscos" data-category="mariscos">
+                        <h2 class="menu-section-title">
+                            <i class="fas fa-fish"></i>
+                            Mariscos
+                        </h2>
+                        <div class="menu-items-grid">
+                            <div class="menu-item">
+                                <div class="menu-item-image">
+                                    <img src="assets/images/menu/camarones-mojo.jpg" alt="Camarones al Mojo de Ajo" loading="lazy">
+                                </div>
+                                <div class="menu-item-content">
+                                    <h3>Camarones al Mojo de Ajo</h3>
+                                    <p class="menu-item-description">Camarones frescos salteados con ajo, mantequilla y especias, acompañados de arroz</p>
+                                    <div class="menu-item-price">$169</div>
+                                    <a href="https://wa.me/529981668821?text=Hola%20Portillos,%20quiero%20ordenar:%20Camarones%20al%20Mojo%20de%20Ajo%20-%20$169" class="btn btn-small btn-whatsapp" target="_blank">
+                                        <i class="fab fa-whatsapp"></i>
+                                        Ordenar
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="menu-item">
+                                <div class="menu-item-image">
+                                    <img src="assets/images/menu/ceviche.jpg" alt="Ceviche de Pescado" loading="lazy">
+                                </div>
+                                <div class="menu-item-content">
+                                    <h3>Ceviche de Pescado</h3>
+                                    <p class="menu-item-description">Pescado fresco marinado en limón con cebolla, tomate, cilantro y chile</p>
+                                    <div class="menu-item-price">$129</div>
+                                    <a href="https://wa.me/529981668821?text=Hola%20Portillos,%20quiero%20ordenar:%20Ceviche%20de%20Pescado%20-%20$129" class="btn btn-small btn-whatsapp" target="_blank">
+                                        <i class="fab fa-whatsapp"></i>
+                                        Ordenar
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="menu-item">
+                                <div class="menu-item-image">
+                                    <img src="assets/images/menu/coctel-camaron.jpg" alt="Cóctel de Camarón" loading="lazy">
+                                </div>
+                                <div class="menu-item-content">
+                                    <h3>Cóctel de Camarón</h3>
+                                    <p class="menu-item-description">Camarones frescos en salsa cóctel con cebolla, cilantro, aguacate y tostadas</p>
+                                    <div class="menu-item-price">$139</div>
+                                    <a href="https://wa.me/529981668821?text=Hola%20Portillos,%20quiero%20ordenar:%20Cóctel%20de%20Camarón%20-%20$139" class="btn btn-small btn-whatsapp" target="_blank">
+                                        <i class="fab fa-whatsapp"></i>
+                                        Ordenar
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="menu-item">
+                                <div class="menu-item-image">
+                                    <img src="assets/images/menu/pulpo.jpg" alt="Pulpo a la Plancha" loading="lazy">
+                                </div>
+                                <div class="menu-item-content">
+                                    <h3>Pulpo a la Plancha</h3>
+                                    <p class="menu-item-description">Pulpo fresco a la plancha con ajo, perejil y especias, acompañado de arroz</p>
+                                    <div class="menu-item-price">$189</div>
+                                    <a href="https://wa.me/529981668821?text=Hola%20Portillos,%20quiero%20ordenar:%20Pulpo%20a%20la%20Plancha%20-%20$189" class="btn btn-small btn-whatsapp" target="_blank">
+                                        <i class="fab fa-whatsapp"></i>
+                                        Ordenar
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- BEBIDAS -->
+                    <section class="menu-section" id="bebidas" data-category="bebidas">
+                        <h2 class="menu-section-title">
+                            <i class="fas fa-glass-cheers"></i>
+                            Bebidas
+                        </h2>
+                        <div class="menu-items-grid">
+                            <div class="menu-item">
+                                <div class="menu-item-image">
+                                    <img src="assets/images/menu/agua-horchata.jpg" alt="Agua de Horchata" loading="lazy">
+                                </div>
+                                <div class="menu-item-content">
+                                    <h3>Agua de Horchata</h3>
+                                    <p class="menu-item-description">Bebida refrescante de arroz con canela y azúcar (1 litro)</p>
+                                    <div class="menu-item-price">$49</div>
+                                    <a href="https://wa.me/529981668821?text=Hola%20Portillos,%20quiero%20ordenar:%20Agua%20de%20Horchata%20(1%20litro)%20-%20$49" class="btn btn-small btn-whatsapp" target="_blank">
+                                        <i class="fab fa-whatsapp"></i>
+                                        Ordenar
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="menu-item">
+                                <div class="menu-item-image">
+                                    <img src="assets/images/menu/agua-jamaica.jpg" alt="Agua de Jamaica" loading="lazy">
+                                </div>
+                                <div class="menu-item-content">
+                                    <h3>Agua de Jamaica</h3>
+                                    <p class="menu-item-description">Bebida refrescante de flor de jamaica (1 litro)</p>
+                                    <div class="menu-item-price">$49</div>
+                                    <a href="https://wa.me/529981668821?text=Hola%20Portillos,%20quiero%20ordenar:%20Agua%20de%20Jamaica%20(1%20litro)%20-%20$49" class="btn btn-small btn-whatsapp" target="_blank">
+                                        <i class="fab fa-whatsapp"></i>
+                                        Ordenar
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="menu-item">
+                                <div class="menu-item-image">
+                                    <img src="assets/images/menu/agua-limon.jpg" alt="Agua de Limón" loading="lazy">
+                                </div>
+                                <div class="menu-item-content">
+                                    <h3>Agua de Limón</h3>
+                                    <p class="menu-item-description">Bebida refrescante de limón natural (1 litro)</p>
+                                    <div class="menu-item-price">$49</div>
+                                    <a href="https://wa.me/529981668821?text=Hola%20Portillos,%20quiero%20ordenar:%20Agua%20de%20Limón%20(1%20litro)%20-%20$49" class="btn btn-small btn-whatsapp" target="_blank">
+                                        <i class="fab fa-whatsapp"></i>
+                                        Ordenar
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="menu-item">
+                                <div class="menu-item-image">
+                                    <img src="assets/images/menu/refrescos.jpg" alt="Refrescos" loading="lazy">
+                                </div>
+                                <div class="menu-item-content">
+                                    <h3>Refrescos</h3>
+                                    <p class="menu-item-description">Coca-Cola, Sprite, Fanta (355ml)</p>
+                                    <div class="menu-item-price">$25</div>
+                                    <a href="https://wa.me/529981668821?text=Hola%20Portillos,%20quiero%20ordenar:%20Refresco%20-%20$25" class="btn btn-small btn-whatsapp" target="_blank">
+                                        <i class="fab fa-whatsapp"></i>
+                                        Ordenar
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
                 </div>
             </div>
         </section>

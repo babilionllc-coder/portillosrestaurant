@@ -76,30 +76,330 @@
 
         <section class="gallery-content">
             <div class="container">
-                <div class="gallery-placeholder">
-                    <h2>Galería Completa de Portillos</h2>
-                    <p>Descubre nuestra comida auténtica, ambiente tradicional y equipo dedicado</p>
-                    <div class="gallery-categories">
-                        <div class="category-card">
-                            <h3>Comida</h3>
-                            <p>Huevos Rancheros, Tacos de Pescado, Pollo con Mole, Camarones al Mojo de Ajo</p>
+                <!-- Gallery Filters -->
+                <div class="gallery-filters">
+                    <button class="gallery-filter-btn active" data-filter="all">
+                        <i class="fas fa-th"></i>
+                        Todos
+                    </button>
+                    <button class="gallery-filter-btn" data-filter="comida">
+                        <i class="fas fa-utensils"></i>
+                        Comida
+                    </button>
+                    <button class="gallery-filter-btn" data-filter="restaurante">
+                        <i class="fas fa-building"></i>
+                        Restaurante
+                    </button>
+                    <button class="gallery-filter-btn" data-filter="eventos">
+                        <i class="fas fa-calendar-alt"></i>
+                        Eventos
+                    </button>
+                    <button class="gallery-filter-btn" data-filter="equipo">
+                        <i class="fas fa-users"></i>
+                        Equipo
+                    </button>
+                </div>
+
+                <!-- Gallery Grid -->
+                <div class="gallery-grid">
+                    <!-- COMIDA -->
+                    <div class="gallery-item" data-category="comida">
+                        <div class="gallery-image">
+                            <img src="assets/images/gallery/huevos-rancheros.jpg" alt="Huevos Rancheros" loading="lazy">
+                            <div class="gallery-overlay">
+                                <div class="gallery-info">
+                                    <h3>Huevos Rancheros</h3>
+                                    <p>Desayuno tradicional mexicano</p>
+                                </div>
+                                <button class="gallery-expand-btn" data-src="assets/images/gallery/huevos-rancheros.jpg" data-alt="Huevos Rancheros">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                            </div>
                         </div>
-                        <div class="category-card">
-                            <h3>Restaurante</h3>
-                            <p>Exterior, Interior, Cocina, Barra, Terraza</p>
+                    </div>
+
+                    <div class="gallery-item" data-category="comida">
+                        <div class="gallery-image">
+                            <img src="assets/images/gallery/chilaquiles.jpg" alt="Chilaquiles Rojos" loading="lazy">
+                            <div class="gallery-overlay">
+                                <div class="gallery-info">
+                                    <h3>Chilaquiles Rojos</h3>
+                                    <p>Tortillas fritas en salsa roja</p>
+                                </div>
+                                <button class="gallery-expand-btn" data-src="assets/images/gallery/chilaquiles.jpg" data-alt="Chilaquiles Rojos">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                            </div>
                         </div>
-                        <div class="category-card">
-                            <h3>Eventos</h3>
-                            <p>Cumpleaños, Catering, Celebraciones Familiares</p>
+                    </div>
+
+                    <div class="gallery-item" data-category="comida">
+                        <div class="gallery-image">
+                            <img src="assets/images/gallery/tacos-pescado.jpg" alt="Tacos de Pescado" loading="lazy">
+                            <div class="gallery-overlay">
+                                <div class="gallery-info">
+                                    <h3>Tacos de Pescado</h3>
+                                    <p>Pescado fresco empanizado</p>
+                                </div>
+                                <button class="gallery-expand-btn" data-src="assets/images/gallery/tacos-pescado.jpg" data-alt="Tacos de Pescado">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                            </div>
                         </div>
-                        <div class="category-card">
-                            <h3>Equipo</h3>
-                            <p>Chef, Servicio, Familia Portillo</p>
+                    </div>
+
+                    <div class="gallery-item" data-category="comida">
+                        <div class="gallery-image">
+                            <img src="assets/images/gallery/pollo-mole.jpg" alt="Pollo con Mole" loading="lazy">
+                            <div class="gallery-overlay">
+                                <div class="gallery-info">
+                                    <h3>Pollo con Mole</h3>
+                                    <p>Mole poblano tradicional</p>
+                                </div>
+                                <button class="gallery-expand-btn" data-src="assets/images/gallery/pollo-mole.jpg" data-alt="Pollo con Mole">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="comida">
+                        <div class="gallery-image">
+                            <img src="assets/images/gallery/camarones-mojo.jpg" alt="Camarones al Mojo de Ajo" loading="lazy">
+                            <div class="gallery-overlay">
+                                <div class="gallery-info">
+                                    <h3>Camarones al Mojo de Ajo</h3>
+                                    <p>Mariscos frescos del Caribe</p>
+                                </div>
+                                <button class="gallery-expand-btn" data-src="assets/images/gallery/camarones-mojo.jpg" data-alt="Camarones al Mojo de Ajo">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="comida">
+                        <div class="gallery-image">
+                            <img src="assets/images/gallery/ceviche.jpg" alt="Ceviche de Pescado" loading="lazy">
+                            <div class="gallery-overlay">
+                                <div class="gallery-info">
+                                    <h3>Ceviche de Pescado</h3>
+                                    <p>Pescado fresco marinado en limón</p>
+                                </div>
+                                <button class="gallery-expand-btn" data-src="assets/images/gallery/ceviche.jpg" data-alt="Ceviche de Pescado">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- RESTAURANTE -->
+                    <div class="gallery-item" data-category="restaurante">
+                        <div class="gallery-image">
+                            <img src="assets/images/gallery/restaurante-exterior.jpg" alt="Exterior del Restaurante" loading="lazy">
+                            <div class="gallery-overlay">
+                                <div class="gallery-info">
+                                    <h3>Exterior del Restaurante</h3>
+                                    <p>Fachada tradicional mexicana</p>
+                                </div>
+                                <button class="gallery-expand-btn" data-src="assets/images/gallery/restaurante-exterior.jpg" data-alt="Exterior del Restaurante">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="restaurante">
+                        <div class="gallery-image">
+                            <img src="assets/images/gallery/restaurante-interior.jpg" alt="Interior del Restaurante" loading="lazy">
+                            <div class="gallery-overlay">
+                                <div class="gallery-info">
+                                    <h3>Interior del Restaurante</h3>
+                                    <p>Ambiente cálido y acogedor</p>
+                                </div>
+                                <button class="gallery-expand-btn" data-src="assets/images/gallery/restaurante-interior.jpg" data-alt="Interior del Restaurante">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="restaurante">
+                        <div class="gallery-image">
+                            <img src="assets/images/gallery/cocina.jpg" alt="Cocina" loading="lazy">
+                            <div class="gallery-overlay">
+                                <div class="gallery-info">
+                                    <h3>Cocina</h3>
+                                    <p>Donde se preparan los sabores</p>
+                                </div>
+                                <button class="gallery-expand-btn" data-src="assets/images/gallery/cocina.jpg" data-alt="Cocina">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="restaurante">
+                        <div class="gallery-image">
+                            <img src="assets/images/gallery/barra.jpg" alt="Barra" loading="lazy">
+                            <div class="gallery-overlay">
+                                <div class="gallery-info">
+                                    <h3>Barra</h3>
+                                    <p>Bebidas y antojitos</p>
+                                </div>
+                                <button class="gallery-expand-btn" data-src="assets/images/gallery/barra.jpg" data-alt="Barra">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="restaurante">
+                        <div class="gallery-image">
+                            <img src="assets/images/gallery/terraza.jpg" alt="Terraza" loading="lazy">
+                            <div class="gallery-overlay">
+                                <div class="gallery-info">
+                                    <h3>Terraza</h3>
+                                    <p>Comer al aire libre</p>
+                                </div>
+                                <button class="gallery-expand-btn" data-src="assets/images/gallery/terraza.jpg" data-alt="Terraza">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="restaurante">
+                        <div class="gallery-image">
+                            <img src="assets/images/gallery/comedor.jpg" alt="Comedor Principal" loading="lazy">
+                            <div class="gallery-overlay">
+                                <div class="gallery-info">
+                                    <h3>Comedor Principal</h3>
+                                    <p>Área principal de servicio</p>
+                                </div>
+                                <button class="gallery-expand-btn" data-src="assets/images/gallery/comedor.jpg" data-alt="Comedor Principal">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- EVENTOS -->
+                    <div class="gallery-item" data-category="eventos">
+                        <div class="gallery-image">
+                            <img src="assets/images/gallery/cumpleanos.jpg" alt="Celebración de Cumpleaños" loading="lazy">
+                            <div class="gallery-overlay">
+                                <div class="gallery-info">
+                                    <h3>Celebración de Cumpleaños</h3>
+                                    <p>Momentos especiales en familia</p>
+                                </div>
+                                <button class="gallery-expand-btn" data-src="assets/images/gallery/cumpleanos.jpg" data-alt="Celebración de Cumpleaños">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="eventos">
+                        <div class="gallery-image">
+                            <img src="assets/images/gallery/catering-eventos.jpg" alt="Servicio de Catering" loading="lazy">
+                            <div class="gallery-overlay">
+                                <div class="gallery-info">
+                                    <h3>Servicio de Catering</h3>
+                                    <p>Eventos especiales y celebraciones</p>
+                                </div>
+                                <button class="gallery-expand-btn" data-src="assets/images/gallery/catering-eventos.jpg" data-alt="Servicio de Catering">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="eventos">
+                        <div class="gallery-image">
+                            <img src="assets/images/gallery/celebraciones-familiares.jpg" alt="Celebraciones Familiares" loading="lazy">
+                            <div class="gallery-overlay">
+                                <div class="gallery-info">
+                                    <h3>Celebraciones Familiares</h3>
+                                    <p>Momentos únicos con los seres queridos</p>
+                                </div>
+                                <button class="gallery-expand-btn" data-src="assets/images/gallery/celebraciones-familiares.jpg" data-alt="Celebraciones Familiares">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- EQUIPO -->
+                    <div class="gallery-item" data-category="equipo">
+                        <div class="gallery-image">
+                            <img src="assets/images/gallery/chef.jpg" alt="Chef Principal" loading="lazy">
+                            <div class="gallery-overlay">
+                                <div class="gallery-info">
+                                    <h3>Chef Principal</h3>
+                                    <p>Experiencia culinaria tradicional</p>
+                                </div>
+                                <button class="gallery-expand-btn" data-src="assets/images/gallery/chef.jpg" data-alt="Chef Principal">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="equipo">
+                        <div class="gallery-image">
+                            <img src="assets/images/gallery/equipo-servicio.jpg" alt="Equipo de Servicio" loading="lazy">
+                            <div class="gallery-overlay">
+                                <div class="gallery-info">
+                                    <h3>Equipo de Servicio</h3>
+                                    <p>Personal amable y profesional</p>
+                                </div>
+                                <button class="gallery-expand-btn" data-src="assets/images/gallery/equipo-servicio.jpg" data-alt="Equipo de Servicio">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="equipo">
+                        <div class="gallery-image">
+                            <img src="assets/images/gallery/familia-portillo.jpg" alt="Familia Portillo" loading="lazy">
+                            <div class="gallery-overlay">
+                                <div class="gallery-info">
+                                    <h3>Familia Portillo</h3>
+                                    <p>La familia detrás del restaurante</p>
+                                </div>
+                                <button class="gallery-expand-btn" data-src="assets/images/gallery/familia-portillo.jpg" data-alt="Familia Portillo">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+
+        <!-- Lightbox Modal -->
+        <div class="lightbox" id="lightbox">
+            <div class="lightbox-content">
+                <button class="lightbox-close" id="lightboxClose">
+                    <i class="fas fa-times"></i>
+                </button>
+                <div class="lightbox-image-container">
+                    <img id="lightboxImage" src="" alt="">
+                    <div class="lightbox-info">
+                        <h3 id="lightboxTitle"></h3>
+                        <p id="lightboxDescription"></p>
+                    </div>
+                </div>
+                <button class="lightbox-prev" id="lightboxPrev">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="lightbox-next" id="lightboxNext">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
     </main>
 
     <!-- Footer -->
