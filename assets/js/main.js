@@ -64,7 +64,7 @@ function initSmoothScrolling() {
     });
 }
 
-// Scroll Animations
+// Scroll Animations - Enhanced
 function initAnimations() {
     const observerOptions = {
         threshold: 0.1,
@@ -75,13 +75,24 @@ function initAnimations() {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('fade-in-up');
+                entry.target.style.opacity = '0';
+                entry.target.style.transform = 'translateY(30px)';
+                
+                // Stagger animation for multiple elements
+                const delay = entry.target.dataset.delay || 0;
+                setTimeout(() => {
+                    entry.target.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }, delay);
             }
         });
     }, observerOptions);
     
-    // Observe elements for animation
-    const animatedElements = document.querySelectorAll('.dish-card, .testimonial-card, .category-link');
-    animatedElements.forEach(el => {
+    // Observe elements for animation with staggered delays
+    const animatedElements = document.querySelectorAll('.dish-card, .testimonial-card, .category-link, .section-title');
+    animatedElements.forEach((el, index) => {
+        el.dataset.delay = index * 100; // Stagger by 100ms
         observer.observe(el);
     });
 }
@@ -280,26 +291,43 @@ function initContactForm() {
     }
 }
 
-// Scroll to Top Functionality
+// Scroll Progress and Back to Top - Enhanced
 function initScrollToTop() {
-    const scrollToTopBtn = document.getElementById('scrollToTop');
+    // Create scroll progress indicator
+    const progressBar = document.createElement('div');
+    progressBar.className = 'scroll-progress';
+    document.body.appendChild(progressBar);
     
-    if (scrollToTopBtn) {
-        window.addEventListener('scroll', function() {
-            if (window.pageYOffset > 300) {
-                scrollToTopBtn.style.display = 'block';
-            } else {
-                scrollToTopBtn.style.display = 'none';
-            }
-        });
+    // Create back to top button
+    const backToTopBtn = document.createElement('button');
+    backToTopBtn.className = 'back-to-top';
+    backToTopBtn.innerHTML = '<i class="fas fa-arrow-up"></i>';
+    backToTopBtn.setAttribute('aria-label', 'Volver arriba');
+    document.body.appendChild(backToTopBtn);
+    
+    // Scroll progress functionality
+    window.addEventListener('scroll', function() {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const scrollPercent = (scrollTop / scrollHeight) * 100;
         
-        scrollToTopBtn.addEventListener('click', function() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
+        progressBar.style.width = scrollPercent + '%';
+        
+        // Show/hide back to top button
+        if (scrollTop > 300) {
+            backToTopBtn.classList.add('visible');
+        } else {
+            backToTopBtn.classList.remove('visible');
+        }
+    });
+    
+    // Back to top functionality
+    backToTopBtn.addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
         });
-    }
+    });
 }
 
 // Cookie Consent (for future implementation)
