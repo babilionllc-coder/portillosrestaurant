@@ -62,4 +62,7 @@ echo "Your website will be available at:"
 echo "https://[username].github.io/portillosrestaurant"
 echo ""
 echo "⏱️  GitHub Pages typically takes 5-10 minutes to deploy"
+<<<<<<< HEAD
 
+=======
+>>>>>>> 569cfb9b58f6e0a82c91d8f0dcf2030ab002aace

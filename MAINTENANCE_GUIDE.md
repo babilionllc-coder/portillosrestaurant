@@ -269,4 +269,7 @@
 ---
 
 **¡Mantén el sitio web de Portillos Restaurante funcionando perfectamente! 🌮✨**
+<<<<<<< HEAD
 
+=======
+>>>>>>> 569cfb9b58f6e0a82c91d8f0dcf2030ab002aace

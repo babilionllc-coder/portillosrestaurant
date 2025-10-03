@@ -128,4 +128,7 @@
 ### **Performance:** ✅ Optimized
 
 **The Portillos Restaurante website is fully functional, optimized, and ready for launch!**
+<<<<<<< HEAD
 
+=======
+>>>>>>> 569cfb9b58f6e0a82c91d8f0dcf2030ab002aace

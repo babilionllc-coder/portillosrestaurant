@@ -119,4 +119,7 @@
 ---
 
 **The website is 70% complete. The remaining 30% requires images and interactive content implementation.**
+<<<<<<< HEAD
 
+=======
+>>>>>>> 569cfb9b58f6e0a82c91d8f0dcf2030ab002aace
