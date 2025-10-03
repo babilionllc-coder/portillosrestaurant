@@ -1,0 +1,14 @@
+# GitHub Pages Configuration
+# This file ensures proper deployment to GitHub Pages
+
+# Build settings for GitHub Pages
+# Source: Deploy from a branch
+# Branch: main
+# Folder: / (root)
+
+# Custom 404 page
+# 404.html will be used automatically
+
+# Jekyll settings (disabled for static site)
+# Jekyll is disabled for this static HTML site
+
