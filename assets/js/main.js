@@ -10,53 +10,155 @@ document.addEventListener('DOMContentLoaded', function() {
     initImageLoading();
 });
 
-// Mobile Menu Toggle
+// Enhanced Mobile Menu Toggle with iOS Support
 function initMobileMenu() {
     const navToggle = document.getElementById('navToggle');
     const navMenu = document.getElementById('navMenu');
     
-    if (navToggle && navMenu) {
-        navToggle.addEventListener('click', function() {
-            navToggle.classList.toggle('active');
-            navMenu.classList.toggle('active');
-        });
+    if (!navToggle || !navMenu) return;
+
+    let isMenuOpen = false;
+    let touchStartY = 0;
+    let touchEndY = 0;
+
+    // Detect iOS devices
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || 
+                  (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+
+    // Enhanced toggle function with ARIA management
+    function toggleMenu(force = null) {
+        const shouldOpen = force !== null ? force : !isMenuOpen;
         
-        // Close menu when clicking on a link
-        const navLinks = document.querySelectorAll('.nav-link');
-        navLinks.forEach(link => {
-            link.addEventListener('click', function() {
-                navToggle.classList.remove('active');
-                navMenu.classList.remove('active');
-                navToggle.setAttribute('aria-expanded', 'false');
-            });
+        if (shouldOpen) {
+            navToggle.classList.add('active');
+            navMenu.classList.add('active');
+            navToggle.setAttribute('aria-expanded', 'true');
+            document.body.style.overflow = 'hidden'; // Prevent background scroll
+            isMenuOpen = true;
+            
+            // Focus management for accessibility
+            setTimeout(() => {
+                const firstLink = navMenu.querySelector('.nav-link');
+                if (firstLink) firstLink.focus();
+            }, 100);
+        } else {
+            navToggle.classList.remove('active');
+            navMenu.classList.remove('active');
+            navToggle.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = ''; // Restore background scroll
+            isMenuOpen = false;
+        }
+    }
+
+    // Click event (desktop and touch devices)
+    navToggle.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        toggleMenu();
+    });
+
+    // Touch events for iOS devices
+    if (isIOS) {
+        navToggle.addEventListener('touchstart', function(e) {
+            touchStartY = e.touches[0].clientY;
+        }, { passive: true });
+
+        navToggle.addEventListener('touchend', function(e) {
+            touchEndY = e.changedTouches[0].clientY;
+            const touchDiff = Math.abs(touchStartY - touchEndY);
+            
+            // Only trigger if it's a tap (small movement)
+            if (touchDiff < 10) {
+                e.preventDefault();
+                e.stopPropagation();
+                toggleMenu();
+            }
+        }, { passive: false });
+    }
+
+    // Close menu when clicking on a link
+    const navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            toggleMenu(false);
         });
 
-        // Close menu when clicking outside
-        document.addEventListener('click', function(event) {
-            if (!navMenu.contains(event.target) && !navToggle.contains(event.target)) {
-                navMenu.classList.remove('active');
-                navToggle.classList.remove('active');
-                navToggle.setAttribute('aria-expanded', 'false');
-            }
-        });
+        // Add touch support for links on iOS
+        if (isIOS) {
+            link.addEventListener('touchstart', function() {
+                this.style.transform = 'scale(0.98)';
+            }, { passive: true });
 
-        // Handle escape key
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape' && navMenu.classList.contains('active')) {
-                navMenu.classList.remove('active');
-                navToggle.classList.remove('active');
-                navToggle.setAttribute('aria-expanded', 'false');
-                navToggle.focus();
+            link.addEventListener('touchend', function() {
+                this.style.transform = '';
+            }, { passive: true });
+        }
+    });
+
+    // Close menu when clicking outside (improved for touch)
+    function handleOutsideClick(event) {
+        if (isMenuOpen && !navMenu.contains(event.target) && !navToggle.contains(event.target)) {
+            toggleMenu(false);
+        }
+    }
+
+    document.addEventListener('click', handleOutsideClick);
+    
+    // Touch outside detection for iOS
+    if (isIOS) {
+        document.addEventListener('touchstart', function(e) {
+            if (isMenuOpen && !navMenu.contains(e.target) && !navToggle.contains(e.target)) {
+                toggleMenu(false);
             }
-        });
+        }, { passive: true });
+    }
+
+    // Handle escape key
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape' && isMenuOpen) {
+            toggleMenu(false);
+            navToggle.focus();
+        }
+    });
+
+    // Handle iOS viewport changes (address bar show/hide)
+    if (isIOS) {
+        let lastHeight = window.innerHeight;
         
-        // Close menu when clicking outside
-        document.addEventListener('click', function(e) {
-            if (!navToggle.contains(e.target) && !navMenu.contains(e.target)) {
-                navToggle.classList.remove('active');
-                navMenu.classList.remove('active');
+        function handleViewportChange() {
+            const currentHeight = window.innerHeight;
+            
+            // If height decreased significantly, likely address bar appeared
+            if (currentHeight < lastHeight - 100) {
+                // Adjust menu positioning if needed
+                if (isMenuOpen) {
+                    navMenu.style.maxHeight = `${currentHeight - 70}px`;
+                }
             }
+            
+            lastHeight = currentHeight;
+        }
+
+        window.addEventListener('resize', handleViewportChange);
+        window.addEventListener('orientationchange', function() {
+            setTimeout(handleViewportChange, 500); // iOS needs delay after orientation change
         });
+    }
+
+    // Prevent menu from opening on scroll (iOS Safari)
+    if (isIOS) {
+        let isScrolling = false;
+        
+        window.addEventListener('scroll', function() {
+            isScrolling = true;
+            setTimeout(() => { isScrolling = false; }, 150);
+        }, { passive: true });
+
+        navToggle.addEventListener('touchstart', function(e) {
+            if (isScrolling) {
+                e.preventDefault();
+            }
+        }, { passive: false });
     }
 }
 
