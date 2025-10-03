@@ -1677,10 +1677,6 @@ input:focus, textarea:focus, select:focus {
         z-index: 999;
     }
     
-    .nav-menu.active {
-        top: 100%;
-        transform: translateY(0);
-    }
     
     .nav-list.active {
         left: 0;
