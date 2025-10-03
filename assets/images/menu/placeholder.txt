@@ -1,0 +1,24 @@
+# Menu Images Directory
+# Placeholder file - Replace with actual dish photos
+
+Required Images:
+- huevos-rancheros.jpg
+- chilaquiles.jpg
+- tacos-pescado.jpg
+- pollo-mole.jpg
+- camarones-mojo.jpg
+- ceviche.jpg
+- tacos-pastor.jpg
+- guaraches.jpg
+- aguas-frescas.jpg
+- machaca.jpg
+- huevos-mexicanos.jpg
+- albondigas.jpg
+- costillas.jpg
+- chicharron.jpg
+- pescado-frito.jpg
+- coctel-camaron.jpg
+- agua-horchata.jpg
+- agua-jamaica.jpg
+- agua-limon.jpg
+- refrescos.jpg
