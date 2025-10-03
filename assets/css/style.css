@@ -471,11 +471,11 @@ p {
     transition: all 0.1s ease;
 }
 
-/* Fade-in Animation for Scroll */
+/* Subtle Fade-in Animation for Scroll */
 @keyframes fadeInUp {
     from {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(10px);
     }
     to {
         opacity: 1;
@@ -484,7 +484,7 @@ p {
 }
 
 .fade-in-up {
-    animation: fadeInUp 0.6s ease-out forwards;
+    animation: fadeInUp 0.4s ease-out forwards;
 }
 
 /* Loading Animation */
@@ -692,7 +692,6 @@ input:focus, textarea:focus, select:focus {
     font-weight: var(--font-semibold);
     color: var(--color-white);
     margin-bottom: var(--spacing-6);
-    animation: fadeInUp 0.8s ease-out 0.2s both;
 }
 
 .hero-badge i {
@@ -702,7 +701,6 @@ input:focus, textarea:focus, select:focus {
 
 .page-title {
     margin-bottom: var(--spacing-6);
-    animation: fadeInUp 0.8s ease-out 0.4s both;
 }
 
 .title-highlight {
@@ -730,7 +728,6 @@ input:focus, textarea:focus, select:focus {
     color: rgba(255, 255, 255, 0.9);
     margin-bottom: var(--spacing-8);
     line-height: var(--leading-relaxed);
-    animation: fadeInUp 0.8s ease-out 0.6s both;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
@@ -739,7 +736,6 @@ input:focus, textarea:focus, select:focus {
     justify-content: center;
     gap: var(--spacing-8);
     margin-bottom: var(--spacing-10);
-    animation: fadeInUp 0.8s ease-out 0.8s both;
 }
 
 .stat-item {
@@ -778,7 +774,6 @@ input:focus, textarea:focus, select:focus {
     justify-content: center;
     gap: var(--spacing-4);
     margin-bottom: var(--spacing-10);
-    animation: fadeInUp 0.8s ease-out 1s both;
 }
 
 .hero-actions .btn {
@@ -813,7 +808,6 @@ input:focus, textarea:focus, select:focus {
     display: flex;
     justify-content: center;
     gap: var(--spacing-6);
-    animation: fadeInUp 0.8s ease-out 1.2s both;
 }
 
 .feature-item {
@@ -2589,13 +2583,13 @@ input:focus, textarea:focus, select:focus {
     
     /* Mobile-specific animations */
     .hero-content {
-        animation: mobileFadeIn 0.8s ease-out;
+        animation: mobileFadeIn 0.4s ease-out;
     }
     
     @keyframes mobileFadeIn {
         from {
             opacity: 0;
-            transform: translateY(20px);
+            transform: translateY(5px);
         }
         to {
             opacity: 1;
@@ -2745,7 +2739,7 @@ input:focus, textarea:focus, select:focus {
 @keyframes fadeInUp {
     from {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(10px);
     }
     to {
         opacity: 1;
@@ -2754,7 +2748,7 @@ input:focus, textarea:focus, select:focus {
 }
 
 .fade-in-up {
-    animation: fadeInUp 0.6s ease-out;
+    animation: fadeInUp 0.4s ease-out;
 }
 
 /* Smooth scrolling for anchor links */
