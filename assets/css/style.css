@@ -410,6 +410,7 @@ p {
     display: flex;
     align-items: center;
     gap: var(--spacing-3);
+    flex-shrink: 0;
 }
 
 .nav-actions .btn-whatsapp {
@@ -1444,13 +1445,15 @@ input:focus, textarea:focus, select:focus {
 }
 
 .navbar {
-    padding: var(--spacing-sm) 0;
+    padding: var(--spacing-md) 0;
 }
 
 .navbar .container {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: var(--spacing-lg);
+    max-width: 1400px;
 }
 
 .logo {
@@ -1462,7 +1465,7 @@ input:focus, textarea:focus, select:focus {
 }
 
 .logo-image {
-    height: 60px;
+    height: 80px;
     width: auto;
     object-fit: contain;
     border-radius: var(--radius-md);
@@ -1534,18 +1537,22 @@ input:focus, textarea:focus, select:focus {
 .nav-list {
     display: flex;
     list-style: none;
-    gap: var(--spacing-lg);
+    gap: var(--spacing-md);
+    flex: 1;
+    justify-content: center;
 }
 
 .nav-link {
     text-decoration: none;
     color: var(--color-text-primary);
     font-weight: var(--font-medium);
-    padding: var(--spacing-2) var(--spacing-4);
+    padding: var(--spacing-2) var(--spacing-3);
     border-radius: var(--radius-lg);
     transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
+    white-space: nowrap;
+    font-size: var(--text-sm);
 }
 
 .nav-link::before {
