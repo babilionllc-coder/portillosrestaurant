@@ -1,8 +1,8 @@
 # Netlify Deployment Trigger
 # This file ensures Netlify detects changes and triggers a new deployment
 
-Deployment triggered at: 2025-10-03 21:06:45
-Last updated: 2025-10-03 21:06:45
+Deployment triggered at: 2025-10-04 19:20:00
+Last updated: 2025-10-04 19:20:00
 
 Changes included:
 - Updated restaurant hours to 7:00 AM - 10:00 PM Monday to Sunday
