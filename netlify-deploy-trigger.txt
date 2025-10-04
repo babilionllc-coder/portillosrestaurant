@@ -1,10 +1,11 @@
 # Netlify Deployment Trigger
 # This file ensures Netlify detects changes and triggers a new deployment
 
-Deployment triggered at: 2024-10-03 20:45:00
-Last updated: 2024-10-03 20:45:00
+Deployment triggered at: 2025-10-03 20:59:15
+Last updated: 2025-10-03 20:59:15
 
 Changes included:
+- Reduced menu image height for better food visibility (180px desktop, 200px mobile)
 - Added 43+ new menu images (all food categories complete)
 - Fixed image filename issues (double-dot extensions)
 - Added image debugging CSS (red borders for visibility)
@@ -12,7 +13,6 @@ Changes included:
 - Created test-images.html for image verification
 - Enhanced chatbot with emergency fallback system
 - 4-column menu layout implemented
-- Increased image heights for better visibility
 - Ready for production deployment
 <<<<<<< HEAD
 
