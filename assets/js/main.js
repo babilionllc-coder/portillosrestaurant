@@ -17,6 +17,8 @@ function initMobileMenu() {
     
     if (!navToggle || !navMenu) {
         console.error('Mobile menu elements not found');
+        // Create emergency fallback menu
+        createEmergencyMenu();
         return;
     }
 
@@ -29,10 +31,12 @@ function initMobileMenu() {
         if (isActive) {
             navMenu.classList.remove('active');
             navToggle.classList.remove('active');
+            navToggle.setAttribute('aria-expanded', 'false');
             console.log('Menu closed');
         } else {
             navMenu.classList.add('active');
             navToggle.classList.add('active');
+            navToggle.setAttribute('aria-expanded', 'true');
             console.log('Menu opened');
         }
         
@@ -40,12 +44,19 @@ function initMobileMenu() {
         console.log('Menu display:', window.getComputedStyle(navMenu).display);
     }
 
-    // Toggle button click event
-    navToggle.addEventListener('click', function(e) {
+    // iOS Safari touch event handler
+    function handleMenuToggle(e) {
         e.preventDefault();
         e.stopPropagation();
-        console.log('Hamburger clicked');
+        console.log('Menu toggle triggered');
         toggleMenu();
+    }
+
+    // Add multiple event listeners for iOS compatibility
+    navToggle.addEventListener('click', handleMenuToggle);
+    navToggle.addEventListener('touchstart', handleMenuToggle);
+    navToggle.addEventListener('touchend', function(e) {
+        e.preventDefault();
     });
 
     // Close menu when clicking on links
@@ -54,6 +65,7 @@ function initMobileMenu() {
         link.addEventListener('click', function() {
             navMenu.classList.remove('active');
             navToggle.classList.remove('active');
+            navToggle.setAttribute('aria-expanded', 'false');
             console.log('Menu closed via link click');
         });
     });
@@ -63,9 +75,61 @@ function initMobileMenu() {
         if (!navMenu.contains(e.target) && !navToggle.contains(e.target)) {
             navMenu.classList.remove('active');
             navToggle.classList.remove('active');
+            navToggle.setAttribute('aria-expanded', 'false');
             console.log('Menu closed via outside click');
         }
     });
+
+    // iOS Safari specific fixes
+    if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
+        console.log('iOS device detected, applying iOS-specific fixes');
+        
+        // Prevent zoom on double tap
+        navToggle.addEventListener('touchstart', function(e) {
+            e.preventDefault();
+        });
+        
+        // Ensure menu is properly positioned on iOS
+        navMenu.style.webkitTransform = 'translateZ(0)';
+        navMenu.style.transform = 'translateZ(0)';
+    }
+}
+
+// Emergency fallback menu for when elements aren't found
+function createEmergencyMenu() {
+    console.log('Creating emergency fallback menu');
+    
+    const emergencyMenu = document.createElement('div');
+    emergencyMenu.id = 'emergency-menu';
+    emergencyMenu.style.cssText = `
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        z-index: 9999;
+        background: var(--color-red, #DC2626);
+        color: white;
+        padding: 10px;
+        border-radius: 5px;
+        font-size: 14px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    `;
+    
+    emergencyMenu.innerHTML = `
+        <div style="margin-bottom: 10px; font-weight: bold;">Menu:</div>
+        <a href="index.html" style="color: white; display: block; margin: 5px 0; text-decoration: none;">Inicio</a>
+        <a href="menu.html" style="color: white; display: block; margin: 5px 0; text-decoration: none;">Menú</a>
+        <a href="ordenar.html" style="color: white; display: block; margin: 5px 0; text-decoration: none;">Ordenar</a>
+        <a href="nosotros.html" style="color: white; display: block; margin: 5px 0; text-decoration: none;">Nosotros</a>
+    `;
+    
+    document.body.appendChild(emergencyMenu);
+    
+    // Auto-hide after 10 seconds
+    setTimeout(() => {
+        if (emergencyMenu.parentNode) {
+            emergencyMenu.parentNode.removeChild(emergencyMenu);
+        }
+    }, 10000);
 }
 
 // Smooth Scrolling for Anchor Links

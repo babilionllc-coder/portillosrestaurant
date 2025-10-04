@@ -2738,12 +2738,33 @@ input:focus, textarea:focus, select:focus {
         box-shadow: var(--shadow-lg);
         border-top: 1px solid var(--color-border);
         z-index: 1000;
+        /* iOS Safari fixes */
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
     }
     
     .nav-menu.active {
         display: block !important;
         opacity: 1;
         visibility: visible;
+        /* Ensure proper rendering on iOS */
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+    }
+    
+    /* iOS Safari touch improvements */
+    .nav-toggle {
+        -webkit-tap-highlight-color: transparent;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        user-select: none;
+        cursor: pointer;
+    }
+    
+    .nav-toggle:active {
+        opacity: 0.7;
     }
     
     .nav-list {
