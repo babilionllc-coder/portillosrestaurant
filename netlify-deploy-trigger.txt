@@ -1,10 +1,11 @@
 # Netlify Deployment Trigger
 # This file ensures Netlify detects changes and triggers a new deployment
 
-Deployment triggered at: 2025-10-03 20:59:15
-Last updated: 2025-10-03 20:59:15
+Deployment triggered at: 2025-10-03 21:03:30
+Last updated: 2025-10-03 21:03:30
 
 Changes included:
+- Fixed 'Nuestro Menú' title to display on single line (inline display)
 - Reduced menu image height for better food visibility (180px desktop, 200px mobile)
 - Added 43+ new menu images (all food categories complete)
 - Fixed image filename issues (double-dot extensions)
