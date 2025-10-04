@@ -216,7 +216,7 @@ function createWhatsAppMessage(itemName, price, quantity = 1) {
 }
 
 function openWhatsAppOrder(itemName, price, quantity = 1) {
-    const phoneNumber = '529981668821'; // Primary WhatsApp number
+    const phoneNumber = '529981164598'; // Primary WhatsApp number
     const message = createWhatsAppMessage(itemName, price, quantity);
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
     
@@ -246,7 +246,7 @@ function initOrderForm() {
             message += '\nMi nombre: [NOMBRE]\nDirección: [DIRECCIÓN]';
             
             const encodedMessage = encodeURIComponent(message);
-            const whatsappUrl = `https://wa.me/529981668821?text=${encodedMessage}`;
+            const whatsappUrl = `https://wa.me/529981164598?text=${encodedMessage}`;
             
             window.open(whatsappUrl, '_blank');
         });
@@ -580,7 +580,7 @@ function initContactForm() {
             // Create WhatsApp message
             const whatsappMessage = `Hola Portillos,\n\nNombre: ${name}\nEmail: ${email}\nTeléfono: ${phone}\n\nMensaje: ${message}`;
             const encodedMessage = encodeURIComponent(whatsappMessage);
-            const whatsappUrl = `https://wa.me/529981668821?text=${encodedMessage}`;
+            const whatsappUrl = `https://wa.me/529981164598?text=${encodedMessage}`;
             
             window.open(whatsappUrl, '_blank');
             
