@@ -715,17 +715,17 @@ input:focus, textarea:focus, select:focus {
 
 .title-highlight {
     font-family: var(--font-decorative);
-    font-size: var(--text-4xl);
+    font-size: 4rem;
     font-weight: var(--font-normal);
-    color: var(--color-gold);
+    color: var(--color-red);
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .title-main {
     font-family: var(--font-decorative);
-    font-size: var(--text-8xl);
+    font-size: 6rem;
     font-weight: var(--font-bold);
-    color: var(--color-white);
+    color: var(--color-red);
     text-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
     line-height: 0.9;
 }
@@ -939,12 +939,13 @@ input:focus, textarea:focus, select:focus {
 
 /* Menu Sections */
 .menu-section {
-    margin-bottom: var(--spacing-20);
-    padding: var(--spacing-8) 0;
+    margin-bottom: var(--spacing-8);
+    padding: var(--spacing-6);
     border-radius: var(--radius-xl);
-    background: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
     border: 1px solid var(--color-gray-200);
+    height: fit-content;
 }
 
 .menu-section:last-child {
@@ -952,27 +953,25 @@ input:focus, textarea:focus, select:focus {
 }
 
 .menu-section-title {
-    font-size: var(--text-3xl);
+    font-size: var(--text-2xl);
     font-weight: var(--font-bold);
-    color: var(--color-red);
-    margin-bottom: var(--spacing-12);
+    color: var(--color-white);
+    margin-bottom: var(--spacing-6);
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: var(--spacing-4);
-    padding: var(--spacing-4) var(--spacing-8);
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: var(--radius-xl);
+    gap: var(--spacing-3);
+    padding: var(--spacing-3) var(--spacing-4);
+    background: linear-gradient(135deg, var(--color-red), var(--color-primary-600));
+    border-radius: var(--radius-lg);
     box-shadow: var(--shadow-sm);
-    border: 2px solid var(--color-red);
-    max-width: 400px;
-    margin: 0 auto var(--spacing-12);
+    margin: 0 auto var(--spacing-6);
 }
 
 .menu-section-title i {
-    color: var(--color-red);
-    font-size: var(--text-2xl);
+    color: var(--color-white);
+    font-size: var(--text-xl);
 }
 
 .menu-items-grid {
@@ -1140,8 +1139,21 @@ input:focus, textarea:focus, select:focus {
     color: var(--color-primary-600);
 }
 
+/* Tablet Menu Styles */
+@media (max-width: 1024px) {
+    .menu-categories {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-lg);
+    }
+}
+
 /* Mobile Menu Styles */
 @media (max-width: 768px) {
+    .menu-categories {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+    
     .menu-items-grid {
         grid-template-columns: 1fr;
         gap: var(--spacing-lg);
@@ -1185,11 +1197,11 @@ input:focus, textarea:focus, select:focus {
     }
     
     .title-highlight {
-        font-size: var(--text-xl);
+        font-size: 2.5rem;
     }
     
     .title-main {
-        font-size: var(--text-4xl);
+        font-size: 3.5rem;
     }
     
     .hero-stats {
@@ -2057,9 +2069,10 @@ input:focus, textarea:focus, select:focus {
 .menu-categories {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: var(--spacing-md);
-    max-width: 600px;
+    gap: var(--spacing-lg);
+    max-width: 1400px;
     margin: 0 auto;
+    align-items: start;
 }
 
 .category-link {
@@ -5032,20 +5045,22 @@ html {
 
 /* WhatsApp Chatbot Styles */
 .chatbot-toggle {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 60px;
-    height: 60px;
-    background: linear-gradient(135deg, #DC2626, #B91C1C);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 20px rgba(220, 38, 38, 0.3);
-    cursor: pointer;
-    transition: all 0.3s ease;
-    z-index: 9999;
+    position: fixed !important;
+    bottom: 20px !important;
+    right: 20px !important;
+    width: 60px !important;
+    height: 60px !important;
+    background: linear-gradient(135deg, #DC2626, #B91C1C) !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-shadow: 0 4px 20px rgba(220, 38, 38, 0.3) !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    z-index: 10001 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
 }
 
 .chatbot-toggle:hover {
@@ -5083,22 +5098,22 @@ html {
 }
 
 .chatbot-widget {
-    position: fixed;
-    bottom: 90px;
-    right: 20px;
-    width: 350px;
-    height: 500px;
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
-    display: flex;
-    flex-direction: column;
+    position: fixed !important;
+    bottom: 90px !important;
+    right: 20px !important;
+    width: 350px !important;
+    height: 500px !important;
+    background: white !important;
+    border-radius: 12px !important;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15) !important;
+    display: flex !important;
+    flex-direction: column !important;
     opacity: 0;
     visibility: hidden;
     transform: translateY(20px);
-    transition: all 0.3s ease;
-    z-index: 9998;
-    border: 1px solid #e5e7eb;
+    transition: all 0.3s ease !important;
+    z-index: 10000 !important;
+    border: 1px solid #e5e7eb !important;
 }
 
 .chatbot-widget.open {

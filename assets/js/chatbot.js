@@ -18,11 +18,12 @@ class PortillosChatbot {
 
     createWidget() {
         // Create chatbot container
+        console.log('Creating chatbot widget...');
         const chatbotHTML = `
             <div id="chatbot-widget" class="chatbot-widget">
                 <div class="chatbot-header">
                     <div class="chatbot-avatar">
-                        <i class="fas fa-robot"></i>
+                        <i class="fas fa-comments"></i>
                     </div>
                     <div class="chatbot-info">
                         <h4>Portillos Assistant</h4>
@@ -37,7 +38,7 @@ class PortillosChatbot {
                     <div class="chatbot-messages" id="chatbot-messages">
                         <div class="message bot-message">
                             <div class="message-content">
-                                <i class="fas fa-robot"></i>
+                                <i class="fas fa-comments"></i>
                                 <p>¡Hola! 👋 Soy el asistente de Portillos. ¿En qué puedo ayudarte hoy?</p>
                             </div>
                         </div>
@@ -54,12 +55,13 @@ class PortillosChatbot {
             </div>
             
             <div class="chatbot-toggle" id="chatbot-toggle">
-                <i class="fas fa-robot"></i>
+                <i class="fab fa-whatsapp"></i>
                 <span class="notification-badge" id="notification-badge">1</span>
             </div>
         `;
 
         document.body.insertAdjacentHTML('beforeend', chatbotHTML);
+        console.log('Chatbot widget created and added to DOM');
     }
 
     bindEvents() {
@@ -121,7 +123,7 @@ class PortillosChatbot {
         const messageDiv = document.createElement('div');
         messageDiv.className = `message ${isBot ? 'bot-message' : 'user-message'}`;
         
-        const icon = isBot ? '<i class="fas fa-robot"></i>' : '<i class="fas fa-user"></i>';
+        const icon = isBot ? '<i class="fas fa-comments"></i>' : '<i class="fas fa-user"></i>';
         messageDiv.innerHTML = `
             <div class="message-content">
                 ${icon}
@@ -405,5 +407,7 @@ class PortillosChatbot {
 
 // Initialize chatbot when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
+    console.log('DOM loaded, initializing chatbot...');
     new PortillosChatbot();
+    console.log('Chatbot initialized');
 });
