@@ -719,6 +719,8 @@ input:focus, textarea:focus, select:focus {
     font-weight: var(--font-normal);
     color: var(--color-red);
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    display: inline;
+    margin-right: 0.5rem;
 }
 
 .title-main {
@@ -728,6 +730,7 @@ input:focus, textarea:focus, select:focus {
     color: var(--color-red);
     text-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
     line-height: 0.9;
+    display: inline;
 }
 
 .page-subtitle {
@@ -1210,10 +1213,13 @@ input:focus, textarea:focus, select:focus {
     
     .title-highlight {
         font-size: 2.5rem;
+        display: inline;
+        margin-right: 0.3rem;
     }
     
     .title-main {
         font-size: 3.5rem;
+        display: inline;
     }
     
     .hero-stats {
