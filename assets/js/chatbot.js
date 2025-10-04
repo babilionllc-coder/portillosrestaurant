@@ -405,6 +405,44 @@ class PortillosChatbot {
     }
 }
 
+// Simple chatbot creation function
+function createSimpleChatbot() {
+    console.log('Creating simple chatbot...');
+    
+    // Create a simple chatbot button
+    const chatbotButton = document.createElement('div');
+    chatbotButton.id = 'simple-chatbot-toggle';
+    chatbotButton.innerHTML = `
+        <div style="
+            position: fixed !important;
+            bottom: 20px !important;
+            right: 20px !important;
+            width: 60px !important;
+            height: 60px !important;
+            background: #25D366 !important;
+            border-radius: 50% !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3) !important;
+            cursor: pointer !important;
+            z-index: 999999 !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+        ">
+            <i class="fab fa-whatsapp" style="color: white; font-size: 28px;"></i>
+        </div>
+    `;
+    
+    document.body.appendChild(chatbotButton);
+    console.log('Simple chatbot created and added to DOM');
+    
+    // Add click handler
+    chatbotButton.addEventListener('click', () => {
+        window.open('https://wa.me/529981668821', '_blank');
+    });
+}
+
 // Initialize chatbot when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     console.log('DOM loaded, initializing chatbot...');
@@ -419,12 +457,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 console.log('Chatbot toggle found:', toggle);
                 console.log('Chatbot toggle styles:', window.getComputedStyle(toggle));
             } else {
-                console.error('Chatbot toggle NOT found in DOM');
+                console.error('Chatbot toggle NOT found in DOM - creating simple fallback');
+                createSimpleChatbot();
             }
         }, 1000);
         
     } catch (error) {
         console.error('Error initializing chatbot:', error);
+        console.log('Creating simple fallback chatbot...');
+        createSimpleChatbot();
     }
 });
 
@@ -438,5 +479,17 @@ if (document.readyState === 'loading') {
         console.log('Chatbot initialized via fallback', chatbot);
     } catch (error) {
         console.error('Error in fallback chatbot initialization:', error);
+        console.log('Creating simple fallback chatbot...');
+        createSimpleChatbot();
     }
 }
+
+// Emergency fallback - create chatbot after 3 seconds regardless
+setTimeout(() => {
+    const existingChatbot = document.getElementById('chatbot-toggle') || document.getElementById('simple-chatbot-toggle');
+    if (!existingChatbot) {
+        console.log('Emergency fallback - creating chatbot after 3 seconds');
+        createSimpleChatbot();
+    }
+}, 3000);
+
