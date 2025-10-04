@@ -1,10 +1,11 @@
 # Netlify Deployment Trigger
 # This file ensures Netlify detects changes and triggers a new deployment
 
-Deployment triggered at: 2025-10-03 21:03:30
-Last updated: 2025-10-03 21:03:30
+Deployment triggered at: 2025-10-03 21:06:45
+Last updated: 2025-10-03 21:06:45
 
 Changes included:
+- Updated restaurant hours to 7:00 AM - 10:00 PM Monday to Sunday
 - Fixed 'Nuestro Menú' title to display on single line (inline display)
 - Reduced menu image height for better food visibility (180px desktop, 200px mobile)
 - Added 43+ new menu images (all food categories complete)
