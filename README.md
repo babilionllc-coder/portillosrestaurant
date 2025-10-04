@@ -40,7 +40,7 @@ Sitio web completo para Portillos Restaurante, especializado en comida mexicana 
 - **📞 Teléfono Secundario:** 998 189 21 47
 - **📧 Email:** contacto@portillosrestaurante.com
 - **📍 Ubicación:** Cancún, Quintana Roo, México
-- **🕒 Horarios:** Lunes a Domingo 8:00 AM - 10:00 PM
+- **🕒 Horarios:** Lunes a Domingo 7:00 AM - 10:00 PM
 
 ## 🚀 **Instalación y Despliegue**
 
