@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .test-image { 
+            width: 300px; 
+            height: 240px; 
+            object-fit: cover; 
+            border: 2px solid red; 
+            margin: 10px;
+            display: block;
+        }
+        .test-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Menu Images Test</h1>
+    <div class="test-container">
+        <div>
+            <h3>Huevo con jamón</h3>
+            <img src="assets/images/menu/huevo-con-jamon.jpg" alt="Huevo con jamón" class="test-image">
+        </div>
+        <div>
+            <h3>Huevos con chorizo</h3>
+            <img src="assets/images/menu/huevos-con-chorizo.jpg" alt="Huevos con chorizo" class="test-image">
+        </div>
+        <div>
+            <h3>Mariscos Camarones</h3>
+            <img src="assets/images/menu/mariscos-camarones.jpg" alt="Mariscos Camarones" class="test-image">
+        </div>
+        <div>
+            <h3>Chilaquiles</h3>
+            <img src="assets/images/menu/chilaquiles-rojos-verde.jpg" alt="Chilaquiles" class="test-image">
+        </div>
+    </div>
+    
+    <h2>Direct Image Links Test</h2>
+    <ul>
+        <li><a href="assets/images/menu/huevo-con-jamon.jpg" target="_blank">huevo-con-jamon.jpg</a></li>
+        <li><a href="assets/images/menu/huevos-con-chorizo.jpg" target="_blank">huevos-con-chorizo.jpg</a></li>
+        <li><a href="assets/images/menu/mariscos-camarones.jpg" target="_blank">mariscos-camarones.jpg</a></li>
+        <li><a href="assets/images/menu/chilaquiles-rojos-verde.jpg" target="_blank">chilaquiles-rojos-verde.jpg</a></li>
+    </ul>
+</body>
+</html>
