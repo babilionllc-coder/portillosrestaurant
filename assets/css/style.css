@@ -5054,6 +5054,7 @@ html {
 }
 
 /* WhatsApp Chatbot Styles */
+#chatbot-toggle,
 .chatbot-toggle {
     position: fixed !important;
     bottom: 20px !important;
@@ -5068,9 +5069,10 @@ html {
     box-shadow: 0 4px 20px rgba(220, 38, 38, 0.3) !important;
     cursor: pointer !important;
     transition: all 0.3s ease !important;
-    z-index: 10001 !important;
+    z-index: 999999 !important;
     opacity: 1 !important;
     visibility: visible !important;
+    pointer-events: auto !important;
 }
 
 .chatbot-toggle:hover {
@@ -5107,6 +5109,7 @@ html {
     font-weight: bold;
 }
 
+#chatbot-widget,
 .chatbot-widget {
     position: fixed !important;
     bottom: 90px !important;
@@ -5122,7 +5125,7 @@ html {
     visibility: hidden;
     transform: translateY(20px);
     transition: all 0.3s ease !important;
-    z-index: 10000 !important;
+    z-index: 999998 !important;
     border: 1px solid #e5e7eb !important;
 }
 

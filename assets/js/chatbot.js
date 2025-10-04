@@ -408,6 +408,35 @@ class PortillosChatbot {
 // Initialize chatbot when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     console.log('DOM loaded, initializing chatbot...');
-    new PortillosChatbot();
-    console.log('Chatbot initialized');
+    try {
+        const chatbot = new PortillosChatbot();
+        console.log('Chatbot initialized successfully', chatbot);
+        
+        // Force show chatbot after a short delay to ensure it's created
+        setTimeout(() => {
+            const toggle = document.getElementById('chatbot-toggle');
+            if (toggle) {
+                console.log('Chatbot toggle found:', toggle);
+                console.log('Chatbot toggle styles:', window.getComputedStyle(toggle));
+            } else {
+                console.error('Chatbot toggle NOT found in DOM');
+            }
+        }, 1000);
+        
+    } catch (error) {
+        console.error('Error initializing chatbot:', error);
+    }
 });
+
+// Fallback initialization if DOMContentLoaded already fired
+if (document.readyState === 'loading') {
+    console.log('DOM still loading, waiting...');
+} else {
+    console.log('DOM already loaded, initializing chatbot immediately...');
+    try {
+        const chatbot = new PortillosChatbot();
+        console.log('Chatbot initialized via fallback', chatbot);
+    } catch (error) {
+        console.error('Error in fallback chatbot initialization:', error);
+    }
+}
