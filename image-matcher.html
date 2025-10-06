@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Matcher - Portillos Menu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h1 {
+            text-align: center;
+            color: #DC2626;
+            margin-bottom: 30px;
+        }
+        .category {
+            background: white;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .category h2 {
+            color: #DC2626;
+            border-bottom: 2px solid #DC2626;
+            padding-bottom: 10px;
+        }
+        .menu-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .menu-item {
+            border: 2px solid #e5e5e5;
+            border-radius: 10px;
+            padding: 15px;
+            background: #fafafa;
+        }
+        .menu-item h3 {
+            color: #333;
+            margin: 0 0 10px 0;
+        }
+        .image-placeholder {
+            width: 100%;
+            height: 200px;
+            background: #e5e5e5;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            margin-bottom: 10px;
+            border: 2px dashed #ccc;
+        }
+        .instructions {
+            background: #e3f2fd;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+        .instructions h3 {
+            color: #1976d2;
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🍽️ Portillos Menu - Image Matcher</h1>
+        
+        <div class="instructions">
+            <h3>📋 Instructions:</h3>
+            <p>This page shows all your menu items. You need to tell me which image file (from the 27 WhatsApp images) matches each menu item.</p>
+            <p><strong>Format:</strong> "Image [filename] goes with [menu item name]"</p>
+            <p><strong>Example:</strong> "Image WhatsApp Image 2025-10-03 at 10.26.36.jpeg goes with Huevos con ejotes"</p>
+        </div>
+
+        <div class="category">
+            <h2>🍳 DESAYUNOS (Breakfast)</h2>
+            <div class="menu-items">
+                <div class="menu-item">
+                    <div class="image-placeholder">Image needed</div>
+                    <h3>1. Huevos con ejotes</h3>
+                    <p>Huevos revueltos con ejotes frescos</p>
+                </div>
+                <div class="menu-item">
+                    <div class="image-placeholder">Image needed</div>
+                    <h3>2. Hotcakes con miel</h3>
+                    <p>Hotcakes esponjosos con miel natural</p>
+                </div>
+                <div class="menu-item">
+                    <div class="image-placeholder">Image needed</div>
+                    <h3>3. Homelet de jamón con queso</h3>
+                    <p>Omelet relleno de jamón y queso</p>
+                </div>
+                <div class="menu-item">
+                    <div class="image-placeholder">Image needed</div>
+                    <h3>4. Huevos a la mexicana</h3>
+                    <p>Huevos revueltos con tomate, cebolla y chile</p>
+                </div>
+                <div class="menu-item">
+                    <div class="image-placeholder">Image needed</div>
+                    <h3>5. Chilaquiles rojos con pollo</h3>
+                    <p>Tortillas fritas en salsa roja con pollo</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="category">
+            <h2>🔥 ANTOJITOS (Appetizers)</h2>
+            <div class="menu-items">
+                <div class="menu-item">
+                    <div class="image-placeholder">Image needed</div>
+                    <h3>6. Salbutes de pollo</h3>
+                    <p>Tortilla frita con pollo deshebrado</p>
+                </div>
+                <div class="menu-item">
+                    <div class="image-placeholder">Image needed</div>
+                    <h3>7. Huarache de carne asada</h3>
+                    <p>Huarache con carne asada</p>
+                </div>
+                <div class="menu-item">
+                    <div class="image-placeholder">Image needed</div>
+                    <h3>8. Bufet de tacos de guisado</h3>
+                    <p>Variedad de tacos de guisado</p>
+                </div>
+                <div class="menu-item">
+                    <div class="image-placeholder">Image needed</div>
+                    <h3>9. Enchiladas de mole</h3>
+                    <p>Enchiladas bañadas en mole tradicional</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="category">
+            <h2>🍽️ COMIDA (Main Dishes)</h2>
+            <div class="menu-items">
+                <div class="menu-item">
+                    <div class="image-placeholder">Image needed</div>
+                    <h3>10. Filete de pescado empanizado</h3>
+                    <p>Filete de pescado fresco empanizado</p>
+                </div>
+                <div class="menu-item">
+                    <div class="image-placeholder">Image needed</div>
+                    <h3>11. Costillas de cerdo con calabacitas</h3>
+                    <p>Costillas de cerdo con calabacitas</p>
+                </div>
+                <div class="menu-item">
+                    <div class="image-placeholder">Image needed</div>
+                    <h3>12. Pechuga de pollo a la tampiqueña</h3>
+                    <p>Pechuga de pollo a la tampiqueña</p>
+                </div>
+                <div class="menu-item">
+                    <div class="image-placeholder">Image needed</div>
+                    <h3>13. Club sandwich de pechuga a la plancha</h3>
+                    <p>Club sandwich con pechuga a la plancha</p>
+                </div>
+                <div class="menu-item">
+                    <div class="image-placeholder">Image needed</div>
+                    <h3>14. Club sandwich de pechuga en chipotle</h3>
+                    <p>Club sandwich con pechuga en salsa chipotle</p>
+                </div>
+                <div class="menu-item">
+                    <div class="image-placeholder">Image needed</div>
+                    <h3>15. Fajitas de res</h3>
+                    <p>Fajitas de res con vegetales</p>
+                </div>
+                <div class="menu-item">
+                    <div class="image-placeholder">Image needed</div>
+                    <h3>16. Fajitas de pechuga de pollo</h3>
+                    <p>Fajitas de pechuga de pollo con vegetales</p>
+                </div>
+                <div class="menu-item">
+                    <div class="image-placeholder">Image needed</div>
+                    <h3>17. Pechuga de pollo a la plancha</h3>
+                    <p>Pechuga de pollo a la plancha</p>
+                </div>
+                <div class="menu-item">
+                    <div class="image-placeholder">Image needed</div>
+                    <h3>18. Costillas de cerdo al chipotle</h3>
+                    <p>Costillas de cerdo al chipotle</p>
+                </div>
+                <div class="menu-item">
+                    <div class="image-placeholder">Image needed</div>
+                    <h3>19. Pollo con mole</h3>
+                    <p>Pollo con mole tradicional</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="category">
+            <h2>🐟 MARISCOS (Seafood)</h2>
+            <div class="menu-items">
+                <div class="menu-item">
+                    <div class="image-placeholder">Image needed</div>
+                    <h3>20. Camarones empanizados</h3>
+                    <p>Camarones frescos empanizados</p>
+                </div>
+                <div class="menu-item">
+                    <div class="image-placeholder">Image needed</div>
+                    <h3>21. Ceviche de camarón</h3>
+                    <p>Ceviche de camarón fresco</p>
+                </div>
+                <div class="menu-item">
+                    <div class="image-placeholder">Image needed</div>
+                    <h3>22. Sopa de mariscos</h3>
+                    <p>Sopa de mariscos frescos</p>
+                </div>
+                <div class="menu-item">
+                    <div class="image-placeholder">Image needed</div>
+                    <h3>23. Fetuchinni con camarones</h3>
+                    <p>Fetuchinni con camarones</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="category">
+            <h2>🍲 SOPAS (Soups)</h2>
+            <div class="menu-items">
+                <div class="menu-item">
+                    <div class="image-placeholder">Image needed</div>
+                    <h3>24. Caldo de res</h3>
+                    <p>Caldo tradicional de res con vegetales</p>
+                </div>
+                <div class="menu-item">
+                    <div class="image-placeholder">Image needed</div>
+                    <h3>25. Pozole de puerco</h3>
+                    <p>Pozole tradicional de puerco</p>
+                </div>
+                <div class="menu-item">
+                    <div class="image-placeholder">Image needed</div>
+                    <h3>26. Sopa de tortillas</h3>
+                    <p>Sopa de tortillas con queso y crema</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="category">
+            <h2>🍝 PASTAS</h2>
+            <div class="menu-items">
+                <div class="menu-item">
+                    <div class="image-placeholder">Image needed</div>
+                    <h3>27. Espagueti a la boloñesa</h3>
+                    <p>Espagueti con salsa boloñesa tradicional</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="instructions">
+            <h3>📸 Available Images:</h3>
+            <p>You have 27 images with these filenames:</p>
+            <ul style="columns: 2; font-size: 12px;">
+                <li>WhatsApp Image 2025-10-03 at 10.26.36.jpeg</li>
+                <li>WhatsApp Image 2025-10-03 at 10.26.37 (1).jpeg</li>
+                <li>WhatsApp Image 2025-10-03 at 10.26.37.jpeg</li>
+                <li>WhatsApp Image 2025-10-03 at 10.26.38.jpeg</li>
+                <li>WhatsApp Image 2025-10-03 at 10.26.39.jpeg</li>
+                <li>WhatsApp Image 2025-10-03 at 10.26.40 (1).jpeg</li>
+                <li>WhatsApp Image 2025-10-03 at 10.26.40 (2).jpeg</li>
+                <li>WhatsApp Image 2025-10-03 at 10.26.40 (3).jpeg</li>
+                <li>WhatsApp Image 2025-10-03 at 10.26.40 (4).jpeg</li>
+                <li>WhatsApp Image 2025-10-03 at 10.26.40.jpeg</li>
+                <li>WhatsApp Image 2025-10-03 at 10.26.41 (1).jpeg</li>
+                <li>WhatsApp Image 2025-10-03 at 10.26.41 (2).jpeg</li>
+                <li>WhatsApp Image 2025-10-03 at 10.26.41 (3).jpeg</li>
+                <li>WhatsApp Image 2025-10-03 at 10.26.41 (4).jpeg</li>
+                <li>WhatsApp Image 2025-10-03 at 10.26.41 (5).jpeg</li>
+                <li>WhatsApp Image 2025-10-03 at 10.26.41.jpeg</li>
+                <li>WhatsApp Image 2025-10-03 at 10.26.42 (1).jpeg</li>
+                <li>WhatsApp Image 2025-10-03 at 10.26.42 (2).jpeg</li>
+                <li>WhatsApp Image 2025-10-03 at 10.26.42 (3).jpeg</li>
+                <li>WhatsApp Image 2025-10-03 at 10.26.42 (4).jpeg</li>
+                <li>WhatsApp Image 2025-10-03 at 10.26.42.jpeg</li>
+                <li>WhatsApp Image 2025-10-03 at 10.26.43 (1).jpeg</li>
+                <li>WhatsApp Image 2025-10-03 at 10.26.43 (2).jpeg</li>
+                <li>WhatsApp Image 2025-10-03 at 10.26.43 (3).jpeg</li>
+                <li>WhatsApp Image 2025-10-03 at 10.26.43 (4).jpeg</li>
+                <li>WhatsApp Image 2025-10-03 at 10.26.43 (5).jpeg</li>
+                <li>WhatsApp Image 2025-10-03 at 10.26.43.jpeg</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
