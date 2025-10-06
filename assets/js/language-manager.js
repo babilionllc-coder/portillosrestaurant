@@ -77,25 +77,55 @@ class LanguageManager {
                 'legal.privacy_title': 'Política de Privacidad',
                 'legal.terms_title': 'Términos de Uso',
                 
-                // Menu Items
+                // Menu Items - Breakfast
                 'menu.huevos_ejotes': 'Huevos con ejotes',
+                'menu.huevos_ejotes_desc': 'Huevos revueltos con ejotes frescos',
                 'menu.huevos_mexicana': 'Huevos a la mexicana',
+                'menu.huevos_mexicana_desc': 'Huevos revueltos con tomate, cebolla y chile',
                 'menu.hotcakes_chocolate': 'Hotcakes de chocolate',
+                'menu.hotcakes_chocolate_desc': 'Hotcakes esponjosos con chocolate',
                 'menu.omelette_jamon': 'Omelette de jamón con queso',
-                'menu.chilaquiles_rojos': 'Chilaquiles rojos con pollo y huevo',
+                'menu.omelette_jamon_desc': 'Omelet relleno de jamón y queso',
+                'menu.pozole_puerco': 'Pozole de puerco',
+                'menu.pozole_puerco_desc': 'Pozole de puerco',
+                
+                // Menu Items - Antojitos
                 'menu.salbutes_pollo': 'Salbutes de pollo',
+                'menu.salbutes_pollo_desc': 'Tortilla frita con pollo deshebrado',
                 'menu.huarache_carne': 'Huarache de carne asada',
-                'menu.tacos_guisado': 'Bufet de tacos de guisado',
+                'menu.huarache_carne_desc': 'Masa alargada con carne asada',
+                'menu.tacos_guisado': 'Tacos de guisado buffet',
+                'menu.tacos_guisado_desc': 'Variedad de tacos con diferentes guisados',
+                
+                // Menu Items - Seafood
                 'menu.filete_pescado': 'Filete de pescado empanizado',
+                'menu.filete_pescado_desc': 'Filete de pescado fresco empanizado',
                 'menu.sopa_mariscos': 'Sopa de mariscos',
+                'menu.sopa_mariscos_desc': 'Sopa de mariscos',
+                
+                // Menu Items - Main Dishes
                 'menu.pollo_mole': 'Pollo con mole poblano',
+                'menu.pollo_mole_desc': 'Pollo con mole poblano',
                 'menu.costillas_cerdo': 'Costillas de cerdo con calabacitas',
+                'menu.costillas_cerdo_desc': 'Costillas de cerdo con calabacitas frescas',
                 'menu.fajitas_pollo': 'Fajitas de pechuga de pollo',
-                'menu.fajitas_res': 'Fajitas de res',
+                'menu.fajitas_pollo_desc': 'Fajitas de pechuga de pollo',
+                'menu.costillas_chipotle': 'Costillas de cerdo al chipotle',
+                'menu.costillas_chipotle_desc': 'Costillas de cerdo al chipotle',
+                'menu.club_chipotle': 'Club sandwich de pechuga al chipotle',
+                'menu.club_chipotle_desc': 'Club sandwich de pechuga al chipotle',
                 'menu.enchiladas_mole': 'Enchiladas de mole poblano',
+                'menu.enchiladas_mole_desc': 'Tortillas rellenas bañadas en mole poblano',
+                
+                // Menu Items - Soups
                 'menu.sopa_tortillas': 'Sopa de tortillas',
+                'menu.sopa_tortillas_desc': 'Sopa de tortillas',
+                
+                // Menu Items - Pasta
                 'menu.espagueti_bolonesa': 'Espagueti a la boloñesa',
+                'menu.espagueti_bolonesa_desc': 'Espagueti con salsa tradicional de carne',
                 'menu.fetuchini_camarones': 'Fetuchini con camarones',
+                'menu.fetuchini_camarones_desc': 'Fetuchinni con camarones',
                 
                 // Contact
                 'contact.title': 'Contacto',
@@ -211,25 +241,55 @@ class LanguageManager {
                 'legal.privacy_title': 'Privacy Policy',
                 'legal.terms_title': 'Terms of Use',
                 
-                // Menu Items
+                // Menu Items - Breakfast
                 'menu.huevos_ejotes': 'Eggs with green beans',
+                'menu.huevos_ejotes_desc': 'Scrambled eggs with green beans and onion',
                 'menu.huevos_mexicana': 'Mexican-style eggs',
+                'menu.huevos_mexicana_desc': 'Scrambled eggs with tomato, onion and chili',
                 'menu.hotcakes_chocolate': 'Chocolate pancakes',
+                'menu.hotcakes_chocolate_desc': 'Fluffy pancakes with chocolate',
                 'menu.omelette_jamon': 'Ham and cheese omelette',
-                'menu.chilaquiles_rojos': 'Red chilaquiles with chicken and egg',
+                'menu.omelette_jamon_desc': 'Omelette filled with ham and cheese',
+                'menu.pozole_puerco': 'Pork pozole',
+                'menu.pozole_puerco_desc': 'Pork pozole',
+                
+                // Menu Items - Antojitos
                 'menu.salbutes_pollo': 'Chicken salbutes',
+                'menu.salbutes_pollo_desc': 'Fried tortilla with shredded chicken',
                 'menu.huarache_carne': 'Grilled beef huarache',
+                'menu.huarache_carne_desc': 'Traditional huarache with grilled beef',
                 'menu.tacos_guisado': 'Stewed tacos buffet',
+                'menu.tacos_guisado_desc': 'Soft tacos with various stewed fillings',
+                
+                // Menu Items - Seafood
                 'menu.filete_pescado': 'Breaded fish fillet',
+                'menu.filete_pescado_desc': 'Fresh fish fillet breaded and fried',
                 'menu.sopa_mariscos': 'Seafood soup',
+                'menu.sopa_mariscos_desc': 'Rich soup with fresh seafood',
+                
+                // Menu Items - Main Dishes
                 'menu.pollo_mole': 'Chicken with mole poblano',
+                'menu.pollo_mole_desc': 'Chicken breast with traditional mole poblano sauce',
                 'menu.costillas_cerdo': 'Pork ribs with zucchini',
+                'menu.costillas_cerdo_desc': 'Tender pork ribs with zucchini and vegetables',
                 'menu.fajitas_pollo': 'Chicken breast fajitas',
-                'menu.fajitas_res': 'Beef fajitas',
+                'menu.fajitas_pollo_desc': 'Grilled chicken breast with peppers and onions',
+                'menu.costillas_chipotle': 'Pork ribs with chipotle sauce',
+                'menu.costillas_chipotle_desc': 'Pork ribs with chipotle sauce',
+                'menu.club_chipotle': 'Chicken breast club sandwich with chipotle',
+                'menu.club_chipotle_desc': 'Chicken breast club sandwich with chipotle sauce',
                 'menu.enchiladas_mole': 'Mole poblano enchiladas',
+                'menu.enchiladas_mole_desc': 'Corn tortillas filled with chicken and mole sauce',
+                
+                // Menu Items - Soups
                 'menu.sopa_tortillas': 'Tortilla soup',
+                'menu.sopa_tortillas_desc': 'Traditional Mexican soup with crispy tortilla strips',
+                
+                // Menu Items - Pasta
                 'menu.espagueti_bolonesa': 'Spaghetti bolognese',
+                'menu.espagueti_bolonesa_desc': 'Spaghetti with traditional meat sauce',
                 'menu.fetuchini_camarones': 'Fettuccine with shrimp',
+                'menu.fetuchini_camarones_desc': 'Fettuccine pasta with fresh shrimp in cream sauce',
                 
                 // Contact
                 'contact.title': 'Contact',
