@@ -34,6 +34,8 @@ class LanguageManager {
                 'menu.sopas': 'Sopas',
                 'menu.pastas': 'Pastas',
                 'menu.search_placeholder': 'Buscar platillo...',
+                'menu.title': 'Menú Completo - Comida Mexicana Tradicional',
+                'menu.subtitle': 'Descubre los sabores auténticos de México en Cancún con más de 25 platillos tradicionales mexicanos',
                 
                 // Menu Items
                 'menu.huevos_ejotes': 'Huevos con ejotes',
@@ -126,6 +128,8 @@ class LanguageManager {
                 'menu.sopas': 'Soups',
                 'menu.pastas': 'Pasta',
                 'menu.search_placeholder': 'Search dish...',
+                'menu.title': 'Complete Menu - Traditional Mexican Food',
+                'menu.subtitle': 'Discover authentic Mexican flavors in Cancún with over 25 traditional Mexican dishes',
                 
                 // Menu Items
                 'menu.huevos_ejotes': 'Eggs with green beans',
@@ -224,7 +228,7 @@ class LanguageManager {
         `;
         
         // Add to header
-        const header = document.querySelector('.header .container');
+        const header = document.querySelector('.header .navbar .container');
         if (header) {
             header.insertAdjacentHTML('beforeend', switcherHTML);
         }
