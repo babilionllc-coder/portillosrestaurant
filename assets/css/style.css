@@ -5563,3 +5563,17 @@ html {
         height: 40px;
     }
 }
+
+/* Force horizontal title layout - override any conflicting rules */
+.menu-hero .page-title {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: var(--spacing-2) !important;
+}
+
+.menu-hero .title-highlight,
+.menu-hero .title-main {
+    display: inline !important;
+}
