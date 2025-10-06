@@ -5577,3 +5577,16 @@ html {
 .menu-hero .title-main {
     display: inline !important;
 }
+
+/* Menu title styling - single text approach */
+.menu-hero .page-title {
+    font-family: var(--font-decorative) !important;
+    font-size: 5rem !important;
+    font-weight: var(--font-bold) !important;
+    color: var(--color-red) !important;
+    text-align: center !important;
+    margin-bottom: var(--spacing-4) !important;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.4) !important;
+    line-height: 1.1 !important;
+    display: block !important;
+}
