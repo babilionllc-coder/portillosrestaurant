@@ -873,7 +873,7 @@ function initMenuModal() {
         }
     });
 
-    // Smooth scrolling functionality
+    // Enhanced mobile scrolling functionality
     const imageContainer = modal.querySelector('.menu-image-container');
     
     // Add smooth scrolling to image container
@@ -881,10 +881,17 @@ function initMenuModal() {
         // Enable smooth scrolling
         imageContainer.style.scrollBehavior = 'smooth';
         imageContainer.style.webkitOverflowScrolling = 'touch';
+        imageContainer.style.touchAction = 'pan-y';
+        imageContainer.style.overflowY = 'auto';
+        imageContainer.style.overflowX = 'hidden';
         
-        // Add scroll indicators (optional visual feedback)
+        // Mobile touch scrolling improvements
+        let isScrolling = false;
         let scrollTimeout;
+        
         imageContainer.addEventListener('scroll', () => {
+            isScrolling = true;
+            
             // Clear previous timeout
             clearTimeout(scrollTimeout);
             
@@ -894,8 +901,18 @@ function initMenuModal() {
             // Remove visual feedback after scroll stops
             scrollTimeout = setTimeout(() => {
                 imageContainer.style.boxShadow = '';
+                isScrolling = false;
             }, 150);
         });
+        
+        // Prevent default touch behavior that might interfere
+        imageContainer.addEventListener('touchstart', (e) => {
+            // Allow touch scrolling
+        }, { passive: true });
+        
+        imageContainer.addEventListener('touchmove', (e) => {
+            // Allow touch scrolling
+        }, { passive: true });
         
         // Reset scroll position when changing images
         const originalLoadImage = loadImage;
@@ -906,6 +923,8 @@ function initMenuModal() {
                 imageContainer.scrollTop = 0;
             }, 100);
         };
+        
+        console.log('Mobile scrolling enhanced for image container');
     }
 
     // Enhanced scroll handling for better user experience
