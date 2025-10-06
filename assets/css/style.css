@@ -5930,3 +5930,111 @@ html {
         padding: 20px;
     }
 }
+
+/* Social Media Integration */
+.social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 16px;
+    background: white;
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.social-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.social-link.facebook {
+    border-color: #1877f2;
+    color: #1877f2;
+}
+
+.social-link.facebook:hover {
+    background: #1877f2;
+    color: white;
+}
+
+.social-link.whatsapp {
+    border-color: #25d366;
+    color: #25d366;
+}
+
+.social-link.whatsapp:hover {
+    background: #25d366;
+    color: white;
+}
+
+.social-link i {
+    font-size: 1.2rem;
+    width: 20px;
+    text-align: center;
+}
+
+/* Facebook Button */
+.btn-facebook {
+    background: #1877f2;
+    color: white;
+    border: 2px solid #1877f2;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+.btn-facebook:hover {
+    background: #166fe5;
+    border-color: #166fe5;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(24, 119, 242, 0.3);
+}
+
+.btn-facebook i {
+    font-size: 1.1rem;
+}
+
+/* Mobile Social Links */
+@media (max-width: 768px) {
+    .social-links {
+        flex-direction: row;
+        gap: 8px;
+    }
+    
+    .social-link {
+        flex: 1;
+        justify-content: center;
+        padding: 10px 12px;
+        font-size: 0.9rem;
+    }
+    
+    .social-link span {
+        display: none;
+    }
+    
+    .social-link i {
+        font-size: 1.4rem;
+    }
+    
+    .btn-facebook {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+}
