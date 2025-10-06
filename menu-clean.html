@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú - Portillos Restaurante | Comida Mexicana y Mariscos</title>
+    <meta name="description" content="Descubre nuestro menú completo con más de 90 platillos mexicanos auténticos. Desayunos, antojitos, mariscos, tacos y más. ¡Ordena por WhatsApp!">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Menu",
+        "name": "Menú de Portillos Restaurante",
+        "description": "Menú completo de comida mexicana auténtica y mariscos frescos",
+        "url": "https://portillosrestaurante.com/menu.html",
+        "mainEntity": {
+            "@type": "Restaurant",
+            "name": "Portillos Restaurante",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Es Av José López Portillo # 25 Spmz 64 M9 L16",
+                "addressLocality": "Cancún",
+                "addressRegion": "Quintana Roo",
+                "postalCode": "77524",
+                "addressCountry": "MX"
+            },
+            "telephone": "+529981164598",
+            "openingHours": "Mo-Su 07:00-22:00"
+        },
+        "hasMenuSection": [
+            {
+                "@type": "MenuSection",
+                "name": "Desayunos",
+                "description": "Desayunos tradicionales mexicanos"
+            },
+            {
+                "@type": "MenuSection", 
+                "name": "Antojitos",
+                "description": "Antojitos regionales yucatecos"
+            },
+            {
+                "@type": "MenuSection",
+                "name": "Mariscos", 
+                "description": "Mariscos frescos del Caribe"
+            },
+            {
+                "@type": "MenuSection",
+                "name": "Sopas",
+                "description": "Sopas tradicionales mexicanas"
+            }
+        ]
+    }
+    </script>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8NG2S1GG4G"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-8NG2S1GG4G');
+    </script>
+    
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Dancing+Script:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="container">
+                <div class="nav-brand">
+                    <a href="index.html" class="logo">
+                        <img src="assets/images/logo/portilloslogo.png" alt="Portillos Restaurante" class="logo-img">
+                        <span class="logo-text">Portillos</span>
+                    </a>
+                </div>
+                
+                <div class="nav-menu" id="navMenu">
+                    <ul class="nav-list">
+                        <li><a href="index.html" class="nav-link">Inicio</a></li>
+                        <li><a href="menu.html" class="nav-link active">Menú</a></li>
+                        <li><a href="ordenar.html" class="nav-link">Ordenar</a></li>
+                        <li><a href="nosotros.html" class="nav-link">Nosotros</a></li>
+                        <li><a href="galeria.html" class="nav-link">Galería</a></li>
+                        <li><a href="catering.html" class="nav-link">Catering</a></li>
+                        <li><a href="contacto.html" class="nav-link">Contacto</a></li>
+                        <li><a href="reservas.html" class="nav-link">Reservas</a></li>
+                    </ul>
+                </div>
+                
+                <div class="nav-actions">
+                    <a href="https://wa.me/529981164598" class="btn-whatsapp" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>Ordenar</span>
+                    </a>
+                    <button class="nav-toggle" id="navToggle" aria-label="Abrir menú de navegación" aria-expanded="false">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content" class="main" role="main">
+        <!-- Menu Hero Section -->
+        <section class="menu-hero">
+            <div class="container">
+                <div class="menu-hero-content">
+                    <h1 class="page-title">
+                        <span class="title-highlight">Nuestro</span>
+                        <span class="title-main">Menú</span>
+                    </h1>
+                    <p class="page-subtitle">Descubre los sabores auténticos de México con más de 90 platillos tradicionales</p>
+                    
+                    <div class="menu-stats">
+                        <div class="stat">
+                            <span class="stat-number">90+</span>
+                            <span class="stat-label">Platillos</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">4</span>
+                            <span class="stat-label">Categorías</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Mexicano</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Menu Section -->
+        <section class="menu-section">
+            <div class="container">
+                <div class="menu-controls">
+                    <div class="menu-search">
+                        <input type="text" id="menuSearch" placeholder="Buscar platillo..." class="search-input">
+                        <i class="fas fa-search search-icon"></i>
+                    </div>
+                    <div class="menu-filters">
+                        <button class="filter-btn active" data-filter="all">
+                            <i class="fas fa-list"></i>
+                            Todos
+                        </button>
+                        <button class="filter-btn" data-filter="desayunos">
+                            <i class="fas fa-sun"></i>
+                            Desayunos
+                        </button>
+                        <button class="filter-btn" data-filter="antojitos">
+                            <i class="fas fa-pepper-hot"></i>
+                            Antojitos
+                        </button>
+                        <button class="filter-btn" data-filter="comida">
+                            <i class="fas fa-utensils"></i>
+                            Comida
+                        </button>
+                        <button class="filter-btn" data-filter="mariscos">
+                            <i class="fas fa-fish"></i>
+                            Mariscos
+                        </button>
+                        <button class="filter-btn" data-filter="sopas">
+                            <i class="fas fa-bowl-food"></i>
+                            Sopas
+                        </button>
+                        <button class="filter-btn" data-filter="bebidas">
+                            <i class="fas fa-glass-cheers"></i>
+                            Bebidas
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Menu Categories -->
+                <div class="menu-categories">
+                    <!-- Menu content will be added here -->
+                    <div style="text-align: center; padding: 4rem 2rem; color: var(--color-gray-600);">
+                        <i class="fas fa-utensils" style="font-size: 3rem; margin-bottom: 1rem; color: var(--color-red);"></i>
+                        <h3>Menú en Construcción</h3>
+                        <p>Estamos actualizando nuestro menú con nuevos platillos. ¡Pronto tendremos deliciosas opciones para ti!</p>
+                        <a href="https://wa.me/529981164598" class="btn btn-primary" style="margin-top: 1rem;">
+                            <i class="fab fa-whatsapp"></i>
+                            Consultar Disponibilidad
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <h3>Portillos Restaurante</h3>
+                        <p>Comida Mexicana Auténtica</p>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Enlaces Rápidos</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="menu.html">Menú</a></li>
+                        <li><a href="ordenar.html">Ordenar</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Contacto</h4>
+                    <div class="footer-contact">
+                        <p><i class="fas fa-map-marker-alt"></i> Es Av José López Portillo # 25 Spmz 64 M9 L16, 77524 Cancún, Q.R.</p>
+                        <p><i class="fas fa-phone"></i> <a href="tel:+529981164598">+52 998 116 4598</a></p>
+                        <p><i class="fas fa-envelope"></i> <a href="mailto:info@portillosrestaurante.com">info@portillosrestaurante.com</a></p>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Horarios</h4>
+                    <div class="footer-hours">
+                        <p><strong>Lunes - Domingo</strong></p>
+                        <p>7:00 AM - 10:00 PM</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2024 Portillos Restaurante. Todos los derechos reservados.</p>
+                    <div class="footer-legal">
+                        <a href="legal.html">Términos y Condiciones</a>
+                        <a href="legal.html#privacy">Política de Privacidad</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/chatbot.js"></script>
+</body>
+</html>
+
