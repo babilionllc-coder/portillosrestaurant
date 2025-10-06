@@ -5358,3 +5358,202 @@ html {
         font-size: 24px;
     }
 }
+
+/* New Menu Styling for Text-Based Items */
+.menu-categories {
+    display: grid;
+    gap: var(--spacing-8);
+    margin-top: var(--spacing-8);
+}
+
+.menu-category {
+    background: var(--color-white);
+    border-radius: var(--radius-2xl);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--color-gray-200);
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.menu-category:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-xl);
+}
+
+.category-title {
+    background: linear-gradient(135deg, var(--color-red) 0%, var(--color-gold) 100%);
+    color: var(--color-white);
+    padding: var(--spacing-6);
+    margin: 0;
+    font-size: var(--text-2xl);
+    font-weight: var(--font-bold);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-3);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.category-title i {
+    font-size: var(--text-xl);
+    opacity: 0.9;
+}
+
+.menu-items {
+    padding: var(--spacing-6);
+    display: grid;
+    gap: var(--spacing-4);
+}
+
+.menu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-4);
+    background: var(--color-gray-50);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-gray-200);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.menu-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: var(--color-red);
+    transform: scaleY(0);
+    transition: transform 0.3s ease;
+}
+
+.menu-item:hover {
+    background: var(--color-white);
+    box-shadow: var(--shadow-md);
+    transform: translateX(4px);
+}
+
+.menu-item:hover::before {
+    transform: scaleY(1);
+}
+
+.item-info {
+    flex: 1;
+    padding-right: var(--spacing-4);
+}
+
+.item-info h4 {
+    font-size: var(--text-lg);
+    font-weight: var(--font-semibold);
+    color: var(--color-text-primary);
+    margin: 0 0 var(--spacing-1) 0;
+    line-height: 1.3;
+}
+
+.item-info p {
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+    margin: 0;
+    line-height: 1.4;
+    opacity: 0.8;
+}
+
+.item-price {
+    font-size: var(--text-xl);
+    font-weight: var(--font-bold);
+    color: var(--color-red);
+    background: var(--color-white);
+    padding: var(--spacing-2) var(--spacing-4);
+    border-radius: var(--radius-lg);
+    border: 2px solid var(--color-red);
+    min-width: 80px;
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+}
+
+.menu-item:hover .item-price {
+    background: var(--color-red);
+    color: var(--color-white);
+    transform: scale(1.05);
+}
+
+/* Mobile Responsive Menu */
+@media (max-width: 768px) {
+    .menu-categories {
+        gap: var(--spacing-6);
+        margin-top: var(--spacing-6);
+    }
+    
+    .category-title {
+        padding: var(--spacing-4);
+        font-size: var(--text-xl);
+    }
+    
+    .menu-items {
+        padding: var(--spacing-4);
+        gap: var(--spacing-3);
+    }
+    
+    .menu-item {
+        padding: var(--spacing-3);
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-2);
+    }
+    
+    .item-info {
+        padding-right: 0;
+        width: 100%;
+    }
+    
+    .item-price {
+        align-self: flex-end;
+        font-size: var(--text-lg);
+        padding: var(--spacing-2) var(--spacing-3);
+    }
+}
+
+/* WhatsApp Order Buttons */
+.menu-item .btn-whatsapp {
+    margin-left: var(--spacing-3);
+    padding: var(--spacing-2);
+    min-width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-lg);
+    background: #25D366;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-sm);
+}
+
+.menu-item .btn-whatsapp:hover {
+    background: #128C7E;
+    transform: scale(1.1);
+    box-shadow: var(--shadow-md);
+}
+
+.menu-item .btn-whatsapp i {
+    font-size: var(--text-lg);
+}
+
+/* Mobile WhatsApp buttons */
+@media (max-width: 768px) {
+    .menu-item {
+        flex-direction: row;
+        align-items: center;
+        gap: var(--spacing-2);
+    }
+    
+    .menu-item .btn-whatsapp {
+        margin-left: auto;
+        min-width: 40px;
+        height: 40px;
+    }
+}
