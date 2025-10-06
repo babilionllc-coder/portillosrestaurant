@@ -871,6 +871,41 @@ function initMenuModal() {
         }
     });
 
+    // Smooth scrolling functionality
+    const imageContainer = modal.querySelector('.menu-image-container');
+    
+    // Add smooth scrolling to image container
+    if (imageContainer) {
+        // Enable smooth scrolling
+        imageContainer.style.scrollBehavior = 'smooth';
+        imageContainer.style.webkitOverflowScrolling = 'touch';
+        
+        // Add scroll indicators (optional visual feedback)
+        let scrollTimeout;
+        imageContainer.addEventListener('scroll', () => {
+            // Clear previous timeout
+            clearTimeout(scrollTimeout);
+            
+            // Add visual feedback during scroll
+            imageContainer.style.boxShadow = 'inset 0 0 10px rgba(0,0,0,0.1)';
+            
+            // Remove visual feedback after scroll stops
+            scrollTimeout = setTimeout(() => {
+                imageContainer.style.boxShadow = '';
+            }, 150);
+        });
+        
+        // Reset scroll position when changing images
+        const originalLoadImage = loadImage;
+        loadImage = function(index) {
+            originalLoadImage(index);
+            // Scroll to top when changing images
+            setTimeout(() => {
+                imageContainer.scrollTop = 0;
+            }, 100);
+        };
+    }
+
     // Initialize
     loadImage(0);
 }
