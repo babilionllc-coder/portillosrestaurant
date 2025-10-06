@@ -1260,6 +1260,41 @@ input:focus, textarea:focus, select:focus {
     margin: 0;
     font-size: 1.5rem;
     font-weight: 600;
+    color: white;
+}
+
+.menu-modal-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.btn-whatsapp-modal {
+    background: #25d366;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-whatsapp-modal:hover {
+    background: #128c7e;
+    color: white;
+    text-decoration: none;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+}
+
+.btn-whatsapp-modal i {
+    font-size: 1rem;
 }
 
 .menu-modal-close {
@@ -1449,6 +1484,15 @@ input:focus, textarea:focus, select:focus {
         font-size: 1.1rem !important;
     }
     
+    .menu-modal-actions {
+        gap: 8px !important;
+    }
+    
+    .btn-whatsapp-modal {
+        padding: 6px 12px !important;
+        font-size: 0.8rem !important;
+    }
+    
     .menu-navigation {
         padding: 8px 16px !important;
         flex-wrap: wrap;
@@ -1517,6 +1561,15 @@ input:focus, textarea:focus, select:focus {
     
     .menu-modal-header h3 {
         font-size: 1rem !important;
+    }
+    
+    .menu-modal-actions {
+        gap: 6px !important;
+    }
+    
+    .btn-whatsapp-modal {
+        padding: 4px 8px !important;
+        font-size: 0.7rem !important;
     }
     
     .menu-navigation {
