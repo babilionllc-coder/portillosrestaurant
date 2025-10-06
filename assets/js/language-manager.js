@@ -350,7 +350,7 @@ class LanguageManager {
     bindEvents() {
         console.log('Binding language switcher events...');
         
-        // Language switcher events
+        // Language switcher events with better touch support
         document.addEventListener('click', (e) => {
             if (e.target.closest('.lang-btn')) {
                 const btn = e.target.closest('.lang-btn');
@@ -360,12 +360,30 @@ class LanguageManager {
             }
         });
         
+        // Add touch events for better mobile support
+        document.addEventListener('touchstart', (e) => {
+            if (e.target.closest('.lang-btn')) {
+                e.target.closest('.lang-btn').style.transform = 'scale(0.95)';
+            }
+        });
+        
+        document.addEventListener('touchend', (e) => {
+            if (e.target.closest('.lang-btn')) {
+                e.target.closest('.lang-btn').style.transform = '';
+            }
+        });
+        
         // Verify buttons are clickable
         setTimeout(() => {
             const buttons = document.querySelectorAll('.lang-btn');
             console.log('Language buttons found:', buttons.length);
             buttons.forEach((btn, index) => {
                 console.log(`Button ${index}:`, btn.dataset.lang, btn.textContent);
+                
+                // Add accessibility attributes
+                btn.setAttribute('role', 'button');
+                btn.setAttribute('tabindex', '0');
+                btn.setAttribute('aria-label', `Switch to ${btn.dataset.lang === 'es' ? 'Spanish' : 'English'}`);
             });
         }, 1000);
     }
