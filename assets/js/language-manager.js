@@ -23,6 +23,9 @@ class LanguageManager {
                 'hero.order_whatsapp': 'Ordenar por WhatsApp',
                 'hero.follow_facebook': 'Síguenos en Facebook',
                 
+                // Language Switcher
+                'language.label': 'Idioma:',
+                
                 // About Us Page
                 'about.title': 'Nosotros',
                 'about.subtitle': 'Nuestra historia y pasión por la comida mexicana',
@@ -153,6 +156,9 @@ class LanguageManager {
                 'hero.view_menu': 'View Menu',
                 'hero.order_whatsapp': 'Order via WhatsApp',
                 'hero.follow_facebook': 'Follow us on Facebook',
+                
+                // Language Switcher
+                'language.label': 'Language:',
                 
                 // About Us Page
                 'about.title': 'About Us',
@@ -304,36 +310,42 @@ class LanguageManager {
         
         const switcherHTML = `
             <div class="language-switcher">
-                <button class="lang-btn ${activeClass}" data-lang="es">
-                    <span class="flag-icon">🇪🇸</span>
-                    <span>ES</span>
-                </button>
-                <button class="lang-btn ${activeClassEn}" data-lang="en">
-                    <span class="flag-icon">🇺🇸</span>
-                    <span>EN</span>
-                </button>
+                <div class="language-switcher-label">
+                    <i class="fas fa-globe"></i>
+                    <span data-translate="language.label">Idioma:</span>
+                </div>
+                <div class="language-buttons">
+                    <button class="lang-btn ${activeClass}" data-lang="es">
+                        <span class="flag-icon">🇪🇸</span>
+                        <span>Español</span>
+                    </button>
+                    <button class="lang-btn ${activeClassEn}" data-lang="en">
+                        <span class="flag-icon">🇺🇸</span>
+                        <span>English</span>
+                    </button>
+                </div>
             </div>
         `;
         
         console.log('Language switcher HTML:', switcherHTML);
         
-        // Add to header - try multiple selectors
-        let header = document.querySelector('.header .navbar .container');
-        if (!header) {
-            header = document.querySelector('.navbar .container');
+        // Try to add to hero section first, then fallback to header
+        let targetElement = document.querySelector('.hero .container');
+        if (!targetElement) {
+            targetElement = document.querySelector('.hero');
         }
-        if (!header) {
-            header = document.querySelector('.header .container');
+        if (!targetElement) {
+            targetElement = document.querySelector('.main');
         }
-        if (!header) {
-            header = document.querySelector('.container');
+        if (!targetElement) {
+            targetElement = document.querySelector('.header .navbar .container');
         }
         
-        console.log('Found header:', header);
+        console.log('Found target element:', targetElement);
         
-        if (header) {
-            header.insertAdjacentHTML('beforeend', switcherHTML);
-            console.log('Language switcher added successfully to header');
+        if (targetElement) {
+            targetElement.insertAdjacentHTML('afterbegin', switcherHTML);
+            console.log('Language switcher added successfully to target element');
             
             // Verify it was added
             const addedSwitcher = document.querySelector('.language-switcher');
@@ -343,7 +355,7 @@ class LanguageManager {
             // Update active state
             this.updateActiveLanguageButton();
         } else {
-            console.error('Could not find header container for language switcher');
+            console.error('Could not find target element for language switcher');
         }
     }
     
