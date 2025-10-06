@@ -17,53 +17,66 @@ window.addEventListener('load', function() {
     initMobileMenu();
 });
 
-// iPhone-Optimized Mobile Menu System
+// Mobile Menu System - Fixed Implementation
 function initMobileMenu() {
+    console.log('Initializing mobile menu...');
+    
     const navToggle = document.getElementById('navToggle');
     const navMenu = document.getElementById('navMenu');
     
     if (!navToggle || !navMenu) {
-        console.error('Mobile menu elements not found');
-        // Create emergency fallback menu
-        createEmergencyMenu();
+        console.error('Mobile menu elements not found:', { navToggle: !!navToggle, navMenu: !!navMenu });
         return;
     }
 
     console.log('Mobile menu elements found:', { navToggle, navMenu });
 
-    // Toggle menu function
+    // Remove any existing event listeners
+    const newNavToggle = navToggle.cloneNode(true);
+    navToggle.parentNode.replaceChild(newNavToggle, navToggle);
+    
+    // Get the fresh element
+    const toggle = document.getElementById('navToggle');
+
+    // Simple toggle function
     function toggleMenu() {
         const isActive = navMenu.classList.contains('active');
         
         if (isActive) {
+            // Close menu
             navMenu.classList.remove('active');
-            navToggle.classList.remove('active');
-            navToggle.setAttribute('aria-expanded', 'false');
-            console.log('Menu closed');
+            toggle.classList.remove('active');
+            toggle.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
+            console.log('Menu CLOSED');
         } else {
+            // Open menu
             navMenu.classList.add('active');
-            navToggle.classList.add('active');
-            navToggle.setAttribute('aria-expanded', 'true');
-            console.log('Menu opened');
+            toggle.classList.add('active');
+            toggle.setAttribute('aria-expanded', 'true');
+            document.body.style.overflow = 'hidden';
+            console.log('Menu OPENED');
         }
         
+        // Debug info
         console.log('Menu state:', navMenu.classList.contains('active'));
         console.log('Menu display:', window.getComputedStyle(navMenu).display);
+        console.log('Menu visibility:', window.getComputedStyle(navMenu).visibility);
     }
 
-    // iOS Safari touch event handler
-    function handleMenuToggle(e) {
+    // Add click event listener
+    toggle.addEventListener('click', function(e) {
         e.preventDefault();
         e.stopPropagation();
-        console.log('Menu toggle triggered');
+        console.log('Mobile menu toggle CLICKED');
         toggleMenu();
-    }
+    });
 
-    // Add multiple event listeners for iOS compatibility
-    navToggle.addEventListener('click', handleMenuToggle);
-    navToggle.addEventListener('touchstart', handleMenuToggle);
-    navToggle.addEventListener('touchend', function(e) {
+    // Add touch support for mobile
+    toggle.addEventListener('touchstart', function(e) {
         e.preventDefault();
+        console.log('Mobile menu toggle TOUCHED');
+        toggleMenu();
     });
 
     // Close menu when clicking on links
@@ -71,35 +84,25 @@ function initMobileMenu() {
     navLinks.forEach(link => {
         link.addEventListener('click', function() {
             navMenu.classList.remove('active');
-            navToggle.classList.remove('active');
-            navToggle.setAttribute('aria-expanded', 'false');
+            toggle.classList.remove('active');
+            toggle.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
             console.log('Menu closed via link click');
         });
     });
 
     // Close menu when clicking outside
     document.addEventListener('click', function(e) {
-        if (!navMenu.contains(e.target) && !navToggle.contains(e.target)) {
+        if (!navMenu.contains(e.target) && !toggle.contains(e.target)) {
             navMenu.classList.remove('active');
-            navToggle.classList.remove('active');
-            navToggle.setAttribute('aria-expanded', 'false');
+            toggle.classList.remove('active');
+            toggle.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
             console.log('Menu closed via outside click');
         }
     });
 
-    // iOS Safari specific fixes
-    if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
-        console.log('iOS device detected, applying iOS-specific fixes');
-        
-        // Prevent zoom on double tap
-        navToggle.addEventListener('touchstart', function(e) {
-            e.preventDefault();
-        });
-        
-        // Ensure menu is properly positioned on iOS
-        navMenu.style.webkitTransform = 'translateZ(0)';
-        navMenu.style.transform = 'translateZ(0)';
-    }
+    console.log('Mobile menu initialization complete');
 }
 
 // Emergency fallback menu for when elements aren't found
