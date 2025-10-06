@@ -23,18 +23,56 @@ class LanguageManager {
                 'hero.order_whatsapp': 'Ordenar por WhatsApp',
                 'hero.follow_facebook': 'Síguenos en Facebook',
                 
-                // Menu Categories
-                'menu.all': 'Todos',
-                'menu.view_complete': 'VER MENÚ COMPLETO',
-                'menu.desayunos': 'Desayunos',
-                'menu.antojitos': 'Antojitos',
-                'menu.comida': 'Comida',
-                'menu.mariscos': 'Mariscos',
-                'menu.sopas': 'Sopas',
-                'menu.pastas': 'Pastas',
-                'menu.search_placeholder': 'Buscar platillo...',
-                'menu.title': 'Menú Completo - Comida Mexicana Tradicional',
-                'menu.subtitle': 'Descubre los sabores auténticos de México en Cancún con más de 25 platillos tradicionales mexicanos',
+                // About Us Page
+                'about.title': 'Nosotros',
+                'about.subtitle': 'Nuestra historia y pasión por la comida mexicana',
+                'about.history_title': 'La Historia de Portillos',
+                'about.history_text': 'Portillos Restaurante nació el 19 de julio de 2019 con la visión de llevar los sabores auténticos de México al corazón de Cancún. Fundado con pasión y dedicación, nuestro restaurante combina tradiciones culinarias centenarias con ingredientes frescos del mar Caribe.',
+                'about.founded_title': 'Nuestra Historia',
+                'about.founded_date': 'Fundado el 19 de julio de 2019',
+                'about.mission_text': 'Nacimos con la idea de llevar hasta tu mesa auténtica comida mexicana con mucho sabor. Desde el primer día hemos trabajado para ofrecerte los mejores sabores tradicionales de México.',
+                
+                // Contact Page
+                'contact.title': 'Contacto',
+                'contact.subtitle': 'Estamos aquí para servirte',
+                'contact.address_title': 'Dirección',
+                'contact.phone_title': 'Teléfono',
+                'contact.hours_title': 'Horarios',
+                'contact.form_title': 'Envíanos un mensaje',
+                'contact.form_name': 'Nombre',
+                'contact.form_email': 'Email',
+                'contact.form_message': 'Mensaje',
+                'contact.form_send': 'Enviar mensaje',
+                
+                // Order Page
+                'order.title': 'Ordenar',
+                'order.subtitle': 'Ordena tu comida favorita',
+                'order.whatsapp_title': 'Ordena por WhatsApp',
+                'order.whatsapp_description': 'Haz tu pedido directamente por WhatsApp',
+                'order.whatsapp_button': 'Ordenar por WhatsApp',
+                
+                // Catering Page
+                'catering.title': 'Catering',
+                'catering.subtitle': 'Servicios de catering para eventos',
+                'catering.services_title': 'Nuestros Servicios',
+                'catering.contact_title': 'Contáctanos para tu evento',
+                
+                // Reservations Page
+                'reservations.title': 'Reservas',
+                'reservations.subtitle': 'Reserva tu mesa',
+                'reservations.form_title': 'Hacer una reserva',
+                'reservations.form_date': 'Fecha',
+                'reservations.form_time': 'Hora',
+                'reservations.form_guests': 'Número de personas',
+                'reservations.form_name': 'Nombre',
+                'reservations.form_phone': 'Teléfono',
+                'reservations.form_reserve': 'Reservar mesa',
+                
+                // Legal Page
+                'legal.title': 'Términos y Condiciones',
+                'legal.subtitle': 'Información legal',
+                'legal.privacy_title': 'Política de Privacidad',
+                'legal.terms_title': 'Términos de Uso',
                 
                 // Menu Items
                 'menu.huevos_ejotes': 'Huevos con ejotes',
@@ -116,18 +154,56 @@ class LanguageManager {
                 'hero.order_whatsapp': 'Order via WhatsApp',
                 'hero.follow_facebook': 'Follow us on Facebook',
                 
-                // Menu Categories
-                'menu.all': 'All',
-                'menu.view_complete': 'VIEW COMPLETE MENU',
-                'menu.desayunos': 'Breakfast',
-                'menu.antojitos': 'Snacks',
-                'menu.comida': 'Main Dishes',
-                'menu.mariscos': 'Seafood',
-                'menu.sopas': 'Soups',
-                'menu.pastas': 'Pasta',
-                'menu.search_placeholder': 'Search dish...',
-                'menu.title': 'Complete Menu - Traditional Mexican Food',
-                'menu.subtitle': 'Discover authentic Mexican flavors in Cancún with over 25 traditional Mexican dishes',
+                // About Us Page
+                'about.title': 'About Us',
+                'about.subtitle': 'Our history and passion for Mexican food',
+                'about.history_title': 'The History of Portillos',
+                'about.history_text': 'Portillos Restaurant was born on July 19, 2019, with the vision of bringing authentic Mexican flavors to the heart of Cancún. Founded with passion and dedication, our restaurant combines centuries-old culinary traditions with fresh ingredients from the Caribbean Sea.',
+                'about.founded_title': 'Our History',
+                'about.founded_date': 'Founded on July 19, 2019',
+                'about.mission_text': 'We were born with the idea of bringing authentic Mexican food with great flavor to your table. From day one we have worked to offer you the best traditional flavors of Mexico.',
+                
+                // Contact Page
+                'contact.title': 'Contact',
+                'contact.subtitle': 'We are here to serve you',
+                'contact.address_title': 'Address',
+                'contact.phone_title': 'Phone',
+                'contact.hours_title': 'Hours',
+                'contact.form_title': 'Send us a message',
+                'contact.form_name': 'Name',
+                'contact.form_email': 'Email',
+                'contact.form_message': 'Message',
+                'contact.form_send': 'Send message',
+                
+                // Order Page
+                'order.title': 'Order',
+                'order.subtitle': 'Order your favorite food',
+                'order.whatsapp_title': 'Order via WhatsApp',
+                'order.whatsapp_description': 'Place your order directly via WhatsApp',
+                'order.whatsapp_button': 'Order via WhatsApp',
+                
+                // Catering Page
+                'catering.title': 'Catering',
+                'catering.subtitle': 'Catering services for events',
+                'catering.services_title': 'Our Services',
+                'catering.contact_title': 'Contact us for your event',
+                
+                // Reservations Page
+                'reservations.title': 'Reservations',
+                'reservations.subtitle': 'Reserve your table',
+                'reservations.form_title': 'Make a reservation',
+                'reservations.form_date': 'Date',
+                'reservations.form_time': 'Time',
+                'reservations.form_guests': 'Number of people',
+                'reservations.form_name': 'Name',
+                'reservations.form_phone': 'Phone',
+                'reservations.form_reserve': 'Reserve table',
+                
+                // Legal Page
+                'legal.title': 'Terms and Conditions',
+                'legal.subtitle': 'Legal information',
+                'legal.privacy_title': 'Privacy Policy',
+                'legal.terms_title': 'Terms of Use',
                 
                 // Menu Items
                 'menu.huevos_ejotes': 'Eggs with green beans',
@@ -222,14 +298,17 @@ class LanguageManager {
             existingSwitcher.remove();
         }
         
-        // Create language switcher HTML
+        // Create language switcher HTML with active state
+        const activeClass = this.currentLanguage === 'es' ? 'active' : '';
+        const activeClassEn = this.currentLanguage === 'en' ? 'active' : '';
+        
         const switcherHTML = `
             <div class="language-switcher">
-                <button class="lang-btn" data-lang="es">
+                <button class="lang-btn ${activeClass}" data-lang="es">
                     <span class="flag-icon">🇪🇸</span>
                     <span>ES</span>
                 </button>
-                <button class="lang-btn" data-lang="en">
+                <button class="lang-btn ${activeClassEn}" data-lang="en">
                     <span class="flag-icon">🇺🇸</span>
                     <span>EN</span>
                 </button>
@@ -260,6 +339,9 @@ class LanguageManager {
             const addedSwitcher = document.querySelector('.language-switcher');
             console.log('Verification - switcher exists:', !!addedSwitcher);
             console.log('Verification - buttons count:', document.querySelectorAll('.lang-btn').length);
+            
+            // Update active state
+            this.updateActiveLanguageButton();
         } else {
             console.error('Could not find header container for language switcher');
         }
@@ -288,6 +370,17 @@ class LanguageManager {
         }, 1000);
     }
     
+    updateActiveLanguageButton() {
+        const buttons = document.querySelectorAll('.lang-btn');
+        buttons.forEach(btn => {
+            btn.classList.remove('active');
+            if (btn.dataset.lang === this.currentLanguage) {
+                btn.classList.add('active');
+            }
+        });
+        console.log('Updated active language button for:', this.currentLanguage);
+    }
+    
     switchLanguage(lang) {
         console.log('Switching language from', this.currentLanguage, 'to', lang);
         
@@ -302,6 +395,9 @@ class LanguageManager {
         
         // Update page title and meta tags
         this.updatePageMeta(lang);
+        
+        // Update active button
+        this.updateActiveLanguageButton();
         
         // Trigger custom event for other scripts
         document.dispatchEvent(new CustomEvent('languageChanged', {

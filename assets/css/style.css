@@ -6528,6 +6528,31 @@ html {
     color: #374151;
     visibility: visible !important;
     opacity: 1 !important;
+    position: relative;
+}
+
+.lang-btn.active {
+    background: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+    color: white !important;
+    box-shadow: 0 2px 8px rgba(220, 38, 38, 0.3);
+}
+
+.lang-btn.active::after {
+    content: '✓';
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: #10b981;
+    color: white;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: bold;
 }
 
 .lang-btn:hover {
