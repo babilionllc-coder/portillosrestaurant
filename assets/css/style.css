@@ -6543,23 +6543,88 @@ html {
     100% { transform: rotate(360deg); }
 }
 
-/* Mobile real reviews */
+/* Language Switcher */
+.language-switcher {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: 20px;
+}
+
+.lang-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 12px;
+    background: white;
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #374151;
+}
+
+.lang-btn:hover {
+    border-color: var(--primary-color);
+    background: #f9fafb;
+    transform: translateY(-1px);
+}
+
+.lang-btn.active {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
+}
+
+.lang-btn img {
+    width: 20px;
+    height: 15px;
+    border-radius: 2px;
+    object-fit: cover;
+}
+
+.lang-btn span {
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+/* Mobile Language Switcher */
 @media (max-width: 768px) {
-    .real-reviews-badge {
-        margin-left: 0;
-        margin-top: 10px;
-        font-size: 0.7rem;
-        padding: 4px 8px;
+    .language-switcher {
+        margin-left: 10px;
+        gap: 4px;
     }
     
-    .real-badge {
-        font-size: 0.6rem;
-        padding: 1px 4px;
-    }
-    
-    .refresh-reviews-btn {
-        width: 100%;
-        padding: 10px 16px;
+    .lang-btn {
+        padding: 6px 8px;
         font-size: 0.8rem;
     }
+    
+    .lang-btn img {
+        width: 16px;
+        height: 12px;
+    }
+    
+    .lang-btn span {
+        font-size: 0.7rem;
+    }
+}
+
+/* Language-specific content visibility */
+[data-lang="es"] {
+    display: block;
+}
+
+[data-lang="en"] {
+    display: none;
+}
+
+.language-en [data-lang="es"] {
+    display: none;
+}
+
+.language-en [data-lang="en"] {
+    display: block;
 }
