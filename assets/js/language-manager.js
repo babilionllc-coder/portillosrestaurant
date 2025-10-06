@@ -77,8 +77,16 @@ class LanguageManager {
                 'legal.privacy_title': 'Política de Privacidad',
                 'legal.terms_title': 'Términos de Uso',
                 
-                // Menu Items - Breakfast
-                'menu.huevos_ejotes': 'Huevos con ejotes',
+                // Menu Page
+                'menu.title': 'Menú Completo - Comida Mexicana Tradicional',
+                'menu.subtitle': 'Descubre los sabores auténticos de México en Cancún con más de 25 platillos tradicionales mexicanos',
+                'menu.view_complete': 'VER MENÚ COMPLETO',
+                'menu.desayunos': 'Desayunos',
+                'menu.antojitos': 'Antojitos',
+                'menu.comida': 'Comida',
+                'menu.mariscos': 'Mariscos',
+                'menu.sopas': 'Sopas',
+                'menu.pastas': 'Pastas',
                 'menu.huevos_ejotes_desc': 'Huevos revueltos con ejotes frescos',
                 'menu.huevos_mexicana': 'Huevos a la mexicana',
                 'menu.huevos_mexicana_desc': 'Huevos revueltos con tomate, cebolla y chile',
@@ -241,8 +249,16 @@ class LanguageManager {
                 'legal.privacy_title': 'Privacy Policy',
                 'legal.terms_title': 'Terms of Use',
                 
-                // Menu Items - Breakfast
-                'menu.huevos_ejotes': 'Eggs with green beans',
+                // Menu Page
+                'menu.title': 'Complete Menu - Traditional Mexican Food',
+                'menu.subtitle': 'Discover the authentic flavors of Mexico in Cancun with more than 25 traditional Mexican dishes',
+                'menu.view_complete': 'VIEW COMPLETE MENU',
+                'menu.desayunos': 'Breakfasts',
+                'menu.antojitos': 'Appetizers',
+                'menu.comida': 'Main Dishes',
+                'menu.mariscos': 'Seafood',
+                'menu.sopas': 'Soups',
+                'menu.pastas': 'Pasta',
                 'menu.huevos_ejotes_desc': 'Scrambled eggs with green beans and onion',
                 'menu.huevos_mexicana': 'Mexican-style eggs',
                 'menu.huevos_mexicana_desc': 'Scrambled eggs with tomato, onion and chili',
