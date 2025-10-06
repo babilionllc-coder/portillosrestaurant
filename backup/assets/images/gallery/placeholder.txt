@@ -1,0 +1,24 @@
+# Gallery Images Directory
+# Placeholder file - Replace with actual restaurant photos
+
+Required Images:
+- restaurante-exterior.jpg
+- restaurante-interior.jpg
+- cocina.jpg
+- barra.jpg
+- terraza.jpg
+- comedor.jpg
+- entrada.jpg
+- decoracion-mexicana.jpg
+- equipo-servicio.jpg
+- chef-cocinando.jpg
+- familia-portillo.jpg
+- eventos-cumpleanos.jpg
+- catering-eventos.jpg
+- celebraciones-familiares.jpg
+- ambiente-familiar.jpg
+- platos-servidos.jpg
+- clientes-felices.jpg
+- ambiente-tradicional.jpg
+- decoracion-dia-muertos.jpg
+- ambiente-festivo.jpg

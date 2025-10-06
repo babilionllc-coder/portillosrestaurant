@@ -1,0 +1,6 @@
+Backup created on Mon Oct  6 12:13:20 EST 2025
+d452685 Shorten menu page title - Remove 'en Cancún' for cleaner display
+c9129d0 Add real Google Maps reviews integration - Dynamic reviews fetching with API support
+b7e0539 Add Google Maps iframe embed - Interactive maps with reviews on homepage and contact page
+b232151 Update Google Maps review count to 484 - Accurate review count from Google search results
+d0bf37e Add professional Google Maps reviews integration - Beautiful reviews section with proper styling

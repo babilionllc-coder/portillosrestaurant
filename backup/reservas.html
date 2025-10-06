@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservas | Portillos Restaurante Cancún | Reserva Mesa Online</title>
+    <meta name="description" content="Reserva tu mesa en Portillos Restaurante Cancún. Sistema de reservas online fácil y rápido. El mejor restaurante mexicano de Cancún. ¡Reserva ahora y disfruta auténtica comida mexicana!">
+    <meta name="keywords" content="reservas restaurante mexicano cancún, reservar mesa portillos cancún, reservas online cancún, restaurante cancún reservas, reserva mesa restaurante mexicano cancún, portillos restaurante reservas, reservar comida mexicana cancún, restaurante cancún reserva online, mesa restaurante cancún, reservas portillos cancún">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
+    
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Dancing+Script:wght@400;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Dancing+Script:wght@400;600;700&display=swap" rel="stylesheet"></noscript>
+    <!-- Font Awesome -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></noscript>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Restaurant",
+        "name": "Portillos Restaurante",
+        "image": "assets/images/logo/portilloslogo1.png",
+        "description": "Restaurante de comida mexicana y mariscos en Cancún",
+        "url": "https://portillosrestaurante.com",
+        "telephone": "+52-998-166-8821",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Av. José López Portillo L16 n-ext 25",
+            "addressLocality": "Cancún",
+            "addressRegion": "Quintana Roo",
+            "postalCode": "77524",
+            "addressCountry": "MX"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "21.158429985920003",
+            "longitude": "-86.8515277850641"
+        },
+        "openingHours": "Mo-Su 10:00-22:00",
+        "priceRange": "$$",
+        "servesCuisine": ["Mexican", "Seafood"],
+        "acceptsReservations": true
+    }
+    </script>
+</head>
+<body>
+    <!-- Skip to main content link -->
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+    
+    <!-- Header -->
+    <header class="header" role="banner">
+        <nav class="navbar" role="navigation" aria-label="Navegación principal">
+            <div class="container">
+                <div class="nav-brand">
+                    <a href="index.html" class="logo" aria-label="Portillos Restaurante - Ir al inicio">
+                        <img src="assets/images/logo/portilloslogo1.png" alt="Logo de Portillos Restaurante" class="logo-image">
+                    </a>
+                </div>
+                
+                <div class="nav-menu" id="navMenu" role="menubar">
+                    <ul class="nav-list" role="none">
+                        <li role="none"><a href="index.html" class="nav-link" role="menuitem">Inicio</a></li>
+                        <li role="none"><a href="menu.html" class="nav-link" role="menuitem">Menú</a></li>
+                        <li role="none"><a href="ordenar.html" class="nav-link" role="menuitem">Ordenar</a></li>
+                        <li role="none"><a href="nosotros.html" class="nav-link" role="menuitem">Nosotros</a></li>
+                        <li role="none"><a href="catering.html" class="nav-link" role="menuitem">Catering</a></li>
+                        <li role="none"><a href="reservas.html" class="nav-link active" role="menuitem" aria-current="page">Reservas</a></li>
+                        <li role="none"><a href="contacto.html" class="nav-link" role="menuitem">Contacto</a></li>
+                    </ul>
+                </div>
+                
+                <div class="nav-actions">
+                    <a href="https://wa.me/529981164598" class="btn-whatsapp" target="_blank" aria-label="Ordenar comida por WhatsApp">
+                        <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                        <span>Ordenar</span>
+                    </a>
+                    <button class="nav-toggle" id="navToggle" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="navMenu">
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main-content" class="main" role="main">
+        <!-- Hero Section -->
+        <section class="hero hero-reservas">
+            <div class="hero-overlay"></div>
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">Reserva tu Mesa</h1>
+                    <p class="hero-subtitle">Garantiza tu lugar en el mejor restaurante de comida mexicana y mariscos de Cancún</p>
+                    <div class="hero-actions">
+                        <a href="#booking-form" class="btn btn-primary btn-lg">
+                            <i class="fas fa-calendar-check"></i>
+                            Reservar Ahora
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Booking Form Section -->
+        <section id="booking-form" class="booking-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Solicitar Reserva</h2>
+                    <p class="section-subtitle">Completa el formulario y te confirmaremos tu reserva por WhatsApp</p>
+                </div>
+
+                <div class="booking-content">
+                    <div class="booking-form-container">
+                        <form class="booking-form" id="reservationForm">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="nombre" class="form-label">Nombre Completo *</label>
+                                    <input type="text" id="nombre" name="nombre" class="form-input" required>
+                                    <span class="form-error" id="nombre-error"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="telefono" class="form-label">Teléfono *</label>
+                                    <input type="tel" id="telefono" name="telefono" class="form-input" required>
+                                    <span class="form-error" id="telefono-error"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="fecha" class="form-label">Fecha *</label>
+                                    <input type="date" id="fecha" name="fecha" class="form-input" required>
+                                    <span class="form-error" id="fecha-error"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="hora" class="form-label">Hora *</label>
+                                    <select id="hora" name="hora" class="form-select" required>
+                                        <option value="">Selecciona una hora</option>
+                                        <option value="10:00">10:00 AM</option>
+                                        <option value="10:30">10:30 AM</option>
+                                        <option value="11:00">11:00 AM</option>
+                                        <option value="11:30">11:30 AM</option>
+                                        <option value="12:00">12:00 PM</option>
+                                        <option value="12:30">12:30 PM</option>
+                                        <option value="13:00">1:00 PM</option>
+                                        <option value="13:30">1:30 PM</option>
+                                        <option value="14:00">2:00 PM</option>
+                                        <option value="14:30">2:30 PM</option>
+                                        <option value="15:00">3:00 PM</option>
+                                        <option value="15:30">3:30 PM</option>
+                                        <option value="16:00">4:00 PM</option>
+                                        <option value="16:30">4:30 PM</option>
+                                        <option value="17:00">5:00 PM</option>
+                                        <option value="17:30">5:30 PM</option>
+                                        <option value="18:00">6:00 PM</option>
+                                        <option value="18:30">6:30 PM</option>
+                                        <option value="19:00">7:00 PM</option>
+                                        <option value="19:30">7:30 PM</option>
+                                        <option value="20:00">8:00 PM</option>
+                                        <option value="20:30">8:30 PM</option>
+                                        <option value="21:00">9:00 PM</option>
+                                        <option value="21:30">9:30 PM</option>
+                                        <option value="22:00">10:00 PM</option>
+                                    </select>
+                                    <span class="form-error" id="hora-error"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="personas" class="form-label">Número de Personas *</label>
+                                    <select id="personas" name="personas" class="form-select" required>
+                                        <option value="">Selecciona</option>
+                                        <option value="1">1 persona</option>
+                                        <option value="2">2 personas</option>
+                                        <option value="3">3 personas</option>
+                                        <option value="4">4 personas</option>
+                                        <option value="5">5 personas</option>
+                                        <option value="6">6 personas</option>
+                                        <option value="7">7 personas</option>
+                                        <option value="8">8 personas</option>
+                                        <option value="9">9 personas</option>
+                                        <option value="10">10 personas</option>
+                                        <option value="11">11+ personas</option>
+                                    </select>
+                                    <span class="form-error" id="personas-error"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="ocasion" class="form-label">Ocasión</label>
+                                    <select id="ocasion" name="ocasion" class="form-select">
+                                        <option value="">Selecciona una ocasión</option>
+                                        <option value="Cena casual">Cena casual</option>
+                                        <option value="Cita romántica">Cita romántica</option>
+                                        <option value="Celebración familiar">Celebración familiar</option>
+                                        <option value="Cumpleaños">Cumpleaños</option>
+                                        <option value="Aniversario">Aniversario</option>
+                                        <option value="Reunión de negocios">Reunión de negocios</option>
+                                        <option value="Otra">Otra</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="comentarios" class="form-label">Comentarios Adicionales</label>
+                                <textarea id="comentarios" name="comentarios" class="form-textarea" rows="4" placeholder="Alergias alimentarias, preferencias de mesa, etc."></textarea>
+                            </div>
+
+                            <div class="form-group checkbox-group">
+                                <input type="checkbox" id="terminos" name="terminos" required>
+                                <label for="terminos" class="checkbox-label">
+                                    Acepto los <a href="legal.html#terminos" target="_blank">términos y condiciones</a> y la <a href="legal.html#privacidad" target="_blank">política de privacidad</a> *
+                                </label>
+                                <span class="form-error" id="terminos-error"></span>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-lg btn-submit">
+                                <i class="fas fa-paper-plane"></i>
+                                Enviar Solicitud de Reserva
+                            </button>
+                        </form>
+                    </div>
+
+                    <div class="booking-info">
+                        <div class="info-card">
+                            <div class="info-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="info-content">
+                                <h3>Horarios de Atención</h3>
+                                <p>Lunes a Domingo<br>10:00 AM - 10:00 PM</p>
+                            </div>
+                        </div>
+
+                        <div class="info-card">
+                            <div class="info-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="info-content">
+                                <h3>Reservas por Teléfono</h3>
+                                <p><a href="tel:+529981164598">+52 998 166 8821</a></p>
+                            </div>
+                        </div>
+
+                        <div class="info-card">
+                            <div class="info-icon">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <div class="info-content">
+                                <h3>Reservas por WhatsApp</h3>
+                                <p><a href="https://wa.me/529981164598" target="_blank">WhatsApp Directo</a></p>
+                            </div>
+                        </div>
+
+                        <div class="info-card">
+                            <div class="info-icon">
+                                <i class="fas fa-info-circle"></i>
+                            </div>
+                            <div class="info-content">
+                                <h3>Información Importante</h3>
+                                <ul>
+                                    <li>Las reservas están sujetas a disponibilidad</li>
+                                    <li>Confirmaremos tu reserva por WhatsApp</li>
+                                    <li>Llega 15 minutos antes de tu hora</li>
+                                    <li>Para grupos grandes, contacta directamente</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Preguntas Frecuentes</h2>
+                </div>
+
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <h3>¿Con cuánta anticipación debo reservar?</h3>
+                        <p>Recomendamos reservar con al menos 24 horas de anticipación, especialmente para fines de semana y días festivos.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>¿Puedo cancelar mi reserva?</h3>
+                        <p>Sí, puedes cancelar tu reserva llamando al restaurante o enviando un mensaje por WhatsApp.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>¿Aceptan reservas para grupos grandes?</h3>
+                        <p>Para grupos de más de 10 personas, te recomendamos contactarnos directamente para coordinar mejor el servicio.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>¿Qué pasa si llego tarde?</h3>
+                        <p>Tu mesa estará reservada por 15 minutos después de la hora indicada. Después de ese tiempo, la mesa puede ser asignada a otros clientes.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="assets/images/logo/portilloslogo1.png" alt="Portillos Restaurante" class="footer-logo-image">
+                        <div class="footer-logo-text">
+                            <h3>Portillos</h3>
+                            <p>COMIDA MEXICANA Y MARISCOS</p>
+                        </div>
+                    </div>
+                    <p class="footer-description">El mejor restaurante de comida mexicana y mariscos en Cancún. Sabores auténticos y frescura del mar.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-title">Enlaces Rápidos</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="menu.html">Menú</a></li>
+                        <li><a href="ordenar.html">Ordenar</a></li>
+                        <li><a href="nosotros.html">Nosotros</a></li>
+                        <li><a href="catering.html">Catering</a></li>
+                        <li><a href="reservas.html">Reservas</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-title">Contacto</h4>
+                    <div class="footer-contact">
+                        <p><i class="fas fa-map-marker-alt"></i> Av. José López Portillo L16 n-ext 25, 77524 Cancún, Q.R.</p>
+                        <p><i class="fas fa-phone"></i> <a href="tel:+529981164598">+52 998 166 8821</a></p>
+                        <p><i class="fas fa-envelope"></i> <a href="mailto:info@portillosrestaurante.com">info@portillosrestaurante.com</a></p>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-title">Horarios</h4>
+                    <div class="footer-hours">
+                        <p>Lunes a Domingo</p>
+                        <p>10:00 AM - 10:00 PM</p>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Síguenos</h4>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/p/Comida-Mexicana-Mariscos-Hamburguesas-Antojitos-Portillos-Restaurante-61557567512222/" class="social-link facebook" target="_blank" aria-label="Síguenos en Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                            <span>Facebook</span>
+                        </a>
+                        <a href="https://wa.me/529981164598" class="social-link whatsapp" target="_blank" aria-label="Contáctanos por WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>WhatsApp</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2024 Portillos Restaurante. Todos los derechos reservados.</p>
+                    <div class="footer-legal">
+                        <a href="legal.html">Términos y Condiciones</a>
+                        <span class="separator">|</span>
+                        <a href="legal.html#privacidad">Política de Privacidad</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookieConsent" class="cookie-consent">
+        <div class="cookie-content">
+            <div class="cookie-icon">
+                <i class="fas fa-cookie-bite"></i>
+            </div>
+            <div class="cookie-text">
+                <h3>🍪 Política de Cookies</h3>
+                <p>Utilizamos cookies para mejorar tu experiencia en nuestro sitio web, analizar el tráfico y personalizar el contenido. Al continuar navegando, aceptas nuestro uso de cookies.</p>
+                <div class="cookie-links">
+                    <a href="legal.html#cookies" target="_blank">Más información</a>
+                    <span class="cookie-separator">•</span>
+                    <a href="legal.html#privacidad" target="_blank">Privacidad</a>
+                </div>
+            </div>
+            <div class="cookie-actions">
+                <button id="acceptCookies" class="btn btn-primary">
+                    <i class="fas fa-check"></i>
+                    Aceptar
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/booking.js"></script>
+</body>
+</html>

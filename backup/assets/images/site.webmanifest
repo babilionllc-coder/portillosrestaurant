@@ -1,0 +1,30 @@
+{
+    "name": "Portillos Restaurante",
+    "short_name": "Portillos",
+    "description": "Auténtica comida mexicana y mariscos en Cancún",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#DC2626",
+    "icons": [
+        {
+            "src": "assets/images/favicon-16x16.png",
+            "sizes": "16x16",
+            "type": "image/png"
+        },
+        {
+            "src": "assets/images/favicon-32x32.png",
+            "sizes": "32x32",
+            "type": "image/png"
+        },
+        {
+            "src": "assets/images/apple-touch-icon.png",
+            "sizes": "180x180",
+            "type": "image/png"
+        }
+    ]
+}
+<<<<<<< HEAD
+
+=======
+>>>>>>> 569cfb9b58f6e0a82c91d8f0dcf2030ab002aace
