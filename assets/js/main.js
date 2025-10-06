@@ -722,7 +722,8 @@ function initMenuModal() {
     openBtn.addEventListener('click', () => {
         console.log('Opening modal...');
         modal.classList.add('show');
-        document.body.style.overflow = 'hidden';
+        // Allow background scrolling - don't hide overflow
+        // document.body.style.overflow = 'hidden'; // Removed to allow background scrolling
         loadImage(0);
         console.log('Modal classes:', modal.className);
     });
@@ -730,6 +731,7 @@ function initMenuModal() {
     // Close modal
     function closeModal() {
         modal.classList.remove('show');
+        // Ensure scrolling is restored
         document.body.style.overflow = '';
         resetZoom();
     }
@@ -905,6 +907,36 @@ function initMenuModal() {
             }, 100);
         };
     }
+
+    // Enhanced scroll handling for better user experience
+    let isModalOpen = false;
+    
+    // Track modal state when opening
+    const originalOpenClick = openBtn.onclick;
+    openBtn.addEventListener('click', () => {
+        isModalOpen = true;
+        console.log('Modal opened - background scrolling enabled');
+    });
+    
+    // Track modal state when closing
+    const originalCloseModal = closeModal;
+    closeModal = function() {
+        isModalOpen = false;
+        console.log('Modal closed - background scrolling restored');
+        originalCloseModal();
+    };
+    
+    // Allow background scrolling when modal is open
+    document.addEventListener('wheel', (e) => {
+        if (isModalOpen) {
+            // If scrolling outside modal content, allow background scroll
+            const modalContent = modal.querySelector('.menu-modal-content');
+            if (modalContent && !modalContent.contains(e.target)) {
+                // Allow background scrolling
+                return;
+            }
+        }
+    }, { passive: true });
 
     // Initialize
     loadImage(0);
