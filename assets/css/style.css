@@ -6379,3 +6379,144 @@ html {
         height: 300px;
     }
 }
+
+/* Real Google Reviews Styling */
+.real-review {
+    border-left: 4px solid #4285f4;
+    position: relative;
+}
+
+.real-review::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 8px;
+    height: 8px;
+    background: #4285f4;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+.real-badge {
+    background: #4285f4;
+    color: white;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    margin-left: 8px;
+}
+
+.real-reviews-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #e8f0fe;
+    color: #4285f4;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-left: 15px;
+    border: 1px solid #4285f4;
+}
+
+.real-reviews-badge i {
+    color: #4285f4;
+}
+
+.refresh-reviews-btn {
+    background: #f8f9fa;
+    color: var(--text-color);
+    border: 2px solid #e5e7eb;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.refresh-reviews-btn:hover {
+    background: #4285f4;
+    color: white;
+    border-color: #4285f4;
+    transform: translateY(-2px);
+}
+
+.refresh-reviews-btn i {
+    margin-right: 6px;
+}
+
+.reviewer-avatar img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.avatar-fallback {
+    width: 48px;
+    height: 48px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.2rem;
+}
+
+/* Loading state for reviews */
+.reviews-loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.reviews-loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border: 2px solid #f3f3f3;
+    border-top: 2px solid #4285f4;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Mobile real reviews */
+@media (max-width: 768px) {
+    .real-reviews-badge {
+        margin-left: 0;
+        margin-top: 10px;
+        font-size: 0.7rem;
+        padding: 4px 8px;
+    }
+    
+    .real-badge {
+        font-size: 0.6rem;
+        padding: 1px 4px;
+    }
+    
+    .refresh-reviews-btn {
+        width: 100%;
+        padding: 10px 16px;
+        font-size: 0.8rem;
+    }
+}
