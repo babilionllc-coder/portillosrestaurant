@@ -6038,3 +6038,231 @@ html {
         font-size: 0.9rem;
     }
 }
+
+/* Google Maps Reviews Section */
+.google-reviews {
+    background: #f8fafc;
+    padding: 80px 0;
+}
+
+.reviews-summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+    padding: 30px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.rating-overview {
+    text-align: center;
+}
+
+.rating-score {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    line-height: 1;
+    margin-bottom: 8px;
+}
+
+.rating-stars {
+    font-size: 1.5rem;
+    color: #fbbf24;
+    margin-bottom: 8px;
+}
+
+.rating-count {
+    color: var(--text-light);
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.google-maps-link {
+    display: flex;
+    align-items: center;
+}
+
+.btn-google-maps {
+    background: #4285f4;
+    color: white;
+    border: 2px solid #4285f4;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+.btn-google-maps:hover {
+    background: #3367d6;
+    border-color: #3367d6;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(66, 133, 244, 0.3);
+}
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 24px;
+    margin-bottom: 40px;
+}
+
+.review-card {
+    background: white;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    border: 1px solid #e5e7eb;
+}
+
+.review-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 16px;
+}
+
+.reviewer-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.reviewer-avatar {
+    width: 48px;
+    height: 48px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.2rem;
+}
+
+.reviewer-details h4 {
+    margin: 0 0 4px 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.review-rating {
+    color: #fbbf24;
+    font-size: 1rem;
+}
+
+.review-source {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #4285f4;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.review-source i {
+    font-size: 1rem;
+}
+
+.review-content {
+    margin-bottom: 16px;
+}
+
+.review-content p {
+    color: var(--text-color);
+    line-height: 1.6;
+    font-size: 1rem;
+    margin: 0;
+    font-style: italic;
+}
+
+.review-date {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.reviews-cta {
+    text-align: center;
+    padding: 30px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.reviews-cta p {
+    margin-bottom: 20px;
+    color: var(--text-color);
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+/* Mobile Google Reviews */
+@media (max-width: 768px) {
+    .google-reviews {
+        padding: 60px 0;
+    }
+    
+    .reviews-summary {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+        padding: 20px;
+    }
+    
+    .rating-score {
+        font-size: 2.5rem;
+    }
+    
+    .rating-stars {
+        font-size: 1.2rem;
+    }
+    
+    .reviews-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    
+    .review-card {
+        padding: 20px;
+    }
+    
+    .review-header {
+        flex-direction: column;
+        gap: 12px;
+        align-items: flex-start;
+    }
+    
+    .review-source {
+        align-self: flex-end;
+    }
+    
+    .reviewer-info {
+        gap: 10px;
+    }
+    
+    .reviewer-avatar {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+    
+    .reviews-cta {
+        padding: 20px;
+    }
+}
