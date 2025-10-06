@@ -161,10 +161,10 @@
                         antojitos regionales y frescos mariscos. ¡Ordena ahora por WhatsApp!
                     </p>
                     <div class="hero-actions">
-                        <a href="menu.html" class="btn btn-primary">
+                        <button class="btn btn-primary" id="viewMenuBtn">
                             <i class="fas fa-utensils"></i>
                             Ver Menú
-                        </a>
+                        </button>
                         <a href="https://wa.me/529981164598" class="btn btn-whatsapp" target="_blank" aria-label="Ordenar comida por WhatsApp">
                             <i class="fab fa-whatsapp" aria-hidden="true"></i>
                             Ordenar por WhatsApp
@@ -340,6 +340,48 @@
                     <i class="fas fa-check"></i>
                     Aceptar
                 </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Menu Modal -->
+    <div id="menuModal" class="menu-modal">
+        <div class="menu-modal-content">
+            <div class="menu-modal-header">
+                <h3>Menú Completo - Portillos Restaurante</h3>
+                <button class="menu-modal-close" id="closeMenuModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="menu-modal-body">
+                <div class="menu-navigation">
+                    <button class="menu-nav-btn" id="prevMenuBtn">
+                        <i class="fas fa-chevron-left"></i>
+                        Anterior
+                    </button>
+                    <span class="menu-page-info">
+                        <span id="currentPage">1</span> de <span id="totalPages">3</span>
+                    </span>
+                    <button class="menu-nav-btn" id="nextMenuBtn">
+                        Siguiente
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                <div class="menu-image-container">
+                    <img id="menuImage" src="assets/images/VER MENU/vermenu1.jpeg" alt="Menú Portillos" loading="lazy">
+                </div>
+                <div class="menu-zoom-controls">
+                    <button class="zoom-btn" id="zoomOutBtn">
+                        <i class="fas fa-search-minus"></i>
+                    </button>
+                    <span class="zoom-level" id="zoomLevel">100%</span>
+                    <button class="zoom-btn" id="zoomInBtn">
+                        <i class="fas fa-search-plus"></i>
+                    </button>
+                    <button class="zoom-btn" id="resetZoomBtn">
+                        <i class="fas fa-expand-arrows-alt"></i>
+                    </button>
+                </div>
             </div>
         </div>
     </div>
