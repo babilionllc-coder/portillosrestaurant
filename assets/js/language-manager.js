@@ -22,7 +22,6 @@ class LanguageManager {
                 'hero.view_menu': 'Ver Menú',
                 'hero.order_whatsapp': 'Ordenar por WhatsApp',
                 'hero.follow_facebook': 'Síguenos en Facebook',
-                'hero.follow_instagram': 'Síguenos en Instagram',
                 
                 // Menu Categories
                 'menu.all': 'Todos',
@@ -116,7 +115,6 @@ class LanguageManager {
                 'hero.view_menu': 'View Menu',
                 'hero.order_whatsapp': 'Order via WhatsApp',
                 'hero.follow_facebook': 'Follow us on Facebook',
-                'hero.follow_instagram': 'Follow us on Instagram',
                 
                 // Menu Categories
                 'menu.all': 'All',
