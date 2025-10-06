@@ -257,8 +257,8 @@ function initOrderForm() {
 function initMenuSearch() {
     const searchInput = document.getElementById('menuSearch');
     const filterButtons = document.querySelectorAll('.filter-btn');
-    const menuItems = document.querySelectorAll('.menu-item');
-    const menuSections = document.querySelectorAll('.menu-section');
+    const menuItems = document.querySelectorAll('.menu-item-card');
+    const menuSections = document.querySelectorAll('.menu-category');
     
     if (!searchInput || !menuItems.length) return;
     
@@ -292,7 +292,7 @@ function initMenuSearch() {
     function filterMenuItems() {
         menuItems.forEach(item => {
             const itemText = item.textContent.toLowerCase();
-            const itemCategory = item.closest('.menu-section').getAttribute('data-category');
+            const itemCategory = item.closest('.menu-category').getAttribute('data-category');
             
             // Check if item matches search term
             const matchesSearch = currentSearch === '' || itemText.includes(currentSearch);
@@ -313,7 +313,7 @@ function initMenuSearch() {
         
         // Show/hide menu sections based on visible items
         menuSections.forEach(section => {
-            const visibleItems = section.querySelectorAll('.menu-item[style*="block"]');
+            const visibleItems = section.querySelectorAll('.menu-item-card[style*="block"]');
             if (visibleItems.length > 0) {
                 section.style.display = 'block';
                 section.style.opacity = '1';
