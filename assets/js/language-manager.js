@@ -217,20 +217,33 @@ class LanguageManager {
         const switcherHTML = `
             <div class="language-switcher">
                 <button class="lang-btn" data-lang="es">
-                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMTUiIHZpZXdCb3g9IjAgMCAyMCAxNSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjIwIiBoZWlnaHQ9IjE1IiBmaWxsPSIjRkZGRkZGIi8+CjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSI1IiBmaWxsPSIjRkYwMDAwIi8+CjxyZWN0IHk9IjEwIiB3aWR0aD0iMjAiIGhlaWdodD0iNSIgZmlsbD0iI0ZGMDAwMCIvPgo8L3N2Zz4K" alt="ES">
+                    <span class="flag-icon">🇪🇸</span>
                     <span>ES</span>
                 </button>
                 <button class="lang-btn" data-lang="en">
-                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMTUiIHZpZXdCb3g9IjAgMCAyMCAxNSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjIwIiBoZWlnaHQ9IjE1IiBmaWxsPSIjMDAyNzY2Ii8+CjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIxLjE1IiBmaWxsPSIjRkZGRkZGIi8+CjxyZWN0IHk9IjEuMTUiIHdpZHRoPSIyMCIgaGVpZ2h0PSIxLjE1IiBmaWxsPSIjRkZGRkZGIi8+CjxyZWN0IHk9IjMuNDUiIHdpZHRoPSIyMCIgaGVpZ2h0PSIxLjE1IiBmaWxsPSIjRkZGRkZGIi8+CjxyZWN0IHk9IjUuNzUiIHdpZHRoPSIyMCIgaGVpZ2h0PSIxLjE1IiBmaWxsPSIjRkZGRkZGIi8+CjxyZWN0IHk9IjguMDUiIHdpZHRoPSIyMCIgaGVpZ2h0PSIxLjE1IiBmaWxsPSIjRkZGRkZGIi8+CjxyZWN0IHk9IjEwLjM1IiB3aWR0aD0iMjAiIGhlaWdodD0iMS4xNSIgZmlsbD0iI0ZGRkZGRiIvPgo8cmVjdCB5PSIxMi42NSIgd2lkdGg9IjIwIiBoZWlnaHQ9IjEuMTUiIGZpbGw9IiNGRkZGRkYiLz4KPHJlY3QgeT0iMTQuOTUiIHdpZHRoPSIyMCIgaGVpZ2h0PSIxLjE1IiBmaWxsPSIjRkZGRkZGIi8+CjxyZWN0IHdpZHRoPSI4LjMzIiBoZWlnaHQ9IjE1IiBmaWxsPSIjRkZGRkZGIi8+CjxyZWN0IHdpZHRoPSIxLjE1IiBoZWlnaHQ9IjE1IiBmaWxsPSIjRkZGRkZGIi8+CjxyZWN0IHg9IjEuMTUiIHdpZHRoPSIxLjE1IiBoZWlnaHQ9IjE1IiBmaWxsPSIjRkZGRkZGIi8+CjxyZWN0IHg9IjIuMyIgd2lkdGg9IjEuMTUiIGhlaWdodD0iMTUiIGZpbGw9IiNGRkZGRkYiLz4KPHJlY3QgeD0iMy40NSIgd2lkdGg9IjEuMTUiIGhlaWdodD0iMTUiIGZpbGw9IiNGRkZGRkYiLz4KPHJlY3QgeD0iNC42IiB3aWR0aD0iMS4xNSIgaGVpZ2h0PSIxNSIgZmlsbD0iI0ZGRkZGRiIvPgo8cmVjdCB4PSI1Ljc1IiB3aWR0aD0iMS4xNSIgaGVpZ2h0PSIxNSIgZmlsbD0iI0ZGRkZGRiIvPgo8cmVjdCB4PSI2LjkiIHdpZHRoPSIxLjE1IiBoZWlnaHQ9IjE1IiBmaWxsPSIjRkZGRkZGIi8+CjxyZWN0IHg9IjguMDUiIHdpZHRoPSIxLjE1IiBoZWlnaHQ9IjE1IiBmaWxsPSIjRkZGRkZGIi8+Cjwvc3ZnPgo=" alt="EN">
+                    <span class="flag-icon">🇺🇸</span>
                     <span>EN</span>
                 </button>
             </div>
         `;
         
-        // Add to header
-        const header = document.querySelector('.header .navbar .container');
+        // Add to header - try multiple selectors
+        let header = document.querySelector('.header .navbar .container');
+        if (!header) {
+            header = document.querySelector('.navbar .container');
+        }
+        if (!header) {
+            header = document.querySelector('.header .container');
+        }
+        if (!header) {
+            header = document.querySelector('.container');
+        }
+        
         if (header) {
             header.insertAdjacentHTML('beforeend', switcherHTML);
+            console.log('Language switcher added successfully');
+        } else {
+            console.error('Could not find header container for language switcher');
         }
     }
     

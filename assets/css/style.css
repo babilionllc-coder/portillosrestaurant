@@ -6578,11 +6578,9 @@ html {
     color: white;
 }
 
-.lang-btn img {
-    width: 20px;
-    height: 15px;
-    border-radius: 2px;
-    object-fit: cover;
+.lang-btn .flag-icon {
+    font-size: 1.2rem;
+    margin-right: 4px;
 }
 
 .lang-btn span {

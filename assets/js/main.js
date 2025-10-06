@@ -2,12 +2,19 @@
 
 // DOM Content Loaded
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM loaded, initializing mobile menu...');
     // Initialize all functionality
     initMobileMenu();
     initSmoothScrolling();
     initAnimations();
     initWhatsAppButtons();
     initImageLoading();
+});
+
+// Also initialize when window loads (fallback)
+window.addEventListener('load', function() {
+    console.log('Window loaded, re-initializing mobile menu...');
+    initMobileMenu();
 });
 
 // iPhone-Optimized Mobile Menu System
