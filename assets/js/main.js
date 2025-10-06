@@ -683,6 +683,191 @@ document.addEventListener('DOMContentLoaded', function() {
     optimizeImages();
 });
 
+// Menu Modal Functionality
+function initMenuModal() {
+    const modal = document.getElementById('menuModal');
+    const openBtn = document.getElementById('viewMenuBtn');
+    const closeBtn = document.getElementById('closeMenuModal');
+    const prevBtn = document.getElementById('prevMenuBtn');
+    const nextBtn = document.getElementById('nextMenuBtn');
+    const menuImage = document.getElementById('menuImage');
+    const currentPageSpan = document.getElementById('currentPage');
+    const totalPagesSpan = document.getElementById('totalPages');
+    const zoomInBtn = document.getElementById('zoomInBtn');
+    const zoomOutBtn = document.getElementById('zoomOutBtn');
+    const resetZoomBtn = document.getElementById('resetZoomBtn');
+    const zoomLevelSpan = document.getElementById('zoomLevel');
+
+    if (!modal || !openBtn) return;
+
+    // Menu images array
+    const menuImages = [
+        'assets/images/VER MENU/vermenu1.jpeg',
+        'assets/images/VER MENU/vermenu2.jpeg',
+        'assets/images/VER MENU/vermenu3.jpeg'
+    ];
+
+    let currentImageIndex = 0;
+    let currentZoom = 100;
+
+    // Set total pages
+    totalPagesSpan.textContent = menuImages.length;
+
+    // Open modal
+    openBtn.addEventListener('click', () => {
+        modal.classList.add('show');
+        document.body.style.overflow = 'hidden';
+        loadImage(0);
+    });
+
+    // Close modal
+    function closeModal() {
+        modal.classList.remove('show');
+        document.body.style.overflow = '';
+        resetZoom();
+    }
+
+    closeBtn.addEventListener('click', closeModal);
+    
+    // Close on background click
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            closeModal();
+        }
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('show')) {
+            closeModal();
+        }
+    });
+
+    // Navigation functions
+    function loadImage(index) {
+        currentImageIndex = index;
+        menuImage.src = menuImages[index];
+        currentPageSpan.textContent = index + 1;
+        
+        // Update navigation buttons
+        prevBtn.disabled = index === 0;
+        nextBtn.disabled = index === menuImages.length - 1;
+        
+        // Reset zoom when changing images
+        resetZoom();
+    }
+
+    function nextImage() {
+        if (currentImageIndex < menuImages.length - 1) {
+            loadImage(currentImageIndex + 1);
+        }
+    }
+
+    function prevImage() {
+        if (currentImageIndex > 0) {
+            loadImage(currentImageIndex - 1);
+        }
+    }
+
+    // Navigation event listeners
+    nextBtn.addEventListener('click', nextImage);
+    prevBtn.addEventListener('click', prevImage);
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        if (!modal.classList.contains('show')) return;
+        
+        if (e.key === 'ArrowRight') {
+            nextImage();
+        } else if (e.key === 'ArrowLeft') {
+            prevImage();
+        }
+    });
+
+    // Zoom functionality
+    function updateZoom() {
+        menuImage.style.transform = `scale(${currentZoom / 100})`;
+        zoomLevelSpan.textContent = `${currentZoom}%`;
+        
+        // Update zoom buttons
+        zoomOutBtn.disabled = currentZoom <= 50;
+        zoomInBtn.disabled = currentZoom >= 300;
+    }
+
+    function zoomIn() {
+        if (currentZoom < 300) {
+            currentZoom = Math.min(currentZoom + 25, 300);
+            updateZoom();
+        }
+    }
+
+    function zoomOut() {
+        if (currentZoom > 50) {
+            currentZoom = Math.max(currentZoom - 25, 50);
+            updateZoom();
+        }
+    }
+
+    function resetZoom() {
+        currentZoom = 100;
+        updateZoom();
+    }
+
+    // Zoom event listeners
+    zoomInBtn.addEventListener('click', zoomIn);
+    zoomOutBtn.addEventListener('click', zoomOut);
+    resetZoomBtn.addEventListener('click', resetZoom);
+
+    // Mouse wheel zoom
+    menuImage.addEventListener('wheel', (e) => {
+        e.preventDefault();
+        if (e.deltaY < 0) {
+            zoomIn();
+        } else {
+            zoomOut();
+        }
+    });
+
+    // Touch gestures for mobile
+    let startDistance = 0;
+    let startZoom = 100;
+
+    menuImage.addEventListener('touchstart', (e) => {
+        if (e.touches.length === 2) {
+            startDistance = Math.hypot(
+                e.touches[0].clientX - e.touches[1].clientX,
+                e.touches[0].clientY - e.touches[1].clientY
+            );
+            startZoom = currentZoom;
+        }
+    });
+
+    menuImage.addEventListener('touchmove', (e) => {
+        if (e.touches.length === 2) {
+            e.preventDefault();
+            const currentDistance = Math.hypot(
+                e.touches[0].clientX - e.touches[1].clientX,
+                e.touches[0].clientY - e.touches[1].clientY
+            );
+            
+            if (startDistance > 0) {
+                const scale = currentDistance / startDistance;
+                const newZoom = Math.round(startZoom * scale);
+                currentZoom = Math.max(50, Math.min(300, newZoom));
+                updateZoom();
+            }
+        }
+    });
+
+    // Initialize
+    loadImage(0);
+}
+
+// Initialize menu modal when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    initMenuModal();
+});
+
 // Export functions for use in other scripts
 window.PortillosRestaurant = {
     formatPrice,
