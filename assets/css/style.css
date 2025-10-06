@@ -1350,13 +1350,23 @@ input:focus, textarea:focus, select:focus {
     object-fit: contain;
     border-radius: 8px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, opacity 0.3s ease;
     cursor: grab;
     min-height: auto;
 }
 
 .menu-image-container img:active {
     cursor: grabbing;
+}
+
+.menu-image-container img.loading {
+    opacity: 0.5;
+    filter: blur(1px);
+}
+
+.menu-image-container img.loaded {
+    opacity: 1;
+    filter: none;
 }
 
 .menu-zoom-controls {

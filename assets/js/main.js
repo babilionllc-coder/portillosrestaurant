@@ -714,6 +714,61 @@ function initMenuModal() {
 
     let currentImageIndex = 0;
     let currentZoom = 100;
+    let preloadedImages = [];
+    let imagesLoaded = false;
+
+    // Preload all menu images for instant loading
+    function preloadImages() {
+        console.log('Preloading menu images...');
+        let loadedCount = 0;
+        
+        menuImages.forEach((src, index) => {
+            const img = new Image();
+            img.onload = () => {
+                loadedCount++;
+                console.log(`Image ${index + 1} preloaded successfully`);
+                
+                if (loadedCount === menuImages.length) {
+                    imagesLoaded = true;
+                    console.log('All menu images preloaded successfully');
+                }
+            };
+            img.onerror = () => {
+                console.error(`Failed to preload image ${index + 1}:`, src);
+                loadedCount++;
+                
+                if (loadedCount === menuImages.length) {
+                    imagesLoaded = true;
+                    console.log('Image preloading completed (with some errors)');
+                }
+            };
+            img.src = src;
+            preloadedImages[index] = img;
+        });
+    }
+
+    // Start preloading immediately
+    preloadImages();
+
+    // Function to ensure image loads with fallback
+    function ensureImageLoads(src, retryCount = 0) {
+        return new Promise((resolve, reject) => {
+            const img = new Image();
+            img.onload = () => resolve(img);
+            img.onerror = () => {
+                if (retryCount < 3) {
+                    console.log(`Retrying image load (attempt ${retryCount + 1}):`, src);
+                    setTimeout(() => {
+                        ensureImageLoads(src, retryCount + 1).then(resolve).catch(reject);
+                    }, 500 * (retryCount + 1));
+                } else {
+                    console.error('Failed to load image after 3 attempts:', src);
+                    reject(new Error('Image failed to load'));
+                }
+            };
+            img.src = src;
+        });
+    }
 
     // Set total pages
     totalPagesSpan.textContent = menuImages.length;
@@ -756,7 +811,40 @@ function initMenuModal() {
     function loadImage(index) {
         currentImageIndex = index;
         console.log('Loading image:', menuImages[index]);
-        menuImage.src = menuImages[index];
+        
+        // Use preloaded image if available, otherwise load normally
+        if (preloadedImages[index] && preloadedImages[index].complete) {
+            console.log('Using preloaded image for instant loading');
+            menuImage.src = preloadedImages[index].src;
+            menuImage.classList.add('loaded');
+            menuImage.classList.remove('loading');
+            menuImage.onload = () => console.log('Preloaded image displayed successfully');
+        } else {
+            console.log('Loading image normally');
+            menuImage.classList.add('loading');
+            menuImage.classList.remove('loaded');
+            menuImage.src = menuImages[index];
+            
+            menuImage.onload = () => {
+                console.log('Image loaded successfully');
+                menuImage.classList.remove('loading');
+                menuImage.classList.add('loaded');
+            };
+        }
+        
+        menuImage.onerror = () => {
+            console.error('Image failed to load:', menuImages[index]);
+            menuImage.classList.remove('loading');
+            menuImage.classList.add('loaded');
+            
+            // Try to reload after a short delay
+            setTimeout(() => {
+                console.log('Retrying image load...');
+                menuImage.classList.add('loading');
+                menuImage.src = menuImages[index] + '?retry=' + Date.now();
+            }, 1000);
+        };
+        
         currentPageSpan.textContent = index + 1;
         
         // Update navigation buttons
@@ -765,10 +853,6 @@ function initMenuModal() {
         
         // Reset zoom when changing images
         resetZoom();
-        
-        // Check if image loaded
-        menuImage.onload = () => console.log('Image loaded successfully');
-        menuImage.onerror = () => console.log('Image failed to load:', menuImages[index]);
     }
 
     function nextImage() {
