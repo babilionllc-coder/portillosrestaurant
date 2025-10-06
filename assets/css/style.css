@@ -6058,7 +6058,7 @@ html {
     
     .social-link {
         flex: 1;
-        justify-content: center;
+    justify-content: center;
         padding: 10px 12px;
         font-size: 0.9rem;
     }
@@ -6270,7 +6270,7 @@ html {
     }
     
     .reviews-summary {
-        flex-direction: column;
+    flex-direction: column;
         gap: 20px;
         text-align: center;
         padding: 20px;
@@ -6294,7 +6294,7 @@ html {
     }
     
     .review-header {
-        flex-direction: column;
+    flex-direction: column;
         gap: 12px;
         align-items: flex-start;
     }
@@ -6304,9 +6304,9 @@ html {
     }
     
     .reviewer-info {
-        gap: 10px;
-    }
-    
+    gap: 10px;
+}
+
     .reviewer-avatar {
         width: 40px;
         height: 40px;
@@ -6399,7 +6399,7 @@ html {
     
     .map-buttons {
         flex-direction: row;
-        gap: 8px;
+    gap: 8px;
     }
     
     .map-buttons .btn {
@@ -6545,14 +6545,16 @@ html {
 
 /* Language Switcher */
 .language-switcher {
-    display: flex;
+    display: flex !important;
     align-items: center;
     gap: 8px;
     margin-left: 20px;
+    visibility: visible !important;
+    opacity: 1 !important;
 }
 
 .lang-btn {
-    display: flex;
+    display: flex !important;
     align-items: center;
     gap: 6px;
     padding: 8px 12px;
@@ -6564,6 +6566,8 @@ html {
     font-size: 0.9rem;
     font-weight: 600;
     color: #374151;
+    visibility: visible !important;
+    opacity: 1 !important;
 }
 
 .lang-btn:hover {
@@ -6600,9 +6604,8 @@ html {
         font-size: 0.8rem;
     }
     
-    .lang-btn img {
-        width: 16px;
-        height: 12px;
+    .lang-btn .flag-icon {
+        font-size: 1rem;
     }
     
     .lang-btn span {

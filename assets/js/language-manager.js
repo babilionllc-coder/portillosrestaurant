@@ -199,9 +199,11 @@ class LanguageManager {
     }
     
     init() {
+        console.log('Initializing LanguageManager...');
         this.createLanguageSwitcher();
         this.applyLanguage(this.currentLanguage);
         this.bindEvents();
+        console.log('LanguageManager initialized with language:', this.currentLanguage);
     }
     
     getStoredLanguage() {
@@ -213,6 +215,15 @@ class LanguageManager {
     }
     
     createLanguageSwitcher() {
+        console.log('Creating language switcher...');
+        
+        // Check if switcher already exists
+        const existingSwitcher = document.querySelector('.language-switcher');
+        if (existingSwitcher) {
+            console.log('Language switcher already exists, removing old one');
+            existingSwitcher.remove();
+        }
+        
         // Create language switcher HTML
         const switcherHTML = `
             <div class="language-switcher">
@@ -227,6 +238,8 @@ class LanguageManager {
             </div>
         `;
         
+        console.log('Language switcher HTML:', switcherHTML);
+        
         // Add to header - try multiple selectors
         let header = document.querySelector('.header .navbar .container');
         if (!header) {
@@ -239,26 +252,51 @@ class LanguageManager {
             header = document.querySelector('.container');
         }
         
+        console.log('Found header:', header);
+        
         if (header) {
             header.insertAdjacentHTML('beforeend', switcherHTML);
-            console.log('Language switcher added successfully');
+            console.log('Language switcher added successfully to header');
+            
+            // Verify it was added
+            const addedSwitcher = document.querySelector('.language-switcher');
+            console.log('Verification - switcher exists:', !!addedSwitcher);
+            console.log('Verification - buttons count:', document.querySelectorAll('.lang-btn').length);
         } else {
             console.error('Could not find header container for language switcher');
         }
     }
     
     bindEvents() {
+        console.log('Binding language switcher events...');
+        
         // Language switcher events
         document.addEventListener('click', (e) => {
             if (e.target.closest('.lang-btn')) {
-                const lang = e.target.closest('.lang-btn').dataset.lang;
+                const btn = e.target.closest('.lang-btn');
+                const lang = btn.dataset.lang;
+                console.log('Language button clicked:', lang);
                 this.switchLanguage(lang);
             }
         });
+        
+        // Verify buttons are clickable
+        setTimeout(() => {
+            const buttons = document.querySelectorAll('.lang-btn');
+            console.log('Language buttons found:', buttons.length);
+            buttons.forEach((btn, index) => {
+                console.log(`Button ${index}:`, btn.dataset.lang, btn.textContent);
+            });
+        }, 1000);
     }
     
     switchLanguage(lang) {
-        if (lang === this.currentLanguage) return;
+        console.log('Switching language from', this.currentLanguage, 'to', lang);
+        
+        if (lang === this.currentLanguage) {
+            console.log('Language already active, skipping');
+            return;
+        }
         
         this.currentLanguage = lang;
         this.setStoredLanguage(lang);
@@ -271,6 +309,8 @@ class LanguageManager {
         document.dispatchEvent(new CustomEvent('languageChanged', {
             detail: { language: lang }
         }));
+        
+        console.log('Language switched successfully to:', lang);
     }
     
     applyLanguage(lang) {
@@ -379,7 +419,16 @@ class LanguageManager {
 
 // Initialize language manager when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
+    console.log('DOM ready, initializing LanguageManager...');
     window.languageManager = new LanguageManager();
+});
+
+// Fallback initialization
+window.addEventListener('load', () => {
+    if (!window.languageManager) {
+        console.log('Window loaded, fallback LanguageManager initialization...');
+        window.languageManager = new LanguageManager();
+    }
 });
 
 // Export for use in other scripts
