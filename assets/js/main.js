@@ -698,7 +698,12 @@ function initMenuModal() {
     const resetZoomBtn = document.getElementById('resetZoomBtn');
     const zoomLevelSpan = document.getElementById('zoomLevel');
 
-    if (!modal || !openBtn) return;
+    if (!modal || !openBtn) {
+        console.log('Modal elements not found:', { modal: !!modal, openBtn: !!openBtn });
+        return;
+    }
+
+    console.log('Modal elements found:', { modal: !!modal, openBtn: !!openBtn });
 
     // Menu images array
     const menuImages = [
@@ -715,9 +720,11 @@ function initMenuModal() {
 
     // Open modal
     openBtn.addEventListener('click', () => {
+        console.log('Opening modal...');
         modal.classList.add('show');
         document.body.style.overflow = 'hidden';
         loadImage(0);
+        console.log('Modal classes:', modal.className);
     });
 
     // Close modal
@@ -746,6 +753,7 @@ function initMenuModal() {
     // Navigation functions
     function loadImage(index) {
         currentImageIndex = index;
+        console.log('Loading image:', menuImages[index]);
         menuImage.src = menuImages[index];
         currentPageSpan.textContent = index + 1;
         
@@ -755,6 +763,10 @@ function initMenuModal() {
         
         // Reset zoom when changing images
         resetZoom();
+        
+        // Check if image loaded
+        menuImage.onload = () => console.log('Image loaded successfully');
+        menuImage.onerror = () => console.log('Image failed to load:', menuImages[index]);
     }
 
     function nextImage() {
@@ -865,6 +877,11 @@ function initMenuModal() {
 
 // Initialize menu modal when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
+    initMenuModal();
+});
+
+// Also initialize when window loads (for pages that load dynamically)
+window.addEventListener('load', () => {
     initMenuModal();
 });
 
