@@ -1039,7 +1039,7 @@ input:focus, textarea:focus, select:focus {
 
 .menu-item-image {
     width: 100%;
-    height: 180px;
+    height: 250px;
     overflow: hidden;
     position: relative;
     background: #f0f0f0;
@@ -1177,7 +1177,7 @@ input:focus, textarea:focus, select:focus {
     }
     
     .menu-item-image {
-        height: 200px;
+        height: 220px;
     }
     
     .menu-item-content {
@@ -5769,7 +5769,7 @@ html {
 
 .menu-item-image {
     width: 100%;
-    height: 200px;
+    height: 250px;
     overflow: hidden;
     position: relative;
     background: #f0f0f0;
@@ -5866,7 +5866,7 @@ html {
     }
     
     .menu-item-image {
-        height: 180px;
+        height: 220px;
     }
     
     .menu-item-content {
